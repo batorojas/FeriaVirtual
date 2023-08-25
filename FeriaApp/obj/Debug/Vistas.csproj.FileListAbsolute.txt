@@ -1,0 +1,37 @@
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\FeriaApp.exe.config
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\FeriaApp.exe
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\FeriaApp.pdb
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\MetroFramework.Design.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\MetroFramework.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\MetroFramework.Fonts.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\Vistas.csproj.AssemblyReference.cache
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.Properties.Resources.resources
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\Vistas.csproj.GenerateResource.cache
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\Vistas.csproj.CoreCompileInputs.cache
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\Vistas.csproj.CopyComplete
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.exe
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.pdb
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\Clases.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\Clases.pdb
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vLogin.resources
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vMain.resources
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\FeriaApp.exe.config
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\FeriaApp.exe
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\FeriaApp.pdb
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Clases.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\MetroFramework.Design.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\MetroFramework.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Modelo.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Clases.pdb
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Modelo.pdb
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\Vistas.csproj.AssemblyReference.cache
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vDistribuidores.resources
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vLogin.resources
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vMain.resources
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.Properties.Resources.resources
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\Vistas.csproj.GenerateResource.cache
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\Vistas.csproj.CoreCompileInputs.cache
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\Vistas.csproj.CopyComplete
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.exe
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.pdb

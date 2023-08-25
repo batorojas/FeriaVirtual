@@ -1,0 +1,6 @@
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\Modelo\bin\Debug\Modelo.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\Modelo\bin\Debug\Modelo.pdb
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\Modelo\obj\Debug\Modelo.csproj.AssemblyReference.cache
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\Modelo\obj\Debug\Modelo.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\Modelo\obj\Debug\Modelo.pdb

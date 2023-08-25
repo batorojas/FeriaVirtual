@@ -1,0 +1,6 @@
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Clases\bin\Debug\Clases.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Clases\bin\Debug\Clases.pdb
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Clases\obj\Debug\Clases.csproj.AssemblyReference.cache
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Clases\obj\Debug\Clases.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Clases\obj\Debug\Clases.pdb
