@@ -42,7 +42,7 @@ namespace FeriaApp
                 loginData.Password = tbPassword.Text;
 
                 if (loginData.Username == "admin" && loginData.Password == "123")
-                //if (BusinessLayer.AuthenticateUser(loginData))
+                //if (Modelo.AuthenticateUser(loginData))
                 {
 
                     ventanaSecundaria = new vMain();
