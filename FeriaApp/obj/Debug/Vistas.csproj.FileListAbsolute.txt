@@ -35,3 +35,29 @@ C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\Vistas.csp
 C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\Vistas.csproj.CopyComplete
 C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.exe
 C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.pdb
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\Negocios.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.Buffers.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.Memory.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.Numerics.Vectors.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.Text.Encodings.Web.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.Text.Json.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.ValueTuple.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\Conexion.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\Negocios.pdb
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\Negocios.dll.config
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.Buffers.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.Memory.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.Numerics.Vectors.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.Text.Encodings.Web.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.Text.Json.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.ValueTuple.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\Conexion.pdb
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\Conexion.dll.config
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vDistribuidores.resources

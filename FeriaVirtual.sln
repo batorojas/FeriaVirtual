@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vistas", "FeriaApp\Vistas.c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clases", "Clases\Clases.csproj", "{413EC1DD-A906-4E70-AE87-011BBC5B26F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{9EFA6907-F2B3-45E2-A0FB-0159F49114EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocios", "Modelo\Negocios.csproj", "{9EFA6907-F2B3-45E2-A0FB-0159F49114EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conexion", "Conexion\Conexion.csproj", "{A6B7E6E9-382F-4011-BB8E-A9B942B704F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{9EFA6907-F2B3-45E2-A0FB-0159F49114EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EFA6907-F2B3-45E2-A0FB-0159F49114EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EFA6907-F2B3-45E2-A0FB-0159F49114EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6B7E6E9-382F-4011-BB8E-A9B942B704F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6B7E6E9-382F-4011-BB8E-A9B942B704F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6B7E6E9-382F-4011-BB8E-A9B942B704F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6B7E6E9-382F-4011-BB8E-A9B942B704F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

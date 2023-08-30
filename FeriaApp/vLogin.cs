@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Clases;
+using Negocios;
 
 namespace FeriaApp
 {
@@ -37,12 +38,13 @@ namespace FeriaApp
             try
             {
                 // Crear una instancia de Login y asignar los valores de los campos de entrada
-                Login loginData = new Login();
+                Sesion loginData = new Sesion();
+                ServicioBaseDatos neg = new ServicioBaseDatos();
                 loginData.Username = tbUser.Text;
                 loginData.Password = tbPassword.Text;
 
-                if (loginData.Username == "admin" && loginData.Password == "123")
-                //if (Modelo.AuthenticateUser(loginData))
+                //if (loginData.Username == "admin" && loginData.Password == "123")
+                if (neg.IngresarSistema(loginData))
                 {
 
                     ventanaSecundaria = new vMain();
