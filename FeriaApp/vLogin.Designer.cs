@@ -122,7 +122,7 @@
             this.tbPassword.Location = new System.Drawing.Point(238, 154);
             this.tbPassword.MaxLength = 32767;
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.PasswordChar = '\0';
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbPassword.SelectedText = "";
             this.tbPassword.SelectionLength = 0;
@@ -145,7 +145,9 @@
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.metroButton1);
+            this.MaximizeBox = false;
             this.Name = "vLogin";
+            this.Resizable = false;
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

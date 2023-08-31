@@ -97,11 +97,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="vDistribuidores.cs">
+    <Compile Include="vAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="vDistribuidores.Designer.cs">
-      <DependentUpon>vDistribuidores.cs</DependentUpon>
+    <Compile Include="vAdministrador.Designer.cs">
+      <DependentUpon>vAdministrador.cs</DependentUpon>
     </Compile>
     <Compile Include="vLogin.cs">
       <SubType>Form</SubType>
@@ -117,8 +117,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="vDistribuidores.resx">
-      <DependentUpon>vDistribuidores.cs</DependentUpon>
+    <Compile Include="vProductores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vProductores.Designer.cs">
+      <DependentUpon>vProductores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vVentas.Designer.cs">
+      <DependentUpon>vVentas.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="vAdministrador.resx">
+      <DependentUpon>vAdministrador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vLogin.resx">
       <DependentUpon>vLogin.cs</DependentUpon>
@@ -135,6 +147,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="vVentas.resx">
+      <DependentUpon>vVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
     </None>

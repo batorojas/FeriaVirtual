@@ -24,12 +24,12 @@ namespace Negocios
 
                 //this.con.NombreBaseDeDatos = "feriamaipogrande";
                 this.con.TableName = "USUARIO";
-                this.con.ConnectionString = "Data Source=localhost:1521/xe;User Id=feriamaipogrande;Password=123;";
+                this.con.ConnectionString = "Data Source=localhost:1521/xe;User Id=maipogrande;Password=123;";
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show("ERROR ID:001SES NAME:NEGOCIO SESION  " + ex);
+                MessageBox.Show("ERROR: " + ex);
             }
         }
 
@@ -49,7 +49,7 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR ID:002SES NAME:NEGOCIO SESION  " + ex);
+                MessageBox.Show("ERROR: " + ex);
                 return false;
             }
             finally

@@ -11,16 +11,11 @@ using System.Windows.Forms;
 
 namespace FeriaApp
 {
-    public partial class vDistribuidores : MetroForm
+    public partial class vProductores : MetroForm
     {
-        public vDistribuidores()
+        public vProductores()
         {
             InitializeComponent();
-        }
-
-        private void vDistribuidores_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

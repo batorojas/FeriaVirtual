@@ -60,4 +60,5 @@ D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.Threa
 D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.ValueTuple.xml
 D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\Conexion.pdb
 D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\Conexion.dll.config
-D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vDistribuidores.resources
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vAdministrador.resources
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vVentas.resources
