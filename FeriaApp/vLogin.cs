@@ -69,5 +69,50 @@ namespace FeriaApp
         {
             this.Close(); // Cierra la ventana principal cuando la ventana secundaria se cierra
         }
+
+        private void txtUser_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void richTextBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void richTextBox1_TextChanged_2(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

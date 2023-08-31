@@ -4,3 +4,9 @@ D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Clases\obj\Debug\Clases.csproj.
 D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache
 D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Clases\obj\Debug\Clases.dll
 D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Clases\obj\Debug\Clases.pdb
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\Clases\bin\Debug\Clases.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\Clases\bin\Debug\Clases.pdb
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\Clases\obj\Debug\Clases.csproj.AssemblyReference.cache
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\Clases\obj\Debug\Clases.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\Clases\obj\Debug\Clases.pdb

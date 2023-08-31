@@ -22,11 +22,8 @@ C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Clases.dll
 C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\MetroFramework.Design.dll
 C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\MetroFramework.dll
 C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\MetroFramework.Fonts.dll
-C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Modelo.dll
 C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Clases.pdb
-C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Modelo.pdb
 C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\Vistas.csproj.AssemblyReference.cache
-C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vDistribuidores.resources
 C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vLogin.resources
 C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vMain.resources
 C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.Properties.Resources.resources
@@ -62,3 +59,30 @@ D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\Conexion.pdb
 D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\Conexion.dll.config
 D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vAdministrador.resources
 D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vVentas.resources
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Negocios.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\System.Buffers.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\System.Memory.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\System.Text.Json.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\System.ValueTuple.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Conexion.dll
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Negocios.pdb
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Negocios.dll.config
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\System.Buffers.xml
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\System.Memory.xml
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\System.Text.Json.xml
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\System.ValueTuple.xml
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Conexion.pdb
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Conexion.dll.config
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vAdministrador.resources
+C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vVentas.resources
