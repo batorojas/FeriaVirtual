@@ -43,6 +43,13 @@ namespace Negocios
                 // CORREGIR MENSAJE DE ERROR
                 MessageBox.Show("ERROR ID:002PRO NAME:NEGOCIO PRODUCTO " + ex);
             }
+            finally
+            {
+                if (con != null)
+                {
+                    con.CerrarConexion(); // Llamada al método personalizado CerrarConexion
+                }
+            }
 
             return this.con.DbDataSet;
         }
