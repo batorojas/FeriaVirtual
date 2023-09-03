@@ -32,10 +32,10 @@
             this.btnLogin = new MetroFramework.Controls.MetroButton();
             this.tbUser = new MetroFramework.Controls.MetroTextBox();
             this.tbPassword = new MetroFramework.Controls.MetroTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelUsuario = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelContraseña = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,24 +118,15 @@
             this.tbPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.tbPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // label1
+            // labelUsuario
             // 
-            this.label1.Location = new System.Drawing.Point(171, 124);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 28);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Usuario";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(146, 180);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 28);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Contraseña";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.labelUsuario.Location = new System.Drawing.Point(171, 124);
+            this.labelUsuario.Name = "labelUsuario";
+            this.labelUsuario.Size = new System.Drawing.Size(70, 28);
+            this.labelUsuario.TabIndex = 7;
+            this.labelUsuario.Text = "Usuario";
+            this.labelUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelUsuario.Click += new System.EventHandler(this.labelUsuario_Click);
             // 
             // label3
             // 
@@ -157,16 +148,26 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // labelContraseña
+            // 
+            this.labelContraseña.Location = new System.Drawing.Point(154, 180);
+            this.labelContraseña.Name = "labelContraseña";
+            this.labelContraseña.Size = new System.Drawing.Size(84, 28);
+            this.labelContraseña.TabIndex = 11;
+            this.labelContraseña.Text = "Contraseña";
+            this.labelContraseña.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelContraseña.Click += new System.EventHandler(this.labelContraseña_Click);
+            // 
             // vLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(599, 464);
+            this.Controls.Add(this.labelContraseña);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelUsuario);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbUser);
             this.Controls.Add(this.btnLogin);
@@ -179,20 +180,20 @@
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.PictureBox pictureBox1;
 
         private System.Windows.Forms.Label label3;
 
-        private System.Windows.Forms.Label label2;
-
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelUsuario;
 
         #endregion
 
         private MetroFramework.Controls.MetroButton btnLogin;
         private MetroFramework.Controls.MetroTextBox tbUser;
         private MetroFramework.Controls.MetroTextBox tbPassword;
+        private System.Windows.Forms.Label labelContraseña;
     }
 }
