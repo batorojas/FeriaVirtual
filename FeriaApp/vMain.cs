@@ -33,16 +33,15 @@ namespace FeriaApp
             ventanaAdministrador.ShowDialog();
         }
 
-        private void metroButtonProductores_Click(object sender, EventArgs e)
-        {
-            ventanaProductores = new vProductores();
-            ventanaProductores.ShowDialog();
-        }
-
         private void metroButtonVentas_Click(object sender, EventArgs e)
         {
             ventanaVentas = new vVentas();
             ventanaVentas.ShowDialog();
+        }
+
+        private void metroTabPage4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

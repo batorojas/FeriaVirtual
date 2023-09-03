@@ -29,94 +29,40 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroButtonVentas = new MetroFramework.Controls.MetroButton();
             this.metroButtonLista = new MetroFramework.Controls.MetroButton();
-            this.metroButtonProductores = new MetroFramework.Controls.MetroButton();
-            this.metroButtonClientes = new MetroFramework.Controls.MetroButton();
-            this.metroButtonTransportistas = new MetroFramework.Controls.MetroButton();
-            this.metroButtonConsultor = new MetroFramework.Controls.MetroButton();
             this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.metroButtonVentas = new MetroFramework.Controls.MetroButton();
-            this.metroPanel1.SuspendLayout();
+            this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
+            this.metroTabVentasLocales = new MetroFramework.Controls.MetroTabPage();
+            this.metroTabVentasExternas = new MetroFramework.Controls.MetroTabPage();
+            this.metroTabContratos = new MetroFramework.Controls.MetroTabPage();
+            this.metroTabTransportes = new MetroFramework.Controls.MetroTabPage();
+            this.metroTabUsuarios = new MetroFramework.Controls.MetroTabPage();
             this.metroContextMenu1.SuspendLayout();
+            this.metroTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // metroPanel1
+            // metroButtonVentas
             // 
-            this.metroPanel1.Controls.Add(this.metroButtonVentas);
-            this.metroPanel1.Controls.Add(this.metroButtonConsultor);
-            this.metroPanel1.Controls.Add(this.metroButtonTransportistas);
-            this.metroPanel1.Controls.Add(this.metroButtonClientes);
-            this.metroPanel1.Controls.Add(this.metroButtonProductores);
-            this.metroPanel1.HorizontalScrollbarBarColor = true;
-            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(170, 82);
-            this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(468, 286);
-            this.metroPanel1.TabIndex = 0;
-            this.metroPanel1.VerticalScrollbarBarColor = true;
-            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(373, 60);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(47, 19);
-            this.metroLabel1.TabIndex = 1;
-            this.metroLabel1.Text = "MENU";
+            this.metroButtonVentas.Location = new System.Drawing.Point(676, 195);
+            this.metroButtonVentas.Name = "metroButtonVentas";
+            this.metroButtonVentas.Size = new System.Drawing.Size(101, 57);
+            this.metroButtonVentas.TabIndex = 9;
+            this.metroButtonVentas.Text = "Ventas";
+            this.metroButtonVentas.UseSelectable = true;
+            this.metroButtonVentas.Click += new System.EventHandler(this.metroButtonVentas_Click);
             // 
             // metroButtonLista
             // 
-            this.metroButtonLista.Location = new System.Drawing.Point(644, 163);
+            this.metroButtonLista.Location = new System.Drawing.Point(676, 275);
             this.metroButtonLista.Name = "metroButtonLista";
             this.metroButtonLista.Size = new System.Drawing.Size(101, 57);
             this.metroButtonLista.TabIndex = 3;
             this.metroButtonLista.Text = "Listado";
             this.metroButtonLista.UseSelectable = true;
             this.metroButtonLista.Click += new System.EventHandler(this.metroButton1_Click);
-            // 
-            // metroButtonProductores
-            // 
-            this.metroButtonProductores.Location = new System.Drawing.Point(149, 101);
-            this.metroButtonProductores.Name = "metroButtonProductores";
-            this.metroButtonProductores.Size = new System.Drawing.Size(101, 57);
-            this.metroButtonProductores.TabIndex = 5;
-            this.metroButtonProductores.Text = "Productores";
-            this.metroButtonProductores.UseSelectable = true;
-            this.metroButtonProductores.Click += new System.EventHandler(this.metroButtonProductores_Click);
-            // 
-            // metroButtonClientes
-            // 
-            this.metroButtonClientes.Location = new System.Drawing.Point(29, 101);
-            this.metroButtonClientes.Name = "metroButtonClientes";
-            this.metroButtonClientes.Size = new System.Drawing.Size(101, 57);
-            this.metroButtonClientes.TabIndex = 6;
-            this.metroButtonClientes.Text = "Clientes";
-            this.metroButtonClientes.UseSelectable = true;
-            // 
-            // metroButtonTransportistas
-            // 
-            this.metroButtonTransportistas.Location = new System.Drawing.Point(149, 21);
-            this.metroButtonTransportistas.Name = "metroButtonTransportistas";
-            this.metroButtonTransportistas.Size = new System.Drawing.Size(101, 57);
-            this.metroButtonTransportistas.TabIndex = 7;
-            this.metroButtonTransportistas.Text = "Transportistas";
-            this.metroButtonTransportistas.UseSelectable = true;
-            // 
-            // metroButtonConsultor
-            // 
-            this.metroButtonConsultor.Location = new System.Drawing.Point(29, 21);
-            this.metroButtonConsultor.Name = "metroButtonConsultor";
-            this.metroButtonConsultor.Size = new System.Drawing.Size(101, 57);
-            this.metroButtonConsultor.TabIndex = 8;
-            this.metroButtonConsultor.Text = "Consultor";
-            this.metroButtonConsultor.UseSelectable = true;
             // 
             // metroContextMenu1
             // 
@@ -138,46 +84,119 @@
             this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem2.Text = "toolStripMenuItem2";
             // 
-            // metroButtonVentas
+            // metroTabControl1
             // 
-            this.metroButtonVentas.Location = new System.Drawing.Point(320, 30);
-            this.metroButtonVentas.Name = "metroButtonVentas";
-            this.metroButtonVentas.Size = new System.Drawing.Size(101, 57);
-            this.metroButtonVentas.TabIndex = 9;
-            this.metroButtonVentas.Text = "Ventas";
-            this.metroButtonVentas.UseSelectable = true;
-            this.metroButtonVentas.Click += new System.EventHandler(this.metroButtonVentas_Click);
+            this.metroTabControl1.Controls.Add(this.metroTabVentasLocales);
+            this.metroTabControl1.Controls.Add(this.metroTabVentasExternas);
+            this.metroTabControl1.Controls.Add(this.metroTabContratos);
+            this.metroTabControl1.Controls.Add(this.metroTabTransportes);
+            this.metroTabControl1.Controls.Add(this.metroTabUsuarios);
+            this.metroTabControl1.Location = new System.Drawing.Point(23, 21);
+            this.metroTabControl1.Name = "metroTabControl1";
+            this.metroTabControl1.SelectedIndex = 4;
+            this.metroTabControl1.Size = new System.Drawing.Size(629, 385);
+            this.metroTabControl1.TabIndex = 4;
+            this.metroTabControl1.UseSelectable = true;
+            // 
+            // metroTabVentasLocales
+            // 
+            this.metroTabVentasLocales.HorizontalScrollbarBarColor = true;
+            this.metroTabVentasLocales.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabVentasLocales.HorizontalScrollbarSize = 10;
+            this.metroTabVentasLocales.Location = new System.Drawing.Point(4, 38);
+            this.metroTabVentasLocales.Name = "metroTabVentasLocales";
+            this.metroTabVentasLocales.Size = new System.Drawing.Size(645, 122);
+            this.metroTabVentasLocales.TabIndex = 0;
+            this.metroTabVentasLocales.Text = "Ventas Locales";
+            this.metroTabVentasLocales.VerticalScrollbarBarColor = true;
+            this.metroTabVentasLocales.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabVentasLocales.VerticalScrollbarSize = 10;
+            // 
+            // metroTabVentasExternas
+            // 
+            this.metroTabVentasExternas.HorizontalScrollbarBarColor = true;
+            this.metroTabVentasExternas.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabVentasExternas.HorizontalScrollbarSize = 10;
+            this.metroTabVentasExternas.Location = new System.Drawing.Point(4, 38);
+            this.metroTabVentasExternas.Name = "metroTabVentasExternas";
+            this.metroTabVentasExternas.Size = new System.Drawing.Size(645, 122);
+            this.metroTabVentasExternas.TabIndex = 1;
+            this.metroTabVentasExternas.Text = "Ventas Externas";
+            this.metroTabVentasExternas.VerticalScrollbarBarColor = true;
+            this.metroTabVentasExternas.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabVentasExternas.VerticalScrollbarSize = 10;
+            // 
+            // metroTabContratos
+            // 
+            this.metroTabContratos.HorizontalScrollbarBarColor = true;
+            this.metroTabContratos.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabContratos.HorizontalScrollbarSize = 10;
+            this.metroTabContratos.Location = new System.Drawing.Point(4, 38);
+            this.metroTabContratos.Name = "metroTabContratos";
+            this.metroTabContratos.Size = new System.Drawing.Size(645, 122);
+            this.metroTabContratos.TabIndex = 2;
+            this.metroTabContratos.Text = "Contratos";
+            this.metroTabContratos.VerticalScrollbarBarColor = true;
+            this.metroTabContratos.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabContratos.VerticalScrollbarSize = 10;
+            // 
+            // metroTabTransportes
+            // 
+            this.metroTabTransportes.HorizontalScrollbarBarColor = true;
+            this.metroTabTransportes.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabTransportes.HorizontalScrollbarSize = 10;
+            this.metroTabTransportes.Location = new System.Drawing.Point(4, 38);
+            this.metroTabTransportes.Name = "metroTabTransportes";
+            this.metroTabTransportes.Size = new System.Drawing.Size(645, 122);
+            this.metroTabTransportes.TabIndex = 3;
+            this.metroTabTransportes.Text = "Transportes";
+            this.metroTabTransportes.VerticalScrollbarBarColor = true;
+            this.metroTabTransportes.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabTransportes.VerticalScrollbarSize = 10;
+            this.metroTabTransportes.Click += new System.EventHandler(this.metroTabPage4_Click);
+            // 
+            // metroTabUsuarios
+            // 
+            this.metroTabUsuarios.HorizontalScrollbarBarColor = true;
+            this.metroTabUsuarios.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabUsuarios.HorizontalScrollbarSize = 10;
+            this.metroTabUsuarios.Location = new System.Drawing.Point(4, 38);
+            this.metroTabUsuarios.Name = "metroTabUsuarios";
+            this.metroTabUsuarios.Size = new System.Drawing.Size(621, 343);
+            this.metroTabUsuarios.TabIndex = 4;
+            this.metroTabUsuarios.Text = "Usuarios";
+            this.metroTabUsuarios.VerticalScrollbarBarColor = true;
+            this.metroTabUsuarios.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabUsuarios.VerticalScrollbarSize = 10;
             // 
             // vMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.metroPanel1);
+            this.Controls.Add(this.metroTabControl1);
+            this.Controls.Add(this.metroButtonVentas);
             this.Controls.Add(this.metroButtonLista);
             this.Name = "vMain";
             this.Load += new System.EventHandler(this.Main_Load);
-            this.metroPanel1.ResumeLayout(false);
             this.metroContextMenu1.ResumeLayout(false);
+            this.metroTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroButton metroButtonLista;
-        private MetroFramework.Controls.MetroButton metroButtonConsultor;
-        private MetroFramework.Controls.MetroButton metroButtonTransportistas;
-        private MetroFramework.Controls.MetroButton metroButtonClientes;
-        private MetroFramework.Controls.MetroButton metroButtonProductores;
         private MetroFramework.Controls.MetroContextMenu metroContextMenu1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private MetroFramework.Controls.MetroButton metroButtonVentas;
+        private MetroFramework.Controls.MetroTabControl metroTabControl1;
+        private MetroFramework.Controls.MetroTabPage metroTabVentasLocales;
+        private MetroFramework.Controls.MetroTabPage metroTabVentasExternas;
+        private MetroFramework.Controls.MetroTabPage metroTabContratos;
+        private MetroFramework.Controls.MetroTabPage metroTabTransportes;
+        private MetroFramework.Controls.MetroTabPage metroTabUsuarios;
     }
 }
 

@@ -106,7 +106,7 @@
             this.tbPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbPassword.MaxLength = 32767;
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.PasswordChar = '\0';
+            this.tbPassword.PasswordChar = '●';
             this.tbPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.tbPassword.SelectedText = "";
             this.tbPassword.SelectionLength = 0;
