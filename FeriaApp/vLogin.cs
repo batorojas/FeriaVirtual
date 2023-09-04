@@ -24,7 +24,7 @@ namespace FeriaApp
 
         private void Login_Load(object sender, EventArgs e)
         {
-            
+            this.AcceptButton = btnLogin;
         }
 
         private void metroButton1_Click(object sender, EventArgs e)

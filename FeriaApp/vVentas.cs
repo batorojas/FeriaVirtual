@@ -17,6 +17,9 @@ namespace FeriaApp
         public vVentas()
         {
             InitializeComponent();
+            //tabControl1.DrawItem += new DrawItemEventHandler(tabControl1_DrawItem);
+            //this.tabControl1 = new TabControls.DotNetBarTabControl();
+
         }
 
         private void vVentas_Load(object sender, EventArgs e)
@@ -37,5 +40,22 @@ namespace FeriaApp
         {
 
         }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //private void tabControl1_DrawItem(Object sender, System.Windows.Forms.DrawItemEventArgs e)
+        //{
+        //    string tabName = tabControl1.TabPages[e.Index].Text;
+        //    StringFormat stringFormat = new StringFormat();
+        //    stringFormat.Alignment = StringAlignment.Center;
+        //    stringFormat.LineAlignment = StringAlignment.Center;
+        //    //Find if it is selected, this one will be hightlighted...
+        //    if (e.Index == tabControl1.SelectedIndex)
+        //        e.Graphics.FillRectangle(Brushes.LightBlue, e.Bounds);
+        //    e.Graphics.DrawString(tabName, this.Font, Brushes.Black, tabControl1.GetTabRect(e.Index), stringFormat);
+        //}
     }
 }

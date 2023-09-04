@@ -14,7 +14,6 @@ namespace FeriaApp
     public partial class vMain : MetroForm
     {
         private vAdministrador ventanaAdministrador;
-        private vProductores ventanaProductores;
         private vVentas ventanaVentas;
 
         public vMain()
@@ -37,11 +36,6 @@ namespace FeriaApp
         {
             ventanaVentas = new vVentas();
             ventanaVentas.ShowDialog();
-        }
-
-        private void metroTabPage4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
