@@ -57,7 +57,6 @@ D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.Threa
 D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\System.ValueTuple.xml
 D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\Conexion.pdb
 D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\bin\Debug\Conexion.dll.config
-D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vAdministrador.resources
 D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vVentas.resources
 C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Negocios.dll
@@ -86,3 +85,9 @@ C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Conexion.p
 C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\bin\Debug\Conexion.dll.config
 C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vAdministrador.resources
 C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vVentas.resources
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vInicio.resources
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vUsuarios.resources
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vContratos.resources
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vTransportes.resources
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vVentasExternas.resources
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vVentasLocales.resources

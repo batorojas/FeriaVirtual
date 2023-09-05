@@ -100,11 +100,17 @@
     <Compile Include="DotNetBarTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="vAdministrador.cs">
-      <SubType>Form</SubType>
+    <Compile Include="vContratos.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="vAdministrador.Designer.cs">
-      <DependentUpon>vAdministrador.cs</DependentUpon>
+    <Compile Include="vContratos.Designer.cs">
+      <DependentUpon>vContratos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vInicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="vInicio.Designer.cs">
+      <DependentUpon>vInicio.cs</DependentUpon>
     </Compile>
     <Compile Include="vLogin.cs">
       <SubType>Form</SubType>
@@ -120,14 +126,41 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vTransportes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="vTransportes.Designer.cs">
+      <DependentUpon>vTransportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vUsuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="vUsuarios.Designer.cs">
+      <DependentUpon>vUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="vVentas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="vVentas.Designer.cs">
       <DependentUpon>vVentas.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="vAdministrador.resx">
-      <DependentUpon>vAdministrador.cs</DependentUpon>
+    <Compile Include="vVentasExternas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="vVentasExternas.Designer.cs">
+      <DependentUpon>vVentasExternas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vVentasLocales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="vVentasLocales.Designer.cs">
+      <DependentUpon>vVentasLocales.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="vContratos.resx">
+      <DependentUpon>vContratos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vInicio.resx">
+      <DependentUpon>vInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vLogin.resx">
       <DependentUpon>vLogin.cs</DependentUpon>
@@ -144,8 +177,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="vTransportes.resx">
+      <DependentUpon>vTransportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vUsuarios.resx">
+      <DependentUpon>vUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vVentas.resx">
       <DependentUpon>vVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vVentasExternas.resx">
+      <DependentUpon>vVentasExternas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vVentasLocales.resx">
+      <DependentUpon>vVentasLocales.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>

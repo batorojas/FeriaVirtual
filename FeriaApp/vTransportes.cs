@@ -1,5 +1,4 @@
-﻿using MetroFramework.Forms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FeriaApp
 {
-    public partial class vAdministrador : MetroForm
+    public partial class vTransportes : UserControl
     {
-        public vAdministrador()
+        public vTransportes()
         {
             InitializeComponent();
         }
