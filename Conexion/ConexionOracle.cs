@@ -67,7 +67,6 @@ namespace Conexion
                         return;
                     }
                 }
-
             }
         }
 
@@ -77,6 +76,24 @@ namespace Conexion
             if (this.DbDataSet != null)
             {
                 this.DbDataSet.Dispose();
+            }
+        }
+
+        public void ejecutarProcedimiento(String nombreProcedimiento, String[] parametros, OracleDbType[] tipos, Object[] valores)
+        {
+            using (OracleConnection con = new OracleConnection(this.ConnectionString))
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd = new OracleCommand(nombreProcedimiento, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                for (int i = 0; i < parametros.Length; i++)
+                {
+                    cmd.Parameters.Add(parametros[i], tipos[i]).Value = valores[i];
+                }
+                con.Open();
+                cmd.ExecuteNonQuery();
+
             }
         }
 

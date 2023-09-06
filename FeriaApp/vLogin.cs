@@ -46,9 +46,9 @@ namespace FeriaApp
                 //if (loginData.Username == "admin" && loginData.Password == "123")
                 if (neg.IngresarSistema(loginData))
                 {
-
                     ventanaSecundaria = new vMain();
                     ventanaSecundaria.FormClosed += vMain_FormClosed;
+                    ventanaSecundaria.ValorRecibidoSesionUsername = loginData.Username; // Enviar sesion.Username a la ventana vMain
                     ventanaSecundaria.Show(); // ventanaSecundaria.Show(); o nuevaVentana.ShowDialog();
                     this.Hide();
 

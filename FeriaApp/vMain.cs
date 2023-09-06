@@ -1,4 +1,5 @@
-﻿using MetroFramework.Forms;
+﻿using MetroFramework.Controls;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,12 +8,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Configuration;
 using System.Windows.Forms;
+using System.Windows.Media;
 
 namespace FeriaApp
 {
     public partial class vMain : MetroForm
     {
+        public string ValorRecibidoSesionUsername { get; set; }
         private vVentas ventanaVentas;
 
         public vMain()
@@ -22,9 +26,10 @@ namespace FeriaApp
 
         private void Main_Load(object sender, EventArgs e)
         {
-            // Selecciona la pestaña deseada al iniciar la aplicacióna
+            // Selecciona la pestaña deseada al iniciar la aplicacion
             //tabControlMenu1.SelectedTab = null;
             tabControlMenu1.SelectedTab = tabPageInicio;
+            vInicio1.NombreSesionStartPage = char.ToUpper(ValorRecibidoSesionUsername[0]) + ValorRecibidoSesionUsername.Substring(1).ToLower(); // Transforma a mayusculas la primera letra de la String
         }
 
         private void metroButtonVentas_Click(object sender, EventArgs e)
