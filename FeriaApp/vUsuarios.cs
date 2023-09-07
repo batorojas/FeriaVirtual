@@ -29,6 +29,7 @@ namespace FeriaApp
             ObtenerComunasDesdeDataSet();
             metroTabControl1.SelectedTab = metroTabPageUsuarios;
             metroComboBoxTipoCuenta.SelectedIndex = 1;
+            metroRadioButtonEstadoCuenta1.Checked = true;
             ocultarDatos();
 
             // llenar el combobox con las comunas
@@ -110,6 +111,31 @@ namespace FeriaApp
             }
 
             return comunas;
+        }
+
+        void limpiarCrearUsuario()
+        {
+            metroTextBoxNombreUsuario.Text = "";
+            metroTextBoxContrasena.Text = "";
+            metroComboBoxTipoCuenta.SelectedIndex = 1;
+            metroRadioButtonEstadoCuenta1.Checked = true;
+
+            metroTextBoxRut.Text = "";
+            metroTextBoxRutDV.Text = "";
+            metroTextBoxRazonSocial.Text = "";
+            metroTextBoxGiro.Text = "";
+            metroComboBoxComuna.SelectedIndex = 0;
+            metroTextBoxDireccion.Text = "";
+        }
+
+        private void metroButtonLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarCrearUsuario();
+        }
+
+        private void metroButtonAgregarUsuario_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

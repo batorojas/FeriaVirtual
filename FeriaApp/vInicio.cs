@@ -23,7 +23,6 @@ namespace FeriaApp
         {
             get { return metroLabel1.Text; }
             set { metroLabel1.Text = value; }
-            
         }
 
 
