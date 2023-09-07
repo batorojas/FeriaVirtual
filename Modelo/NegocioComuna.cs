@@ -36,7 +36,7 @@ namespace Negocios
                 this.configurarConexion();
                 this.con.SqlString = "SELECT * FROM " + this.con.TableName + " ORDER BY NOMBRE_COMUNA";
                 this.con.EsSelect = true;
-                this.con.Conectar();
+                this.con.conectar();
             }
             catch (Exception ex)
             {
@@ -47,7 +47,7 @@ namespace Negocios
             {
                 if (con != null)
                 {
-                    con.CerrarConexion(); // Llamada al método personalizado CerrarConexion
+                    con.cerrarConexion(); // Llamada al método personalizado CerrarConexion
                 }
             }
 

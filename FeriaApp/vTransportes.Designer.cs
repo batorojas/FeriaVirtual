@@ -48,7 +48,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.metroLabel1);
             this.Name = "vTransportes";
-            this.Size = new System.Drawing.Size(604, 441);
+            this.Size = new System.Drawing.Size(656, 441);
             this.ResumeLayout(false);
             this.PerformLayout();
 

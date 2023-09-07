@@ -76,6 +76,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NegocioComuna.cs" />
+    <Compile Include="NegocioPerfil.cs" />
+    <Compile Include="NegocioTipoCliente.cs" />
     <Compile Include="NegocioUsuario.cs" />
     <Compile Include="NegocioVenta.cs" />
     <Compile Include="ServicioBaseDatos.cs" />

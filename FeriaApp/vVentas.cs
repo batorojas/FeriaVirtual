@@ -25,7 +25,7 @@ namespace FeriaApp
         private void vVentas_Load(object sender, EventArgs e)
         {
             NegocioVenta negocioVenta = new NegocioVenta();
-            DataSet listaVenta = negocioVenta.ListarVenta();
+            DataSet listaVenta = negocioVenta.listarVenta();
 
             this.dgvListaVentas.AutoGenerateColumns = true;
             this.dgvListaVentas.DataSource = listaVenta.Tables["CABECERA_PV"];

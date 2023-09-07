@@ -42,7 +42,7 @@ namespace Negocios
                 this.configurarConexion();
                 this.con.SqlString = "SELECT * FROM " + this.con.TableName;
                 this.con.EsSelect = true;
-                this.con.Conectar();
+                this.con.conectar();
             }
             catch (Exception ex)
             {
@@ -53,14 +53,14 @@ namespace Negocios
             {
                 if (con != null)
                 {
-                    con.CerrarConexion(); // Llamada al método personalizado CerrarConexion
+                    con.cerrarConexion(); // Llamada al método personalizado CerrarConexion
                 }
             }
 
             return this.con.DbDataSet;
         }
 
-        public void IngresarUsuario(Usuario usuario)
+        public void ingresarUsuario(Usuario usuario)
         {
             try
             {
@@ -82,7 +82,7 @@ namespace Negocios
             {
                 if (con != null)
                 {
-                    con.CerrarConexion(); // Llamada al método personalizado CerrarConexion
+                    con.cerrarConexion(); // Llamada al método personalizado CerrarConexion
                 }
             }
         }
@@ -109,7 +109,7 @@ namespace Negocios
             {
                 if (con != null)
                 {
-                    con.CerrarConexion(); // Llamada al método personalizado CerrarConexion
+                    con.cerrarConexion(); // Llamada al método personalizado CerrarConexion
                 }
             }
         }
@@ -136,7 +136,7 @@ namespace Negocios
             {
                 if (con != null)
                 {
-                    con.CerrarConexion(); // Llamada al método personalizado CerrarConexion
+                    con.cerrarConexion(); // Llamada al método personalizado CerrarConexion
                 }
             }
         }
@@ -148,7 +148,7 @@ namespace Negocios
             this.con.SqlString = "SELECT * FROM " + this.con.TableName + " "
                                    + "WHERE NOMBRE_USUARIO = '" + nombreUsuario + "'";
             this.con.EsSelect = true;
-            this.con.Conectar();
+            this.con.conectar();
 
 
             DataTable dt = new DataTable();
@@ -172,7 +172,7 @@ namespace Negocios
             {
                 if (con != null)
                 {
-                    con.CerrarConexion(); // Llamada al método personalizado CerrarConexion
+                    con.cerrarConexion(); // Llamada al método personalizado CerrarConexion
                 }
             }
 
@@ -185,7 +185,7 @@ namespace Negocios
             this.con.SqlString = "SELECT * FROM " + this.con.TableName + " "
                                    + "WHERE ID_USUARIO = " + idUsuario;
             this.con.EsSelect = true;
-            this.con.Conectar();
+            this.con.conectar();
 
 
             DataTable dt = new DataTable();
@@ -209,7 +209,7 @@ namespace Negocios
             {
                 if (con != null)
                 {
-                    con.CerrarConexion(); // Llamada al método personalizado CerrarConexion
+                    con.cerrarConexion(); // Llamada al método personalizado CerrarConexion
                 }
             }
 
@@ -217,14 +217,14 @@ namespace Negocios
 
         }
 
-        public DataSet RetornarId()
+        public DataSet retornarId()
         {
             try
             {
                 this.configurarConexion();
                 this.con.SqlString = "SELECT * FROM USUARIO WHERE ID_USUARIO = (SELECT MAX(ID_USUARIO) FROM USUARIO)";
                 this.con.EsSelect = true;
-                this.con.Conectar();
+                this.con.conectar();
             }
             catch (Exception ex)
             {
@@ -235,7 +235,7 @@ namespace Negocios
             {
                 if (con != null)
                 {
-                    con.CerrarConexion(); // Llamada al método personalizado CerrarConexion
+                    con.cerrarConexion(); // Llamada al método personalizado CerrarConexion
                 }
             }
 

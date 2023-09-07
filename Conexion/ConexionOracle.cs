@@ -39,7 +39,7 @@ namespace Conexion
             return new OracleConnection(ConnectionString);
         }
 
-        public void Conectar()
+        public void conectar()
         {
             using (OracleConnection con = new OracleConnection(this.ConnectionString))
             {
@@ -71,7 +71,7 @@ namespace Conexion
         }
 
         // Método para cerrar la conexión
-        public void CerrarConexion()
+        public void cerrarConexion()
         {
             if (this.DbDataSet != null)
             {

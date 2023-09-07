@@ -44,7 +44,7 @@ namespace FeriaApp
                 loginData.Password = tbPassword.Text;
 
                 //if (loginData.Username == "admin" && loginData.Password == "123")
-                if (neg.IngresarSistema(loginData))
+                if (neg.ingresarSistema(loginData))
                 {
                     ventanaSecundaria = new vMain();
                     ventanaSecundaria.FormClosed += vMain_FormClosed;

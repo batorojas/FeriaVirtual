@@ -33,7 +33,7 @@ namespace Negocios
             }
         }
 
-        public Boolean IngresarSistema(Sesion ingreso)
+        public Boolean ingresarSistema(Sesion ingreso)
         {
 
             try
@@ -43,7 +43,7 @@ namespace Negocios
                                      + " NOMBRE_USUARIO = '" + ingreso.Username + "' AND"
                                      + " PASSWORD = '" + ingreso.Password + "'";
                 this.con.EsSelect = true;
-                this.con.Conectar();
+                this.con.conectar();
 
                 return this.con.DbDataSet.Tables[this.con.TableName].Rows.Count == 1;
             }
@@ -56,7 +56,7 @@ namespace Negocios
             {
                 if (con != null)
                 {
-                    con.CerrarConexion(); // Llamada al método personalizado CerrarConexion
+                    con.cerrarConexion(); // Llamada al método personalizado CerrarConexion
                 }
             }
         }

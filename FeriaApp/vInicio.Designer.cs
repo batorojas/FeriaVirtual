@@ -33,6 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroButtonVentas = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,24 +73,35 @@
             // metroLabel1
             // 
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(275, 11);
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel1.Location = new System.Drawing.Point(248, 0);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(308, 25);
             this.metroLabel1.TabIndex = 15;
             this.metroLabel1.Text = "Usuario";
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // metroButtonVentas
+            // 
+            this.metroButtonVentas.Location = new System.Drawing.Point(510, 224);
+            this.metroButtonVentas.Name = "metroButtonVentas";
+            this.metroButtonVentas.Size = new System.Drawing.Size(46, 45);
+            this.metroButtonVentas.TabIndex = 16;
+            this.metroButtonVentas.Text = "Ventas";
+            this.metroButtonVentas.UseSelectable = true;
+            this.metroButtonVentas.Click += new System.EventHandler(this.metroButtonVentas_Click);
+            // 
             // vInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.metroButtonVentas);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
             this.Name = "vInicio";
-            this.Size = new System.Drawing.Size(604, 441);
+            this.Size = new System.Drawing.Size(656, 441);
             this.Load += new System.EventHandler(this.vInicio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -102,5 +114,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroButton metroButtonVentas;
     }
 }
