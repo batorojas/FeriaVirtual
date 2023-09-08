@@ -132,7 +132,6 @@ C:\Users\eden\Documents\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vMain.resources
 C:\Users\eden\Documents\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.Properties.Resources.resources
 C:\Users\eden\Documents\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vTransportes.resources
 C:\Users\eden\Documents\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vUsuarios.resources
-C:\Users\eden\Documents\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vVentas.resources
 C:\Users\eden\Documents\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vVentasExternas.resources
 C:\Users\eden\Documents\FeriaVirtual\FeriaApp\obj\Debug\FeriaApp.vVentasLocales.resources
 C:\Users\eden\Documents\FeriaVirtual\FeriaApp\obj\Debug\Vistas.csproj.GenerateResource.cache

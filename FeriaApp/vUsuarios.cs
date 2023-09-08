@@ -43,7 +43,7 @@ namespace FeriaApp
             obtenerComunasDesdeDataSet();
             obtenerTipoClienteDesdeDataSet();
             obtenerTipoPerfilDesdeDataSet();
-            metroTabControl1.SelectedTab = metroTabPageUsuarios;
+            metroTabControl1.SelectedTab = dgvListaUsuarios;
             metroRadioButtonEstadoCuentaActiva.Checked = true;
 
             // llenar el combobox con las comunas
@@ -63,6 +63,11 @@ namespace FeriaApp
             metroComboBoxTipoCuenta.ValueMember = "IdPerfil"; // Utiliza el ID de la comuna como valor seleccionado
 
             metroComboBoxTipoCuenta.SelectedIndex = 1; // Seleciona automaticamente el tipo de cuenta a tipo Cliente
+            
+            NegocioUsuario negocioUsuarios = new NegocioUsuario();
+            DataSet listaUsuarios = negocioUsuarios.listarUsuario();
+            this.dgvListaUsuarios.AutoGenerateColumns = true;
+            this.dgvListaUsuarios.DataSource = listaUsuarios.Tables["USUARIO"];
         }
 
         private void metroComboBoxTipoCuenta_SelectedIndexChanged(object sender, EventArgs e)
@@ -406,6 +411,16 @@ namespace FeriaApp
             {
                 e.KeyChar = 'K';
             }
+        }
+
+        private void metroTabPageUsuarios_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void metroTabPageUsuarios_Layout(object sender, LayoutEventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 
