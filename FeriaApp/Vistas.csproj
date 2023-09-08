@@ -138,12 +138,6 @@
     <Compile Include="vUsuarios.Designer.cs">
       <DependentUpon>vUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="vVentas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="vVentas.Designer.cs">
-      <DependentUpon>vVentas.cs</DependentUpon>
-    </Compile>
     <Compile Include="vVentasExternas.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -182,9 +176,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="vUsuarios.resx">
       <DependentUpon>vUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="vVentas.resx">
-      <DependentUpon>vVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vVentasExternas.resx">
       <DependentUpon>vVentasExternas.cs</DependentUpon>

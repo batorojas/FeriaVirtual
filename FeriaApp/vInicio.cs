@@ -28,12 +28,7 @@ namespace FeriaApp
 
         private void vInicio_Load(object sender, EventArgs e)
         {
-        }
-
-        private void metroButtonVentas_Click(object sender, EventArgs e)
-        {
-            vVentas ventanaVentas = new vVentas();
-            ventanaVentas.ShowDialog();
+            
         }
     }
 }
