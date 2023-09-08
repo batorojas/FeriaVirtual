@@ -10,3 +10,9 @@ C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\Clases\obj\Debug\Clases.cspro
 C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache
 C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\Clases\obj\Debug\Clases.dll
 C:\Users\eden\Documents\Feria Virtual\FeriaVirtual\Clases\obj\Debug\Clases.pdb
+C:\Users\eden\Documents\FeriaVirtual\Clases\bin\Debug\Clases.dll
+C:\Users\eden\Documents\FeriaVirtual\Clases\bin\Debug\Clases.pdb
+C:\Users\eden\Documents\FeriaVirtual\Clases\obj\Debug\Clases.csproj.AssemblyReference.cache
+C:\Users\eden\Documents\FeriaVirtual\Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache
+C:\Users\eden\Documents\FeriaVirtual\Clases\obj\Debug\Clases.dll
+C:\Users\eden\Documents\FeriaVirtual\Clases\obj\Debug\Clases.pdb

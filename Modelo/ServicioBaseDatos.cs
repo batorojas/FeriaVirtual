@@ -41,7 +41,8 @@ namespace Negocios
                 this.configurarConexion();
                 this.con.SqlString = "SELECT * FROM " + this.con.TableName + " WHERE "
                                      + " NOMBRE_USUARIO = '" + ingreso.Username + "' AND"
-                                     + " PASSWORD = '" + ingreso.Password + "'";
+                                     + " PASSWORD = '" + ingreso.Password + "'"
+                                     + " AND ID_PERFIL = 1 AND ID_ESTD_CTA = 1";
                 this.con.EsSelect = true;
                 this.con.conectar();
 

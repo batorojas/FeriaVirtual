@@ -297,8 +297,7 @@ namespace FeriaApp
                         nuevoUsuario.Password = this.metroTextBoxContrasena.Text;
                         nuevoUsuario.IdPerfil = valorTipoCuenta;
                         nuevoUsuario.IdEstadoCuenta = estadoCuenta; // RadioButton Estado Cuenta
-
-
+                        
                         NegocioUsuario negocioUsuario = new NegocioUsuario();
                         negocioUsuario.ingresarUsuario(nuevoUsuario);
                         MessageBox.Show("Usuario Agregado");
@@ -311,20 +310,73 @@ namespace FeriaApp
                     break;
                 case 2:
                     // Realizar acción para la opción Cliente
-                    MessageBox.Show($"Se seleccionó la Opción {estadoCuenta}");
+                    try
+                    {
+                        Usuario nuevoUsuarioProductor = new Usuario();
+                        nuevoUsuarioProductor.UserName = this.metroTextBoxNombreUsuario.Text;
+                        nuevoUsuarioProductor.Password = this.metroTextBoxContrasena.Text;
+                        nuevoUsuarioProductor.IdEstadoCuenta = estadoCuenta;
+                        Cliente nuevoCliente = new Cliente();
+                        nuevoCliente.DireccionCliente = this.metroTextBoxDireccion.Text;
+                        nuevoCliente.RazonSocialCliente = this.metroTextBoxContrasena.Text;
+                        nuevoCliente.GiroCliente = this.metroTextBoxGiro.Text;
+                        nuevoCliente.RutCliente = Int32.Parse(this.metroTextBoxRut.Text);
+                        nuevoCliente.DvRutCliente = this.metroTextBoxRutDV.Text;
+                        nuevoCliente.IdComunaCliente = valorComuna;
+                        nuevoCliente.IdUsuarioCliente = valorTipoCuenta;
+                        nuevoCliente.IdTipoCliente = valorTipoCliente;
+                    }
+                    catch (Exception ex) 
+                    { 
+                        MessageBox.Show("ERROR AL INTENTAR INGRESAR USUARIO" + ex); 
+                    }
+                    
                     break;
                 case 3:
                     // Realizar acción para la opción Transportista
-                    MessageBox.Show($"Se seleccionó la Opción {estadoCuenta}");
+                    try
+                    {
+                        Usuario nuevoUsuario = new Usuario();
+                        nuevoUsuario.UserName = this.metroTextBoxNombreUsuario.Text;
+                        nuevoUsuario.Password = this.metroTextBoxContrasena.Text;
+                        nuevoUsuario.IdPerfil = valorTipoCuenta;
+                        nuevoUsuario.IdEstadoCuenta = estadoCuenta; // RadioButton Estado Cuenta
+                        
+                        NegocioUsuario negocioUsuario = new NegocioUsuario();
+                        negocioUsuario.ingresarUsuario(nuevoUsuario);
+                        MessageBox.Show("Usuario Agregado");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR AL INTENTAR INGRESAR USUARIO" + ex);
+                    }
                     break;
                 case 4:
                     // Realizar acción para la opción Productor
-                    MessageBox.Show($"Se seleccionó la Opción {estadoCuenta}");
+                    try
+                    {
+                        Usuario nuevoUsuarioProductor = new Usuario();
+                        nuevoUsuarioProductor.UserName = this.metroTextBoxNombreUsuario.Text;
+                        nuevoUsuarioProductor.Password = this.metroTextBoxContrasena.Text;
+                        nuevoUsuarioProductor.IdEstadoCuenta = estadoCuenta;
+                        Productor nuevoProductor = new Productor();
+                        nuevoProductor.DireccionProductor = this.metroTextBoxDireccion.Text;
+                        nuevoProductor.RazonSocialProductor = this.metroTextBoxContrasena.Text;
+                        nuevoProductor.GiroProductor = this.metroTextBoxGiro.Text;
+                        nuevoProductor.RutProductor = Int32.Parse(this.metroTextBoxRut.Text);
+                        nuevoProductor.DvRutProductor = this.metroTextBoxRutDV.Text;
+                        nuevoProductor.IdComunaProductor = valorComuna;
+                        nuevoProductor.IdUsuarioProductor = valorTipoCuenta;
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR AL INTENTAR INGRESAR USUARIO" + ex);
+                    }
                     break;
-                default:
-                    // Realizar acción predeterminada si no coincide con ninguna opción
-                    MessageBox.Show("Opción no reconocida");
+
                     break;
+                
             }
         }
 
