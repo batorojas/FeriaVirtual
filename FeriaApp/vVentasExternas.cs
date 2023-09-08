@@ -14,6 +14,8 @@ namespace FeriaApp
 {
     public partial class vVentasExternas : UserControl
     {
+        NegocioVenta negocioVenta = new NegocioVenta();
+
         public vVentasExternas()
         {
             InitializeComponent();
@@ -21,7 +23,6 @@ namespace FeriaApp
 
         private void vVentasExternas_Load(object sender, EventArgs e)
         {
-            NegocioVenta negocioVenta = new NegocioVenta();
             DataSet listaVenta = negocioVenta.listarVenta();
             this.dgvListaVentas.AutoGenerateColumns = true;
             this.dgvListaVentas.DataSource = listaVenta.Tables["CABECERA_PV"];
@@ -29,7 +30,7 @@ namespace FeriaApp
 
         private void dgvListaVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            throw new System.NotImplementedException();
+
         }
     }
 }

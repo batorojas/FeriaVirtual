@@ -18,6 +18,7 @@ namespace FeriaApp
         NegocioComuna negocioComuna = new NegocioComuna();
         NegocioTipoCliente negocioTipoCliente = new NegocioTipoCliente();
         NegocioPerfil negocioPerfil = new NegocioPerfil();
+        NegocioUsuario negocioUsuarios = new NegocioUsuario();
 
         Usuario usuario = new Usuario();
         Productor productor = new Productor();
@@ -40,14 +41,47 @@ namespace FeriaApp
 
         private void vUsuarios_Load(object sender, EventArgs e)
         {
+            metroTabControl1.SelectedTab = metroTabPageUsuarios;
+        }
+
+        private void metroTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Obtén el índice de la pestaña actualmente seleccionada
+            int tabIndex = metroTabControl1.SelectedIndex;
+
+            // Ejecuta funciones basadas en la pestaña seleccionada
+            switch (tabIndex)
+            {
+                case 0:
+                    tabClientes();
+                    break;
+                case 1:
+                    tabCrearCliente();
+                    break;
+                default:
+                    MessageBox.Show("Pestaña no reconocida");
+                    break;
+            }
+        }
+
+        private void tabClientes()
+        {
+            // PESTAÑA USUARIOS
+            DataSet listaUsuarios = negocioUsuarios.retornarUsuarios();
+            metroGridListaUsuarios.AutoGenerateColumns = true;
+            metroGridListaUsuarios.DataSource = listaUsuarios.Tables["USUARIO"]; // Listar usuarios
+        }
+
+        private void tabCrearCliente()
+        {
+            // PESTAÑA CREAR USUARIO
             obtenerComunasDesdeDataSet();
             obtenerTipoClienteDesdeDataSet();
             obtenerTipoPerfilDesdeDataSet();
-            metroTabControl1.SelectedTab = dgvListaUsuarios;
             metroRadioButtonEstadoCuentaActiva.Checked = true;
 
-            // llenar el combobox con las comunas
-            metroComboBoxComuna.DataSource = comunas; 
+            // llenar el combobox con las Comunas
+            metroComboBoxComuna.DataSource = comunas;
             metroComboBoxComuna.DisplayMember = "NombreComuna"; // Muestra el nombre de la comuna
             metroComboBoxComuna.ValueMember = "IdComuna"; // Utiliza el ID de la comuna como valor seleccionado
             metroComboBoxComuna.DropDownHeight = 200; // Establece la altura máxima en píxeles
@@ -62,12 +96,7 @@ namespace FeriaApp
             metroComboBoxTipoCuenta.DisplayMember = "DescPerfil"; // Muestra el nombre de la comuna
             metroComboBoxTipoCuenta.ValueMember = "IdPerfil"; // Utiliza el ID de la comuna como valor seleccionado
 
-            metroComboBoxTipoCuenta.SelectedIndex = 1; // Seleciona automaticamente el tipo de cuenta a tipo Cliente
-            
-            NegocioUsuario negocioUsuarios = new NegocioUsuario();
-            DataSet listaUsuarios = negocioUsuarios.listarUsuario();
-            this.dgvListaUsuarios.AutoGenerateColumns = true;
-            this.dgvListaUsuarios.DataSource = listaUsuarios.Tables["USUARIO"];
+            //metroComboBoxTipoCuenta.SelectedIndex = 1; // Seleciona automaticamente el tipo de cuenta a tipo Cliente
         }
 
         private void metroComboBoxTipoCuenta_SelectedIndexChanged(object sender, EventArgs e)
@@ -214,7 +243,7 @@ namespace FeriaApp
         {
             metroTextBoxNombreUsuario.Text = "";
             metroTextBoxContrasena.Text = "";
-            metroComboBoxTipoCuenta.SelectedIndex = 1;
+            metroComboBoxTipoCuenta.SelectedIndex = 0;
             metroRadioButtonEstadoCuentaActiva.Checked = true;
 
             metroTextBoxRut.Text = "";
@@ -289,6 +318,8 @@ namespace FeriaApp
             int valorComuna = retornarValorComboboxSeleccionado(metroComboBoxComuna);
             int valorTipoCliente = retornarValorComboboxSeleccionado(metroComboBoxTipoCliente);
 
+
+            // Case Switch para Insertar cada Tipo de Usuario (PERFIL)
             int opcion = valorTipoCuenta; // Cambia el valor de 'opcion' según necesidades
 
             switch (opcion)
@@ -317,10 +348,11 @@ namespace FeriaApp
                     // Realizar acción para la opción Cliente
                     try
                     {
-                        Usuario nuevoUsuarioProductor = new Usuario();
-                        nuevoUsuarioProductor.UserName = this.metroTextBoxNombreUsuario.Text;
-                        nuevoUsuarioProductor.Password = this.metroTextBoxContrasena.Text;
-                        nuevoUsuarioProductor.IdEstadoCuenta = estadoCuenta;
+                        Usuario nuevoUsuarioCliente = new Usuario();
+                        nuevoUsuarioCliente.UserName = this.metroTextBoxNombreUsuario.Text;
+                        nuevoUsuarioCliente.Password = this.metroTextBoxContrasena.Text;
+                        nuevoUsuarioCliente.IdEstadoCuenta = estadoCuenta;
+
                         Cliente nuevoCliente = new Cliente();
                         nuevoCliente.DireccionCliente = this.metroTextBoxDireccion.Text;
                         nuevoCliente.RazonSocialCliente = this.metroTextBoxContrasena.Text;
@@ -330,6 +362,10 @@ namespace FeriaApp
                         nuevoCliente.IdComunaCliente = valorComuna;
                         nuevoCliente.IdUsuarioCliente = valorTipoCuenta;
                         nuevoCliente.IdTipoCliente = valorTipoCliente;
+
+
+                        // TO DO: INGRESAR DATOS DE USUARIO + DATOS DE CLIENTE
+
                     }
                     catch (Exception ex) 
                     { 
@@ -364,6 +400,7 @@ namespace FeriaApp
                         nuevoUsuarioProductor.UserName = this.metroTextBoxNombreUsuario.Text;
                         nuevoUsuarioProductor.Password = this.metroTextBoxContrasena.Text;
                         nuevoUsuarioProductor.IdEstadoCuenta = estadoCuenta;
+
                         Productor nuevoProductor = new Productor();
                         nuevoProductor.DireccionProductor = this.metroTextBoxDireccion.Text;
                         nuevoProductor.RazonSocialProductor = this.metroTextBoxContrasena.Text;
@@ -373,15 +410,18 @@ namespace FeriaApp
                         nuevoProductor.IdComunaProductor = valorComuna;
                         nuevoProductor.IdUsuarioProductor = valorTipoCuenta;
 
+                        // TO DO: INGRESAR DATOS DE USUARIO + DATOS DE PRODUCTOR
+
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("ERROR AL INTENTAR INGRESAR USUARIO" + ex);
                     }
                     break;
-
+                default:
+                    // Realizar acción predeterminada si no coincide con ninguna opción
+                    MessageBox.Show("Opción de Usuario no reconocida");
                     break;
-                
             }
         }
 
@@ -411,16 +451,6 @@ namespace FeriaApp
             {
                 e.KeyChar = 'K';
             }
-        }
-
-        private void metroTabPageUsuarios_Click(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        private void metroTabPageUsuarios_Layout(object sender, LayoutEventArgs e)
-        {
-            throw new System.NotImplementedException();
         }
     }
 
