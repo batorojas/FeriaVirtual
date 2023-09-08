@@ -44,7 +44,7 @@ namespace FeriaApp
             obtenerTipoClienteDesdeDataSet();
             obtenerTipoPerfilDesdeDataSet();
             metroTabControl1.SelectedTab = metroTabPageUsuarios;
-            metroRadioButtonEstadoCuenta1.Checked = true;
+            metroRadioButtonEstadoCuentaActiva.Checked = true;
 
             // llenar el combobox con las comunas
             metroComboBoxComuna.DataSource = comunas; 
@@ -210,7 +210,7 @@ namespace FeriaApp
             metroTextBoxNombreUsuario.Text = "";
             metroTextBoxContrasena.Text = "";
             metroComboBoxTipoCuenta.SelectedIndex = 1;
-            metroRadioButtonEstadoCuenta1.Checked = true;
+            metroRadioButtonEstadoCuentaActiva.Checked = true;
 
             metroTextBoxRut.Text = "";
             metroTextBoxRutDV.Text = "";
@@ -223,10 +223,6 @@ namespace FeriaApp
 
         private void metroButtonAgregarUsuario_Click(object sender, EventArgs e)
         {
-            int valorSeleccionado1 = retornarValorComboboxSeleccionado(metroComboBoxTipoCuenta);
-            int valorSeleccionado2 = retornarValorComboboxSeleccionado(metroComboBoxTipoCuenta);
-            int valorSeleccionado3 = retornarValorComboboxSeleccionado(metroComboBoxTipoCuenta);
-
             //// Verifica si el valor seleccionado es válido (diferente de -1)
             //if (valorSeleccionado != -1)
             //{
@@ -239,7 +235,10 @@ namespace FeriaApp
             //    MessageBox.Show("No se ha seleccionado un valor válido.");
             //}
 
-            MessageBox.Show($"Valor seleccionado: {valorSeleccionado1}");
+            //MessageBox.Show($"Valor seleccionado: {valorSeleccionado1}");
+
+            ingresarUsuario();
+
         }
 
         private int retornarValorComboboxSeleccionado(MetroComboBox comboBox)
@@ -266,24 +265,95 @@ namespace FeriaApp
 
         void ingresarUsuario()
         {
-            //try
-            //{
-            //    Usuario nuevoUsuario = new Usuario();
-            //    nuevoUsuario.NombreUsuario = this.txtNombreUsuario.Text;
-            //    nuevoUsuario.Password = this.txtContraseñaUsuario.Text;
-            //    nuevoUsuario.IdPerfil = Int32.Parse(mcbPerfilUsuarioUsuario.SelectedValue.ToString());
-            //    nuevoUsuario.IdEstadoCuenta = Int32.Parse(mcbEstadoUsuario.SelectedValue.ToString());
+            // Selecciona estado cuenta segun opcion el RadioButton elegido
+            int estadoCuenta = 1;
+            if (metroRadioButtonEstadoCuentaActiva.Checked)
+            {
+                estadoCuenta = 1;
+            }
+            else if (metroRadioButtonEstadoCuentaInactiva.Checked)
+            {
+                estadoCuenta = 2;
+            }
+            else
+            {
+                MessageBox.Show("Ninguna opción seleccionada en Estado de Cuenta");
+            }
+
+            int valorTipoCuenta = retornarValorComboboxSeleccionado(metroComboBoxTipoCuenta);
+            int valorComuna = retornarValorComboboxSeleccionado(metroComboBoxComuna);
+            int valorTipoCliente = retornarValorComboboxSeleccionado(metroComboBoxTipoCliente);
+
+            int opcion = valorTipoCuenta; // Cambia el valor de 'opcion' según necesidades
+
+            switch (opcion)
+            {
+                case 1:
+                    // Realizar acción para la opción Administrador
+                    try
+                    {
+                        Usuario nuevoUsuario = new Usuario();
+                        nuevoUsuario.UserName = this.metroTextBoxNombreUsuario.Text;
+                        nuevoUsuario.Password = this.metroTextBoxContrasena.Text;
+                        nuevoUsuario.IdPerfil = valorTipoCuenta;
+                        nuevoUsuario.IdEstadoCuenta = estadoCuenta; // RadioButton Estado Cuenta
 
 
-            //    NegocioUsuario negocioUsuario = new NegocioUsuario();
-            //    negocioUsuario.IngresarUsuario(nuevoUsuario);
-            //    MessageBox.Show("Usuario Agregado");
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("ERROR AL INTENTAR INGRESAR USUARIO" + ex);
-            //}
+                        NegocioUsuario negocioUsuario = new NegocioUsuario();
+                        negocioUsuario.ingresarUsuario(nuevoUsuario);
+                        MessageBox.Show("Usuario Agregado");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR AL INTENTAR INGRESAR USUARIO" + ex);
+                    }
 
+                    break;
+                case 2:
+                    // Realizar acción para la opción Cliente
+                    MessageBox.Show($"Se seleccionó la Opción {estadoCuenta}");
+                    break;
+                case 3:
+                    // Realizar acción para la opción Transportista
+                    MessageBox.Show($"Se seleccionó la Opción {estadoCuenta}");
+                    break;
+                case 4:
+                    // Realizar acción para la opción Productor
+                    MessageBox.Show($"Se seleccionó la Opción {estadoCuenta}");
+                    break;
+                default:
+                    // Realizar acción predeterminada si no coincide con ninguna opción
+                    MessageBox.Show("Opción no reconocida");
+                    break;
+            }
+        }
+
+        private void metroTextBoxRut_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar si la tecla presionada es un número o la tecla Backspace (para borrar)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Si no es un número ni la tecla Backspace, no permitir la entrada
+                e.Handled = true;
+            }
+        }
+
+        private void metroTextBoxRutDV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char[] caracteresPermitidos = { '1', '2', '3', '4', '5', '6', '7', '8', '9', 'k' };
+
+            // Verificar si la tecla presionada está en la lista de caracteres permitidos o es la tecla Backspace (para borrar)
+            if (!char.IsControl(e.KeyChar) && !caracteresPermitidos.Contains(e.KeyChar))
+            {
+                // Si no es un carácter permitido ni la tecla Backspace, no permitir la entrada
+                e.Handled = true;
+            }
+
+            // Convertir 'k' en minúscula a 'K' en mayúscula
+            if (e.KeyChar == 'k')
+            {
+                e.KeyChar = 'K';
+            }
         }
     }
 
