@@ -38,7 +38,7 @@ namespace FeriaApp
 
         private void vUsuarios_Load(object sender, EventArgs e)
         {
-            metroTabControl1.SelectedTab = metroTabPageUsuarios;
+            metroTabControl1.SelectedIndex = 0;
         }
 
         private void metroTabControl1_SelectedIndexChanged(object sender, EventArgs e)
