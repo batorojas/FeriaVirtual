@@ -100,7 +100,7 @@ namespace Negocios
             return this.con.DbDataSet;
         }
 
-        public void IngresarCliente(Cliente cliente)
+        public void ingresarCliente(Cliente cliente)
         {
             try
             {

@@ -98,7 +98,7 @@ namespace Negocios
         }
 
 
-        public void IngresarProductor(Productor productor)
+        public void ingresarProductor(Productor productor)
         {
             try
             {
