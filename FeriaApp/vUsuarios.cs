@@ -21,10 +21,6 @@ namespace FeriaApp
         NegocioPerfil negocioPerfil = new NegocioPerfil();
         NegocioUsuario negocioUsuarios = new NegocioUsuario();
 
-        Usuario usuario = new Usuario();
-        Productor productor = new Productor();
-        Cliente cliente = new Cliente();
-
         // Lista para almacenar las instancias de Comuna
         List<Comuna> comunas = new List<Comuna>();
 
@@ -277,6 +273,7 @@ namespace FeriaApp
                 metroTextBoxRazonSocial,
                 metroTextBoxGiro,
                 metroTextBoxDireccion };
+
             MetroLabel[] labels = {
                 metroLabelNombreUsuario,
                 metroLabelContrasena,
@@ -540,7 +537,7 @@ namespace FeriaApp
 
         private void metroTextBoxRutDV_KeyPress(object sender, KeyPressEventArgs e)
         {
-            char[] caracteresPermitidos = { '1', '2', '3', '4', '5', '6', '7', '8', '9', 'k' };
+            char[] caracteresPermitidos = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'k' };
 
             // Verificar si la tecla presionada está en la lista de caracteres permitidos o es la tecla Backspace (para borrar)
             if (!char.IsControl(e.KeyChar) && !caracteresPermitidos.Contains(e.KeyChar))
