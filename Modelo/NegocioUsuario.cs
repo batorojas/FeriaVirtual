@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Conexion;
+using System.Data.SqlClient;
 
 namespace Negocios
 {
@@ -217,19 +218,31 @@ namespace Negocios
 
         }
 
-        public DataSet retornarId()
+        public int obtenerUltimoIdUsuario()
         {
+            int ultimoId = -1; // Valor predeterminado en caso de error
+
             try
             {
                 this.configurarConexion();
-                this.con.SqlString = "SELECT * FROM USUARIO WHERE ID_USUARIO = (SELECT MAX(ID_USUARIO) FROM USUARIO)";
+                this.con.SqlString = "SELECT MAX(ID_USUARIO) FROM USUARIO";
                 this.con.EsSelect = true;
                 this.con.conectar();
+
+                // Verificar si se encontró un resultado
+                if (this.con.DbDataSet.Tables.Count > 0 && this.con.DbDataSet.Tables[0].Rows.Count > 0)
+                {
+                    object result = this.con.DbDataSet.Tables[0].Rows[0][0];
+
+                    if (result != DBNull.Value)
+                    {
+                        ultimoId = Convert.ToInt32(result);
+                    }
+                }
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show("ERROR ID:002USU NAME:NEGOCIO USUARIO  " + ex);
+                MessageBox.Show("ERROR ID:002USU NAME:NEGOCIO USUARIO " + ex);
             }
             finally
             {
@@ -239,7 +252,8 @@ namespace Negocios
                 }
             }
 
-            return this.con.DbDataSet;
+            return ultimoId;
         }
+
     }
 }

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocios;
+using MetroFramework;
 
 namespace FeriaApp
 {
@@ -253,6 +254,55 @@ namespace FeriaApp
             metroComboBoxComuna.SelectedIndex = 0;
             metroTextBoxDireccion.Text = "";
             metroComboBoxTipoCliente.SelectedIndex = 0;
+
+            // Devolver color original a los Labels
+            metroLabelNombreUsuario.ForeColor = SystemColors.ControlText;
+            metroLabelContrasena.ForeColor = SystemColors.ControlText;
+            metroLabelRut.ForeColor = SystemColors.ControlText;
+            metroLabelRutDV.ForeColor = SystemColors.ControlText;
+            metroLabelRazonSocial.ForeColor = SystemColors.ControlText;
+            metroLabelGiro.ForeColor = SystemColors.ControlText;
+            metroLabelDireccion.ForeColor = SystemColors.ControlText;
+
+        }
+
+        private bool ValidarCampos()
+        {
+            // Recorre cada TextBox para ver si hay datos en blanco
+            MetroTextBox[] textBoxes = { 
+                metroTextBoxNombreUsuario,
+                metroTextBoxContrasena,
+                metroTextBoxRut,
+                metroTextBoxRutDV,
+                metroTextBoxRazonSocial,
+                metroTextBoxGiro,
+                metroTextBoxDireccion };
+            MetroLabel[] labels = {
+                metroLabelNombreUsuario,
+                metroLabelContrasena,
+                metroLabelRut,
+                metroLabelRutDV,
+                metroLabelRazonSocial,
+                metroLabelGiro,
+                metroLabelDireccion };
+
+            bool allCorrect = true;
+            for (int i = 0; i < textBoxes.Length; i++)
+            {
+                if (textBoxes[i].Visible && labels[i].Visible) // Verificar si el MetroLabel y el MetroTextBox estan visibles
+                {
+                    if (string.IsNullOrEmpty(textBoxes[i].Text))
+                    {
+                        labels[i].ForeColor = Color.Red;
+                        allCorrect = false; // Cambia allCorrect a false solo si se encuentra un campo en blanco
+                    }
+                    else
+                    {
+                        labels[i].ForeColor = SystemColors.ControlText;
+                    }
+                }
+            }
+            return allCorrect;
         }
 
         private void metroButtonAgregarUsuario_Click(object sender, EventArgs e)
@@ -272,7 +322,6 @@ namespace FeriaApp
             //MessageBox.Show($"Valor seleccionado: {valorSeleccionado1}");
 
             ingresarUsuario();
-
         }
 
         private int retornarValorComboboxSeleccionado(MetroComboBox comboBox)
@@ -299,6 +348,7 @@ namespace FeriaApp
 
         void ingresarUsuario()
         {
+
             // Selecciona estado cuenta segun opcion el RadioButton elegido
             int estadoCuenta = 1;
             if (metroRadioButtonEstadoCuentaActiva.Checked)
@@ -314,11 +364,13 @@ namespace FeriaApp
                 MessageBox.Show("Ninguna opción seleccionada en Estado de Cuenta");
             }
 
+
             int valorTipoCuenta = retornarValorComboboxSeleccionado(metroComboBoxTipoCuenta);
             int valorComuna = retornarValorComboboxSeleccionado(metroComboBoxComuna);
             int valorTipoCliente = retornarValorComboboxSeleccionado(metroComboBoxTipoCliente);
 
 
+            
             // Case Switch para Insertar cada Tipo de Usuario (PERFIL)
             int opcion = valorTipoCuenta; // Cambia el valor de 'opcion' según necesidades
 
@@ -328,63 +380,97 @@ namespace FeriaApp
                     // Realizar acción para la opción Administrador
                     try
                     {
-                        Usuario nuevoUsuario = new Usuario();
+                        bool camposLlenos = ValidarCampos();
+                        if (!camposLlenos)
+                        {
+                            // Mensaje de error al detectar uno o mas de un TextBox en blanco
+                            MessageBox.Show("Rellene todos los campos del formulario");
+                            return;
+                        }
+
+                        NegocioUsuario negocioUsuario = new NegocioUsuario();
+
+                        Usuario nuevoUsuario = new Usuario();                        
                         nuevoUsuario.UserName = this.metroTextBoxNombreUsuario.Text;
                         nuevoUsuario.Password = this.metroTextBoxContrasena.Text;
                         nuevoUsuario.IdPerfil = valorTipoCuenta;
                         nuevoUsuario.IdEstadoCuenta = estadoCuenta; // RadioButton Estado Cuenta
                         
-                        NegocioUsuario negocioUsuario = new NegocioUsuario();
                         negocioUsuario.ingresarUsuario(nuevoUsuario);
+
                         MessageBox.Show("Usuario Agregado");
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("ERROR AL INTENTAR INGRESAR USUARIO" + ex);
                     }
-
                     break;
+
                 case 2:
                     // Realizar acción para la opción Cliente
                     try
                     {
+                        bool camposLlenos = ValidarCampos();
+                        if (!camposLlenos)
+                        {
+                            // Mensaje de error al detectar uno o mas de un TextBox en blanco
+                            MessageBox.Show("Rellene todos los campos del formulario");
+                            return;
+                        }
+
+                        NegocioUsuario negocioUsuario = new NegocioUsuario();
+                        NegocioCliente negocioCliente = new NegocioCliente();
+
                         Usuario nuevoUsuarioCliente = new Usuario();
                         nuevoUsuarioCliente.UserName = this.metroTextBoxNombreUsuario.Text;
                         nuevoUsuarioCliente.Password = this.metroTextBoxContrasena.Text;
+                        nuevoUsuarioCliente.IdPerfil = valorTipoCuenta;
                         nuevoUsuarioCliente.IdEstadoCuenta = estadoCuenta;
+
+                        negocioUsuario.ingresarUsuario(nuevoUsuarioCliente);
 
                         Cliente nuevoCliente = new Cliente();
                         nuevoCliente.DireccionCliente = this.metroTextBoxDireccion.Text;
-                        nuevoCliente.RazonSocialCliente = this.metroTextBoxContrasena.Text;
+                        nuevoCliente.RazonSocialCliente = this.metroTextBoxRazonSocial.Text;
                         nuevoCliente.GiroCliente = this.metroTextBoxGiro.Text;
                         nuevoCliente.RutCliente = Int32.Parse(this.metroTextBoxRut.Text);
                         nuevoCliente.DvRutCliente = this.metroTextBoxRutDV.Text;
                         nuevoCliente.IdComunaCliente = valorComuna;
-                        nuevoCliente.IdUsuarioCliente = valorTipoCuenta;
+                        nuevoCliente.IdUsuarioCliente = negocioUsuario.obtenerUltimoIdUsuario();
                         nuevoCliente.IdTipoCliente = valorTipoCliente;
-
-
-                        // TO DO: INGRESAR DATOS DE USUARIO + DATOS DE CLIENTE
-
+                                                
+                        negocioCliente.ingresarCliente(nuevoCliente);
+                        
+                        MessageBox.Show("Usuario Agregado");
                     }
                     catch (Exception ex) 
                     { 
                         MessageBox.Show("ERROR AL INTENTAR INGRESAR USUARIO" + ex); 
                     }
-                    
                     break;
+
                 case 3:
                     // Realizar acción para la opción Transportista
                     try
                     {
+                        bool camposLlenos = ValidarCampos();
+                        if (!camposLlenos)
+                        {
+                            // Mensaje de error al detectar uno o mas de un TextBox en blanco
+                            MessageBox.Show("Rellene todos los campos del formulario");
+                            return;
+                        }
+
+                        NegocioUsuario negocioUsuario = new NegocioUsuario();
+
                         Usuario nuevoUsuario = new Usuario();
                         nuevoUsuario.UserName = this.metroTextBoxNombreUsuario.Text;
                         nuevoUsuario.Password = this.metroTextBoxContrasena.Text;
                         nuevoUsuario.IdPerfil = valorTipoCuenta;
                         nuevoUsuario.IdEstadoCuenta = estadoCuenta; // RadioButton Estado Cuenta
                         
-                        NegocioUsuario negocioUsuario = new NegocioUsuario();
                         negocioUsuario.ingresarUsuario(nuevoUsuario);
+
                         MessageBox.Show("Usuario Agregado");
                     }
                     catch (Exception ex)
@@ -392,32 +478,49 @@ namespace FeriaApp
                         MessageBox.Show("ERROR AL INTENTAR INGRESAR USUARIO" + ex);
                     }
                     break;
+
                 case 4:
                     // Realizar acción para la opción Productor
                     try
                     {
+                        bool camposLlenos = ValidarCampos();
+                        if (!camposLlenos)
+                        {
+                            // Mensaje de error al detectar uno o mas de un TextBox en blanco
+                            MessageBox.Show("Rellene todos los campos del formulario");
+                            return;
+                        }
+
+                        NegocioUsuario negocioUsuario = new NegocioUsuario();
+                        NegocioProductor negocioProductor = new NegocioProductor();
+
                         Usuario nuevoUsuarioProductor = new Usuario();
                         nuevoUsuarioProductor.UserName = this.metroTextBoxNombreUsuario.Text;
                         nuevoUsuarioProductor.Password = this.metroTextBoxContrasena.Text;
+                        nuevoUsuarioProductor.IdPerfil = valorTipoCuenta;
                         nuevoUsuarioProductor.IdEstadoCuenta = estadoCuenta;
+
+                        negocioUsuario.ingresarUsuario(nuevoUsuarioProductor);
 
                         Productor nuevoProductor = new Productor();
                         nuevoProductor.DireccionProductor = this.metroTextBoxDireccion.Text;
-                        nuevoProductor.RazonSocialProductor = this.metroTextBoxContrasena.Text;
+                        nuevoProductor.RazonSocialProductor = this.metroTextBoxRazonSocial.Text;
                         nuevoProductor.GiroProductor = this.metroTextBoxGiro.Text;
                         nuevoProductor.RutProductor = Int32.Parse(this.metroTextBoxRut.Text);
                         nuevoProductor.DvRutProductor = this.metroTextBoxRutDV.Text;
                         nuevoProductor.IdComunaProductor = valorComuna;
-                        nuevoProductor.IdUsuarioProductor = valorTipoCuenta;
+                        nuevoProductor.IdUsuarioProductor = negocioUsuario.obtenerUltimoIdUsuario();
 
-                        // TO DO: INGRESAR DATOS DE USUARIO + DATOS DE PRODUCTOR
+                        negocioProductor.ingresarProductor(nuevoProductor);
 
+                        MessageBox.Show("Usuario Agregado");
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("ERROR AL INTENTAR INGRESAR USUARIO" + ex);
                     }
                     break;
+
                 default:
                     // Realizar acción predeterminada si no coincide con ninguna opción
                     MessageBox.Show("Opción de Usuario no reconocida");
