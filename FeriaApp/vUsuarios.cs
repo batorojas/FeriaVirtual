@@ -588,7 +588,7 @@ namespace FeriaApp
             }
         }
 
-        private void EliminarUsuario()
+        private void eliminarUsuario()
         {
             try
             {
@@ -643,7 +643,21 @@ namespace FeriaApp
 
         private void metroButtonEliminarUsuario_Click(object sender, EventArgs e)
         {
-            EliminarUsuario();
+
+            //adaptar a una funcion y a un case switch
+            //try
+            //{
+            //    int idCliente = idUsuarioSeleccionado;
+            //    NegocioCliente negociocliente = new NegocioCliente();
+            //    negociocliente.eliminarCliente(idCliente);
+
+            //    MessageBox.Show("Cliente eliminado");
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("ERROR AL INTENTAR ELIMINAR CLIENTE " + ex);
+            //}
+            eliminarUsuario();
         }
 
         private void metroGridListaUsuarios_SelectionChanged(object sender, EventArgs e)
@@ -661,5 +675,4 @@ namespace FeriaApp
             }
         }
     }
-
 }
