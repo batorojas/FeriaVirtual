@@ -20,6 +20,7 @@ namespace FeriaApp
         NegocioTipoCliente negocioTipoCliente = new NegocioTipoCliente();
         NegocioPerfil negocioPerfil = new NegocioPerfil();
         NegocioUsuario negocioUsuarios = new NegocioUsuario();
+        NegocioEmpresaTransporte negocioEmpresaTransporte = new NegocioEmpresaTransporte();
 
         // Lista para almacenar las instancias de Comuna
         List<Comuna> comunas = new List<Comuna>();
@@ -30,6 +31,11 @@ namespace FeriaApp
         // Lista para almacenar las instancias de Perfil
         List<Perfil> perfiles = new List<Perfil>();
 
+        // Lista para almacenar las instancias de Transporte
+        List<EmpresaTransporte> transporte = new List<EmpresaTransporte>();
+
+        int idUsuarioSeleccionado;
+
 
         public vUsuarios()
         {
@@ -38,7 +44,14 @@ namespace FeriaApp
 
         private void vUsuarios_Load(object sender, EventArgs e)
         {
+            //metroTabControl1.SelectedTab = null;
             metroTabControl1.SelectedIndex = 0;
+
+            // Listado de usuarios
+            DataSet listaUsuarios = negocioUsuarios.retornarUsuarios();
+            metroGridListaUsuarios.AutoGenerateColumns = true;
+            metroGridListaUsuarios.DataSource = listaUsuarios.Tables["USUARIO"]; // Listar usuarios
+
         }
 
         private void metroTabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -52,21 +65,25 @@ namespace FeriaApp
                 case 0:
                     tabClientes();
                     break;
+
                 case 1:
                     tabCrearCliente();
                     break;
-                default:
-                    MessageBox.Show("Pestaña no reconocida");
+
+                case 2:
+                    // Pestaña Editar Clientes
                     break;
+
+                //default:
+                //    MessageBox.Show("Pestaña no reconocida");
+                //    break;
             }
         }
 
         private void tabClientes()
         {
             // PESTAÑA USUARIOS
-            DataSet listaUsuarios = negocioUsuarios.retornarUsuarios();
-            metroGridListaUsuarios.AutoGenerateColumns = true;
-            metroGridListaUsuarios.DataSource = listaUsuarios.Tables["USUARIO"]; // Listar usuarios
+
         }
 
         private void tabCrearCliente()
@@ -127,7 +144,39 @@ namespace FeriaApp
                 metroLabelTipoCliente.Visible = true;
                 metroComboBoxTipoCliente.Visible = true;
 
-            }else if (selectedIndex == 3) // Condicion para usuario productor
+                // Empresa Transporte
+                metroLabelEmpresaTransporte.Visible = false;
+                metroTextBoxEmpresaTransporte.Visible = false;
+                
+            }
+            else if (selectedIndex == 2) // Condicion para usuario transportista
+            {
+                // Rut
+                metroLabelRut.Visible = false;
+                metroLabelRutDV.Visible = false;
+                metroTextBoxRut.Visible = false;
+                metroTextBoxRutDV.Visible = false;
+
+                // Direccion 
+                metroLabelDireccion.Visible = false;
+                metroLabelComuna.Visible = false;
+                metroTextBoxDireccion.Visible = false;
+                metroComboBoxComuna.Visible = false;
+
+                // Razon Social, Giro social y tipo cliente
+                metroLabelRazonSocial.Visible = false;
+                metroLabelGiro.Visible = false;
+                metroTextBoxRazonSocial.Visible = false;
+                metroTextBoxGiro.Visible = false;
+                metroLabelTipoCliente.Visible = false;
+                metroComboBoxTipoCliente.Visible = false;
+
+                // Empresa Transporte
+                metroLabelEmpresaTransporte.Visible = true;
+                metroTextBoxEmpresaTransporte.Visible = true;
+
+            }
+            else if (selectedIndex == 3) // Condicion para usuario productor
             {
                 // Rut
                 metroLabelRut.Visible = true;
@@ -148,6 +197,10 @@ namespace FeriaApp
                 metroTextBoxGiro.Visible = true;
                 metroLabelTipoCliente.Visible = false;
                 metroComboBoxTipoCliente.Visible = false;
+
+                // Empresa Transporte
+                metroLabelEmpresaTransporte.Visible = false;
+                metroTextBoxEmpresaTransporte.Visible = false;
 
             }
             else
@@ -171,6 +224,10 @@ namespace FeriaApp
                 metroTextBoxGiro.Visible = false;
                 metroLabelTipoCliente.Visible = false;
                 metroComboBoxTipoCliente.Visible = false;
+
+                // Empresa Transporte
+                metroLabelEmpresaTransporte.Visible = false;
+                metroTextBoxEmpresaTransporte.Visible = false;
 
             }
         }
@@ -367,7 +424,6 @@ namespace FeriaApp
             int valorTipoCliente = retornarValorComboboxSeleccionado(metroComboBoxTipoCliente);
 
 
-            
             // Case Switch para Insertar cada Tipo de Usuario (PERFIL)
             int opcion = valorTipoCuenta; // Cambia el valor de 'opcion' según necesidades
 
@@ -459,6 +515,7 @@ namespace FeriaApp
                         }
 
                         NegocioUsuario negocioUsuario = new NegocioUsuario();
+                        NegocioEmpresaTransporte negocioEmpresaTransporte = new NegocioEmpresaTransporte();
 
                         Usuario nuevoUsuario = new Usuario();
                         nuevoUsuario.UserName = this.metroTextBoxNombreUsuario.Text;
@@ -467,6 +524,12 @@ namespace FeriaApp
                         nuevoUsuario.IdEstadoCuenta = estadoCuenta; // RadioButton Estado Cuenta
                         
                         negocioUsuario.ingresarUsuario(nuevoUsuario);
+
+                        EmpresaTransporte nuevoTransporte = new EmpresaTransporte();
+                        nuevoTransporte.NombreEmpresaTransporte = this.metroTextBoxEmpresaTransporte.Text;
+                        nuevoTransporte.IdUsuarioEmpresaTransporte = negocioUsuario.obtenerUltimoIdUsuario();
+
+                        negocioEmpresaTransporte.ingresarEmpresaTransporte(nuevoTransporte);
 
                         MessageBox.Show("Usuario Agregado");
                     }
@@ -525,6 +588,31 @@ namespace FeriaApp
             }
         }
 
+        private void EliminarUsuario()
+        {
+            try
+            {
+                // Obtener el ID del usuario desde la variable de clase
+                int idUsuario = idUsuarioSeleccionado;
+
+                // Verificar si se ha seleccionado un usuario válido
+                if (idUsuario > 0)
+                {
+                    NegocioUsuario negocioUsuario = new NegocioUsuario();
+                    negocioUsuario.eliminarUsuario(idUsuario);
+                    MessageBox.Show("Usuario eliminado");
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione un usuario primero.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR AL ELIMINAR USUARIO: " + ex.Message);
+            }
+        }
+
         private void metroTextBoxRut_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es un número o la tecla Backspace (para borrar)
@@ -550,6 +638,26 @@ namespace FeriaApp
             if (e.KeyChar == 'k')
             {
                 e.KeyChar = 'K';
+            }
+        }
+
+        private void metroButtonEliminarUsuario_Click(object sender, EventArgs e)
+        {
+            EliminarUsuario();
+        }
+
+        private void metroGridListaUsuarios_SelectionChanged(object sender, EventArgs e)
+        {
+            // Verificar si hay al menos una fila seleccionada
+            if (metroGridListaUsuarios.SelectedRows.Count > 0)
+            {
+                // Obtener el ID del usuario seleccionado
+                int idUsuario = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_USUARIO"].Value);
+
+                // Almacenar el ID en una variable de clase para usarlo al eliminar
+                idUsuarioSeleccionado = idUsuario;
+
+                //MessageBox.Show($"ID: {idUsuarioSeleccionado}");
             }
         }
     }
