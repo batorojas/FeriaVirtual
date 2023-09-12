@@ -127,16 +127,16 @@ namespace Negocios
 
         }
 
-        public void eliminarCliente(int rut)
+        public void eliminarCliente(int idCliente)
         {
             try
             {
                 this.configurarConexion();
 
                 this.configurarConexion();
-                String[] parametros = { "RUT" };
+                String[] parametros = { "ID_USUARIO" };
                 OracleDbType[] tipos = { OracleDbType.Int32 };
-                Object[] valores = { rut };
+                Object[] valores = { idCliente };
 
                 this.con.ejecutarProcedimiento("SP_ELIMINAR_CLIENTE", parametros, tipos, valores);
             }
