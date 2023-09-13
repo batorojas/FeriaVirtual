@@ -120,14 +120,14 @@ namespace Negocios
             }
         }
 
-        public void eliminarEmpresaTransporte(int idEmpresa)
+        public void eliminarEmpresaTransporte(int idUserEmpresa)
         {
             try
             {
                 this.configurarConexion();
-                String[] parametros = { "ID" };
+                String[] parametros = { "ID_USER" };
                 OracleDbType[] tipos = { OracleDbType.Int32 };
-                Object[] valores = { idEmpresa };
+                Object[] valores = { idUserEmpresa };
 
                 this.con.ejecutarProcedimiento("SP_ELIMINAR_EMPRESA_TRANSPORTE", parametros, tipos, valores);
             }

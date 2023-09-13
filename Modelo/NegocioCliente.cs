@@ -127,7 +127,7 @@ namespace Negocios
 
         }
 
-        public void eliminarCliente(int idCliente)
+        public void eliminarCliente(int idUserCliente)
         {
             try
             {
@@ -136,7 +136,7 @@ namespace Negocios
                 this.configurarConexion();
                 String[] parametros = { "ID_USUARIO" };
                 OracleDbType[] tipos = { OracleDbType.Int32 };
-                Object[] valores = { idCliente };
+                Object[] valores = { idUserCliente };
 
                 this.con.ejecutarProcedimiento("SP_ELIMINAR_CLIENTE", parametros, tipos, valores);
             }

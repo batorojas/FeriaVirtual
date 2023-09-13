@@ -123,16 +123,16 @@ namespace Negocios
 
         }
 
-        public void eliminarProductor(int rutProductor)
+        public void eliminarProductor(int idUserProductor)
         {
             try
             {
 
 
                 this.configurarConexion();
-                String[] parametros = { "RUTP" };
+                String[] parametros = { "ID_USER" };
                 OracleDbType[] tipos = { OracleDbType.Int32 };
-                Object[] valores = { rutProductor };
+                Object[] valores = { idUserProductor };
 
                 this.con.ejecutarProcedimiento("SP_ELIMINAR_PRODUCTOR", parametros, tipos, valores);
             }

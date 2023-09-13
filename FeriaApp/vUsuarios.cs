@@ -35,6 +35,7 @@ namespace FeriaApp
         List<EmpresaTransporte> transporte = new List<EmpresaTransporte>();
 
         int idUsuarioSeleccionado;
+        int idTPerfilUsuarioSeleccionado;
 
 
         public vUsuarios()
@@ -46,12 +47,6 @@ namespace FeriaApp
         {
             //metroTabControl1.SelectedTab = null;
             metroTabControl1.SelectedIndex = 0;
-
-            // Listado de usuarios
-            DataSet listaUsuarios = negocioUsuarios.retornarUsuarios();
-            metroGridListaUsuarios.AutoGenerateColumns = true;
-            metroGridListaUsuarios.DataSource = listaUsuarios.Tables["USUARIO"]; // Listar usuarios
-
         }
 
         private void metroTabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,6 +79,10 @@ namespace FeriaApp
         {
             // PESTAÑA USUARIOS
 
+            // Listado de usuarios
+            DataSet listaUsuarios = negocioUsuarios.retornarUsuarios();
+            metroGridListaUsuarios.AutoGenerateColumns = true;
+            metroGridListaUsuarios.DataSource = listaUsuarios.Tables["USUARIO"]; // Listar usuarios
         }
 
         private void tabCrearCliente()
@@ -404,7 +403,8 @@ namespace FeriaApp
         {
 
             // Selecciona estado cuenta segun opcion el RadioButton elegido
-            int estadoCuenta = 1;
+            int estadoCuenta = 0;
+
             if (metroRadioButtonEstadoCuentaActiva.Checked)
             {
                 estadoCuenta = 1;
@@ -615,6 +615,75 @@ namespace FeriaApp
             }
         }
 
+        private void eliminarCliente()
+        {
+            try
+            {
+                int idCliente = idUsuarioSeleccionado;
+
+                if (idCliente > 0)
+                {
+                    NegocioCliente negocioCliente = new NegocioCliente();
+                    negocioCliente.eliminarCliente(idCliente);
+                    MessageBox.Show("Cliente eliminado");
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione un usuario primero.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR AL INTENTAR ELIMINAR CLIENTE " + ex);
+            }
+        }
+
+        private void eliminarTransportista()
+        {
+            try
+            {
+                int idTransportista = idUsuarioSeleccionado;
+
+                if (idTransportista > 0)
+                {
+                    NegocioEmpresaTransporte negocioTransporte = new NegocioEmpresaTransporte();
+                    negocioTransporte.eliminarEmpresaTransporte(idTransportista);
+                    MessageBox.Show("Transportista eliminado");
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione un usuario primero.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR AL INTENTAR ELIMINAR EMPRESA DE TRANSPORTE " + ex);
+            }
+        }
+
+        private void eliminarProductor()
+        {
+            try
+            {
+                int idProductor = idUsuarioSeleccionado;
+
+                if (idProductor > 0)
+                {
+                    NegocioProductor negocioTransporte = new NegocioProductor();
+                    negocioTransporte.eliminarProductor(idProductor);
+                    MessageBox.Show("Productor eliminado");
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione un usuario primero.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR AL INTENTAR ELIMINAR PRODUCTOR " + ex);
+            }
+        }
+
         private void metroTextBoxRut_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verificar si la tecla presionada es un número o la tecla Backspace (para borrar)
@@ -646,20 +715,38 @@ namespace FeriaApp
         private void metroButtonEliminarUsuario_Click(object sender, EventArgs e)
         {
 
-            //adaptar a una funcion y a un case switch
-            //try
-            //{
-            //    int idCliente = idUsuarioSeleccionado;
-            //    NegocioCliente negociocliente = new NegocioCliente();
-            //    negociocliente.eliminarCliente(idCliente);
+            int opcion = idTPerfilUsuarioSeleccionado; // Cambia el valor de 'opcion' según necesidades
 
-            //    MessageBox.Show("Cliente eliminado");
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("ERROR AL INTENTAR ELIMINAR CLIENTE " + ex);
-            //}
-            eliminarUsuario();
+            switch (opcion)
+            {
+                case 1:
+                    // Opción Administrador
+                    eliminarUsuario();
+                    break;
+
+                case 2:
+                    // Opción Cliente
+                    eliminarCliente();
+                    eliminarUsuario();
+                    break;
+
+                case 3:
+                    // Opción Transportista
+                    eliminarTransportista();
+                    eliminarUsuario();
+                    break;
+
+                case 4:
+                    // Opción Productor
+                    eliminarProductor();
+                    eliminarUsuario();
+                    break;
+
+                default:
+                    MessageBox.Show("Primero seleccione al usuario que desea eliminar");
+                    break;
+            }
+
         }
 
         private void metroGridListaUsuarios_SelectionChanged(object sender, EventArgs e)
@@ -667,12 +754,22 @@ namespace FeriaApp
             // Verificar si hay al menos una fila seleccionada
             if (metroGridListaUsuarios.SelectedRows.Count > 0)
             {
-                // Obtener el ID del usuario seleccionado
-                int idUsuario = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_USUARIO"].Value);
+                object idUsuarioValue = metroGridListaUsuarios.SelectedRows[0].Cells["ID_USUARIO"].Value;
 
-                // Almacenar el ID en una variable de clase para usarlo al eliminar
-                idUsuarioSeleccionado = idUsuario;
+                if (idUsuarioValue != DBNull.Value)
+                {
+                    // Obtener el ID del usuario seleccionado
+                    int idUsuario = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_USUARIO"].Value);
+                    int idPerfil = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_PERFIL"].Value);
 
+                    idUsuarioSeleccionado = idUsuario;
+                    idTPerfilUsuarioSeleccionado = idPerfil;
+                }
+                else
+                {
+                    idUsuarioSeleccionado = 0;
+                    idTPerfilUsuarioSeleccionado = 0;
+                }
                 //MessageBox.Show($"ID: {idUsuarioSeleccionado}");
             }
         }
