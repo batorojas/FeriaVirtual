@@ -39,6 +39,8 @@
             this.metroButtonEliminarUsuario = new MetroFramework.Controls.MetroButton();
             this.metroGridListaUsuarios = new MetroFramework.Controls.MetroGrid();
             this.metroTabPageCrearUsuario = new MetroFramework.Controls.MetroTabPage();
+            this.metroTextBoxEmpresaTransporte = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabelEmpresaTransporte = new MetroFramework.Controls.MetroLabel();
             this.metroComboBoxTipoCliente = new MetroFramework.Controls.MetroComboBox();
             this.metroLabelTipoCliente = new MetroFramework.Controls.MetroLabel();
             this.metroTextBoxGiro = new MetroFramework.Controls.MetroTextBox();
@@ -65,8 +67,6 @@
             this.metroTextBoxNombreUsuario = new MetroFramework.Controls.MetroTextBox();
             this.metroLabelContrasena = new MetroFramework.Controls.MetroLabel();
             this.metroLabelNombreUsuario = new MetroFramework.Controls.MetroLabel();
-            this.metroLabelEmpresaTransporte = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBoxEmpresaTransporte = new MetroFramework.Controls.MetroTextBox();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPageUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridListaUsuarios)).BeginInit();
@@ -197,6 +197,47 @@
             this.metroTabPageCrearUsuario.VerticalScrollbarBarColor = true;
             this.metroTabPageCrearUsuario.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPageCrearUsuario.VerticalScrollbarSize = 10;
+            // 
+            // metroTextBoxEmpresaTransporte
+            // 
+            // 
+            // 
+            // 
+            this.metroTextBoxEmpresaTransporte.CustomButton.Image = null;
+            this.metroTextBoxEmpresaTransporte.CustomButton.Location = new System.Drawing.Point(162, 1);
+            this.metroTextBoxEmpresaTransporte.CustomButton.Name = "";
+            this.metroTextBoxEmpresaTransporte.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.metroTextBoxEmpresaTransporte.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroTextBoxEmpresaTransporte.CustomButton.TabIndex = 1;
+            this.metroTextBoxEmpresaTransporte.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBoxEmpresaTransporte.CustomButton.UseSelectable = true;
+            this.metroTextBoxEmpresaTransporte.CustomButton.Visible = false;
+            this.metroTextBoxEmpresaTransporte.Lines = new string[0];
+            this.metroTextBoxEmpresaTransporte.Location = new System.Drawing.Point(116, 93);
+            this.metroTextBoxEmpresaTransporte.MaxLength = 20;
+            this.metroTextBoxEmpresaTransporte.Name = "metroTextBoxEmpresaTransporte";
+            this.metroTextBoxEmpresaTransporte.PasswordChar = '\0';
+            this.metroTextBoxEmpresaTransporte.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.metroTextBoxEmpresaTransporte.SelectedText = "";
+            this.metroTextBoxEmpresaTransporte.SelectionLength = 0;
+            this.metroTextBoxEmpresaTransporte.SelectionStart = 0;
+            this.metroTextBoxEmpresaTransporte.ShortcutsEnabled = true;
+            this.metroTextBoxEmpresaTransporte.Size = new System.Drawing.Size(184, 23);
+            this.metroTextBoxEmpresaTransporte.TabIndex = 41;
+            this.metroTextBoxEmpresaTransporte.UseSelectable = true;
+            this.metroTextBoxEmpresaTransporte.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.metroTextBoxEmpresaTransporte.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabelEmpresaTransporte
+            // 
+            this.metroLabelEmpresaTransporte.AutoSize = true;
+            this.metroLabelEmpresaTransporte.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.metroLabelEmpresaTransporte.Location = new System.Drawing.Point(47, 93);
+            this.metroLabelEmpresaTransporte.Name = "metroLabelEmpresaTransporte";
+            this.metroLabelEmpresaTransporte.Size = new System.Drawing.Size(60, 19);
+            this.metroLabelEmpresaTransporte.TabIndex = 40;
+            this.metroLabelEmpresaTransporte.Text = "Empresa";
+            this.metroLabelEmpresaTransporte.UseCustomForeColor = true;
             // 
             // metroComboBoxTipoCliente
             // 
@@ -632,46 +673,6 @@
             this.metroLabelNombreUsuario.TabIndex = 2;
             this.metroLabelNombreUsuario.Text = "Nombre Usuario";
             this.metroLabelNombreUsuario.UseCustomForeColor = true;
-            // 
-            // metroLabelEmpresaTransporte
-            // 
-            this.metroLabelEmpresaTransporte.AutoSize = true;
-            this.metroLabelEmpresaTransporte.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.metroLabelEmpresaTransporte.Location = new System.Drawing.Point(47, 93);
-            this.metroLabelEmpresaTransporte.Name = "metroLabelEmpresaTransporte";
-            this.metroLabelEmpresaTransporte.Size = new System.Drawing.Size(60, 19);
-            this.metroLabelEmpresaTransporte.TabIndex = 40;
-            this.metroLabelEmpresaTransporte.Text = "Empresa";
-            // 
-            // metroTextBoxEmpresaTransporte
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBoxEmpresaTransporte.CustomButton.Image = null;
-            this.metroTextBoxEmpresaTransporte.CustomButton.Location = new System.Drawing.Point(162, 1);
-            this.metroTextBoxEmpresaTransporte.CustomButton.Name = "";
-            this.metroTextBoxEmpresaTransporte.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBoxEmpresaTransporte.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBoxEmpresaTransporte.CustomButton.TabIndex = 1;
-            this.metroTextBoxEmpresaTransporte.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBoxEmpresaTransporte.CustomButton.UseSelectable = true;
-            this.metroTextBoxEmpresaTransporte.CustomButton.Visible = false;
-            this.metroTextBoxEmpresaTransporte.Lines = new string[0];
-            this.metroTextBoxEmpresaTransporte.Location = new System.Drawing.Point(116, 93);
-            this.metroTextBoxEmpresaTransporte.MaxLength = 20;
-            this.metroTextBoxEmpresaTransporte.Name = "metroTextBoxEmpresaTransporte";
-            this.metroTextBoxEmpresaTransporte.PasswordChar = '\0';
-            this.metroTextBoxEmpresaTransporte.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBoxEmpresaTransporte.SelectedText = "";
-            this.metroTextBoxEmpresaTransporte.SelectionLength = 0;
-            this.metroTextBoxEmpresaTransporte.SelectionStart = 0;
-            this.metroTextBoxEmpresaTransporte.ShortcutsEnabled = true;
-            this.metroTextBoxEmpresaTransporte.Size = new System.Drawing.Size(184, 23);
-            this.metroTextBoxEmpresaTransporte.TabIndex = 41;
-            this.metroTextBoxEmpresaTransporte.UseSelectable = true;
-            this.metroTextBoxEmpresaTransporte.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBoxEmpresaTransporte.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // vUsuarios
             // 

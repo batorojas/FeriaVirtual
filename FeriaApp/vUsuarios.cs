@@ -315,6 +315,7 @@ namespace FeriaApp
             metroLabelRazonSocial.ForeColor = SystemColors.ControlText;
             metroLabelGiro.ForeColor = SystemColors.ControlText;
             metroLabelDireccion.ForeColor = SystemColors.ControlText;
+            metroLabelEmpresaTransporte.ForeColor = SystemColors.ControlText;
 
         }
 
@@ -328,7 +329,8 @@ namespace FeriaApp
                 metroTextBoxRutDV,
                 metroTextBoxRazonSocial,
                 metroTextBoxGiro,
-                metroTextBoxDireccion };
+                metroTextBoxDireccion,
+                metroTextBoxEmpresaTransporte };
 
             MetroLabel[] labels = {
                 metroLabelNombreUsuario,
@@ -337,7 +339,8 @@ namespace FeriaApp
                 metroLabelRutDV,
                 metroLabelRazonSocial,
                 metroLabelGiro,
-                metroLabelDireccion };
+                metroLabelDireccion,
+                metroLabelEmpresaTransporte };
 
             bool allCorrect = true;
             for (int i = 0; i < textBoxes.Length; i++)
