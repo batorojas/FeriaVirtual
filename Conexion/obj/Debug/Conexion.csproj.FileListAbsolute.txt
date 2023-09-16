@@ -79,3 +79,30 @@ C:\Users\eden\Documents\FeriaVirtual\Conexion\obj\Debug\Conexion.csproj.CoreComp
 C:\Users\eden\Documents\FeriaVirtual\Conexion\obj\Debug\Conexion.csproj.CopyComplete
 C:\Users\eden\Documents\FeriaVirtual\Conexion\obj\Debug\Conexion.dll
 C:\Users\eden\Documents\FeriaVirtual\Conexion\obj\Debug\Conexion.pdb
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\Conexion.dll.config
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\Conexion.dll
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\Conexion.pdb
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\System.Buffers.dll
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\System.Memory.dll
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\System.Text.Json.dll
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\System.ValueTuple.dll
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\System.Buffers.xml
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\System.Memory.xml
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\System.Text.Json.xml
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\bin\Debug\System.ValueTuple.xml
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\obj\Debug\Conexion.csproj.AssemblyReference.cache
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\obj\Debug\Conexion.csproj.CoreCompileInputs.cache
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\obj\Debug\Conexion.csproj.CopyComplete
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\obj\Debug\Conexion.dll
+C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\obj\Debug\Conexion.pdb

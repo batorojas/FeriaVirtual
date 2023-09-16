@@ -776,5 +776,10 @@ namespace FeriaApp
                 //MessageBox.Show($"ID: {idUsuarioSeleccionado}");
             }
         }
+
+        private void metroGridListaUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
