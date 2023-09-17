@@ -22,3 +22,9 @@ C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Clases\obj\Debug\Clases.
 C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache
 C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Clases\obj\Debug\Clases.dll
 C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Clases\obj\Debug\Clases.pdb
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Clases\bin\Debug\Clases.dll
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Clases\bin\Debug\Clases.pdb
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Clases\obj\Debug\Clases.csproj.AssemblyReference.cache
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Clases\obj\Debug\Clases.dll
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Clases\obj\Debug\Clases.pdb

@@ -40,17 +40,17 @@ namespace FeriaApp
         }
         private void metroLabel1_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         private void metroTextBox1_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         private void metroDateTime2_ValueChanged(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         private void tabContratos()
@@ -83,7 +83,7 @@ namespace FeriaApp
         
     private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }

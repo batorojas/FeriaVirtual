@@ -779,7 +779,7 @@ namespace FeriaApp
 
         private void metroGridListaUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }

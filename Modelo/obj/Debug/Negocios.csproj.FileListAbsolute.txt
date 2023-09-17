@@ -126,3 +126,35 @@ C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Modelo\obj\Debug\Negocio
 C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Modelo\obj\Debug\Negocios.csproj.CopyComplete
 C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Modelo\obj\Debug\Negocios.dll
 C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Modelo\obj\Debug\Negocios.pdb
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\Negocios.dll.config
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\Negocios.dll
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\Negocios.pdb
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\Clases.dll
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\Conexion.dll
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\System.Buffers.dll
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\System.Memory.dll
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\System.Text.Json.dll
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\System.ValueTuple.dll
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\Clases.pdb
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\Conexion.pdb
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\Conexion.dll.config
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\System.Buffers.xml
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\System.Memory.xml
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\System.Text.Json.xml
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\bin\Debug\System.ValueTuple.xml
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\obj\Debug\Negocios.csproj.AssemblyReference.cache
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\obj\Debug\Negocios.csproj.CoreCompileInputs.cache
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\obj\Debug\Negocios.csproj.CopyComplete
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\obj\Debug\Negocios.dll
+C:\Users\Ioannis\Documents\Duoc\Portafolio de titulo\Feria Virtual\Modelo\obj\Debug\Negocios.pdb
