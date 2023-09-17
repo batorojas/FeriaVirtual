@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clases;
 using Negocios;
 
 namespace FeriaApp
@@ -34,7 +35,7 @@ namespace FeriaApp
                     break;
                 
                 case 1:
-                    //tabCrearContrato();
+                    tabCrearContrato();
                     break;
             }
         }
@@ -63,8 +64,25 @@ namespace FeriaApp
             metroGridListaContratos.AutoGenerateColumns = true;
             metroGridListaContratos.DataSource = listaContratos.Tables["CONTRATO"];
         }
+
+        private void tabCrearContrato()
+        {
+            try
+            {
+                Contrato contrato = new Contrato();
+                contrato.FechaInicio = metroFechaInicioContrato.Value;
+                contrato.FechaTermino = metroFechaTerminoContrato.Value;
+                contrato.RutProductor = Convert.ToInt32(metroTextRutProductorContrato.Text);
+                negocioContrato.ingresarContrato(contrato);
+                MessageBox.Show("Contrato Agregado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR AL INTENTAR INGRESAR CONTRATO");
+            }
+        }
         
-        private void metroGridListaContratos_SelectionChanged(object sender, DataGridViewCellEventArgs e)
+        private void metroGridListaContratos_SelectionChanged(object sender, EventArgs e)
         {
             //Verificar si hay al menos una fila seleccionada
             if (metroGridListaContratos.SelectedRows.Count > 0)

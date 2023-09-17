@@ -35,10 +35,11 @@
             this.metroTabContratos = new MetroFramework.Controls.MetroTabPage();
             this.metroGridListaContratos = new MetroFramework.Controls.MetroGrid();
             this.metroTabPageCrearContrato = new MetroFramework.Controls.MetroTabPage();
+            this.buttonCrearContrato = new MetroFramework.Controls.MetroButton();
             this.metroTextRutProductorContrato = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroDateTime2 = new MetroFramework.Controls.MetroDateTime();
-            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
+            this.metroFechaInicioContrato = new MetroFramework.Controls.MetroDateTime();
+            this.metroFechaTerminoContrato = new MetroFramework.Controls.MetroDateTime();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabModificarContrato = new MetroFramework.Controls.MetroTabPage();
@@ -55,7 +56,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabModificarContrato);
             this.metroTabControl1.Location = new System.Drawing.Point(3, 23);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(799, 520);
             this.metroTabControl1.TabIndex = 3;
             this.metroTabControl1.UseSelectable = true;
@@ -85,7 +86,6 @@
             this.metroGridListaContratos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
@@ -108,7 +108,6 @@
             this.metroGridListaContratos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
@@ -120,13 +119,15 @@
             this.metroGridListaContratos.Size = new System.Drawing.Size(763, 348);
             this.metroGridListaContratos.TabIndex = 2;
             this.metroGridListaContratos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGrid1_CellContentClick);
+            this.metroGridListaContratos.SelectionChanged += new System.EventHandler(this.metroGridListaContratos_SelectionChanged);
             // 
             // metroTabPageCrearContrato
             // 
+            this.metroTabPageCrearContrato.Controls.Add(this.buttonCrearContrato);
             this.metroTabPageCrearContrato.Controls.Add(this.metroTextRutProductorContrato);
             this.metroTabPageCrearContrato.Controls.Add(this.metroLabel3);
-            this.metroTabPageCrearContrato.Controls.Add(this.metroDateTime2);
-            this.metroTabPageCrearContrato.Controls.Add(this.metroDateTime1);
+            this.metroTabPageCrearContrato.Controls.Add(this.metroFechaInicioContrato);
+            this.metroTabPageCrearContrato.Controls.Add(this.metroFechaTerminoContrato);
             this.metroTabPageCrearContrato.Controls.Add(this.metroLabel2);
             this.metroTabPageCrearContrato.Controls.Add(this.metroLabel1);
             this.metroTabPageCrearContrato.HorizontalScrollbarBarColor = true;
@@ -140,6 +141,17 @@
             this.metroTabPageCrearContrato.VerticalScrollbarBarColor = true;
             this.metroTabPageCrearContrato.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPageCrearContrato.VerticalScrollbarSize = 10;
+            // 
+            // buttonCrearContrato
+            // 
+            this.buttonCrearContrato.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCrearContrato.ForeColor = System.Drawing.Color.Coral;
+            this.buttonCrearContrato.Location = new System.Drawing.Point(121, 221);
+            this.buttonCrearContrato.Name = "buttonCrearContrato";
+            this.buttonCrearContrato.Size = new System.Drawing.Size(150, 57);
+            this.buttonCrearContrato.TabIndex = 9;
+            this.buttonCrearContrato.Text = "Añadir";
+            this.buttonCrearContrato.UseSelectable = true;
             // 
             // metroTextRutProductorContrato
             // 
@@ -156,7 +168,7 @@
             this.metroTextRutProductorContrato.CustomButton.UseSelectable = true;
             this.metroTextRutProductorContrato.CustomButton.Visible = false;
             this.metroTextRutProductorContrato.Lines = new string[0];
-            this.metroTextRutProductorContrato.Location = new System.Drawing.Point(121, 160);
+            this.metroTextRutProductorContrato.Location = new System.Drawing.Point(121, 156);
             this.metroTextRutProductorContrato.MaxLength = 32767;
             this.metroTextRutProductorContrato.Name = "metroTextRutProductorContrato";
             this.metroTextRutProductorContrato.PasswordChar = '\0';
@@ -177,34 +189,36 @@
             // 
             // metroLabel3
             // 
-            this.metroLabel3.Location = new System.Drawing.Point(8, 160);
+            this.metroLabel3.Location = new System.Drawing.Point(8, 156);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(100, 23);
             this.metroLabel3.TabIndex = 7;
             this.metroLabel3.Text = "Rut Productor";
             // 
-            // metroDateTime2
+            // metroFechaInicioContrato
             // 
-            this.metroDateTime2.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.metroDateTime2.Location = new System.Drawing.Point(121, 50);
-            this.metroDateTime2.MinimumSize = new System.Drawing.Size(4, 30);
-            this.metroDateTime2.Name = "metroDateTime2";
-            this.metroDateTime2.Size = new System.Drawing.Size(279, 30);
-            this.metroDateTime2.TabIndex = 6;
-            this.metroDateTime2.ValueChanged += new System.EventHandler(this.metroDateTime2_ValueChanged);
+            this.metroFechaInicioContrato.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.metroFechaInicioContrato.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.metroFechaInicioContrato.Location = new System.Drawing.Point(121, 46);
+            this.metroFechaInicioContrato.MinimumSize = new System.Drawing.Size(0, 30);
+            this.metroFechaInicioContrato.Name = "metroFechaInicioContrato";
+            this.metroFechaInicioContrato.Size = new System.Drawing.Size(279, 30);
+            this.metroFechaInicioContrato.TabIndex = 6;
+            this.metroFechaInicioContrato.ValueChanged += new System.EventHandler(this.metroDateTime2_ValueChanged);
             // 
-            // metroDateTime1
+            // metroFechaTerminoContrato
             // 
-            this.metroDateTime1.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.metroDateTime1.Location = new System.Drawing.Point(121, 102);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(4, 30);
-            this.metroDateTime1.Name = "metroDateTime1";
-            this.metroDateTime1.Size = new System.Drawing.Size(279, 30);
-            this.metroDateTime1.TabIndex = 5;
+            this.metroFechaTerminoContrato.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.metroFechaTerminoContrato.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.metroFechaTerminoContrato.Location = new System.Drawing.Point(121, 98);
+            this.metroFechaTerminoContrato.MinimumSize = new System.Drawing.Size(0, 30);
+            this.metroFechaTerminoContrato.Name = "metroFechaTerminoContrato";
+            this.metroFechaTerminoContrato.Size = new System.Drawing.Size(279, 30);
+            this.metroFechaTerminoContrato.TabIndex = 5;
             // 
             // metroLabel2
             // 
-            this.metroLabel2.Location = new System.Drawing.Point(8, 109);
+            this.metroLabel2.Location = new System.Drawing.Point(8, 105);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(100, 23);
             this.metroLabel2.TabIndex = 4;
@@ -212,7 +226,7 @@
             // 
             // metroLabel1
             // 
-            this.metroLabel1.Location = new System.Drawing.Point(8, 57);
+            this.metroLabel1.Location = new System.Drawing.Point(8, 53);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(95, 23);
             this.metroLabel1.TabIndex = 2;
@@ -248,14 +262,16 @@
             this.ResumeLayout(false);
         }
 
+        private MetroFramework.Controls.MetroButton buttonCrearContrato;
+
         private MetroFramework.Controls.MetroTextBox metroTextRutProductorContrato;
 
-        private MetroFramework.Controls.MetroDateTime metroDateTime2;
+        private MetroFramework.Controls.MetroDateTime metroFechaInicioContrato;
         private MetroFramework.Controls.MetroLabel metroLabel3;
 
         private MetroFramework.Controls.MetroLabel metroLabel2;
 
-        private MetroFramework.Controls.MetroDateTime metroDateTime1;
+        private MetroFramework.Controls.MetroDateTime metroFechaTerminoContrato;
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
 
