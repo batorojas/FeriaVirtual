@@ -15,11 +15,12 @@ namespace FeriaApp
     public partial class vContratos : UserControl
     {
         NegocioContrato negocioContrato = new NegocioContrato();
+        int idContratoSeleccionado;
         public vContratos()
         {
             InitializeComponent();
         }
-        private void vUsuarios_Load(object sender, EventArgs e)
+        private void vContratos_Load(object sender, EventArgs e)
         {
             //metroTabControl1.SelectedTab = null;
             metroTabControl1.SelectedIndex = 0;
@@ -35,18 +36,9 @@ namespace FeriaApp
                     break;
                 
                 case 1:
-                    tabCrearContrato();
+                    //tabCrearContrato();
                     break;
             }
-        }
-        private void metroLabel1_Click(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        private void metroTextBox1_Click(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
         }
 
         private void metroDateTime2_ValueChanged(object sender, EventArgs e)
@@ -65,11 +57,12 @@ namespace FeriaApp
             metroGridListaContratos.DataSource = listaContratos.Tables["CONTRATO"];
         }
 
-        private void tabCrearContrato()
+        private void CrearContrato()
         {
             try
             {
                 Contrato contrato = new Contrato();
+                contrato.IdContrato = negocioContrato.obtenerUltimoIDContrato();
                 contrato.FechaInicio = metroFechaInicioContrato.Value;
                 contrato.FechaTermino = metroFechaTerminoContrato.Value;
                 contrato.RutProductor = Convert.ToInt32(metroTextRutProductorContrato.Text);
@@ -81,7 +74,41 @@ namespace FeriaApp
                 MessageBox.Show("ERROR AL INTENTAR INGRESAR CONTRATO");
             }
         }
+        private void buttonCrearContrato_Click(object sender, EventArgs e)
+        {
+            CrearContrato();
+        }
+        private void eliminarContrato()
+        {
+            try
+            {
+                // Obtener el ID del usuario desde la variable de clase
+                int idContrato = idContratoSeleccionado;
+
+                // Verificar si se ha seleccionado un usuario válido
+                if (idContrato > 0)
+                {
+                    NegocioContrato negocioContrato = new NegocioContrato();
+                    negocioContrato.eliminarContrato(idContrato);
+                    MessageBox.Show("Contrato eliminado");
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione un contrato para eliminar.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR AL ELIMINAR CONTRATO: " + ex.Message);
+            }
+        }
         
+        private void buttonEliminarContrato_Click(object sender, EventArgs e)
+        {
+            eliminarContrato();
+        }
+        
+
         private void metroGridListaContratos_SelectionChanged(object sender, EventArgs e)
         {
             //Verificar si hay al menos una fila seleccionada
@@ -94,11 +121,14 @@ namespace FeriaApp
                     DateTime fechaInicio = DateTime.Parse(metroGridListaContratos.SelectedRows[0].Cells["FECHA_INICIO"].Value.ToString());
                     DateTime fechaTermino = DateTime.Parse(metroGridListaContratos.SelectedRows[0].Cells["FECHA_TERMINO"].Value.ToString());
                     int RutProductor = Convert.ToInt32(metroGridListaContratos.SelectedRows[0].Cells["RUT_PRODUCTOR"].Value);
+                    idContratoSeleccionado = idContrato;
                 }
-                
+                else
+                {
+                    idContratoSeleccionado = 0;
+                }
             }
         }
-        
     private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             throw new System.NotImplementedException();

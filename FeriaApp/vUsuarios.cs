@@ -478,7 +478,6 @@ namespace FeriaApp
 
                         NegocioUsuario negocioUsuario = new NegocioUsuario();
                         NegocioCliente negocioCliente = new NegocioCliente();
-
                         Usuario nuevoUsuarioCliente = new Usuario();
                         nuevoUsuarioCliente.UserName = this.metroTextBoxNombreUsuario.Text;
                         nuevoUsuarioCliente.Password = this.metroTextBoxContrasena.Text;

@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabContratos = new MetroFramework.Controls.MetroTabPage();
+            this.buttonEliminarContrato = new MetroFramework.Controls.MetroButton();
             this.metroGridListaContratos = new MetroFramework.Controls.MetroGrid();
             this.metroTabPageCrearContrato = new MetroFramework.Controls.MetroTabPage();
             this.buttonCrearContrato = new MetroFramework.Controls.MetroButton();
@@ -56,7 +57,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabModificarContrato);
             this.metroTabControl1.Location = new System.Drawing.Point(3, 23);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(799, 520);
             this.metroTabControl1.TabIndex = 3;
             this.metroTabControl1.UseSelectable = true;
@@ -64,6 +65,7 @@
             // 
             // metroTabContratos
             // 
+            this.metroTabContratos.Controls.Add(this.buttonEliminarContrato);
             this.metroTabContratos.Controls.Add(this.metroGridListaContratos);
             this.metroTabContratos.HorizontalScrollbarBarColor = true;
             this.metroTabContratos.HorizontalScrollbarHighlightOnWheel = false;
@@ -76,6 +78,17 @@
             this.metroTabContratos.VerticalScrollbarBarColor = true;
             this.metroTabContratos.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabContratos.VerticalScrollbarSize = 10;
+            // 
+            // buttonEliminarContrato
+            // 
+            this.buttonEliminarContrato.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEliminarContrato.Location = new System.Drawing.Point(139, 237);
+            this.buttonEliminarContrato.Name = "buttonEliminarContrato";
+            this.buttonEliminarContrato.Size = new System.Drawing.Size(151, 56);
+            this.buttonEliminarContrato.TabIndex = 3;
+            this.buttonEliminarContrato.Text = "Eliminar";
+            this.buttonEliminarContrato.UseSelectable = true;
+            this.buttonEliminarContrato.Click += new System.EventHandler(this.buttonEliminarContrato_Click);
             // 
             // metroGridListaContratos
             // 
@@ -103,7 +116,7 @@
             this.metroGridListaContratos.EnableHeadersVisualStyles = false;
             this.metroGridListaContratos.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGridListaContratos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGridListaContratos.Location = new System.Drawing.Point(3, 38);
+            this.metroGridListaContratos.Location = new System.Drawing.Point(3, 20);
             this.metroGridListaContratos.Name = "metroGridListaContratos";
             this.metroGridListaContratos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -116,7 +129,7 @@
             this.metroGridListaContratos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGridListaContratos.RowTemplate.Height = 24;
             this.metroGridListaContratos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGridListaContratos.Size = new System.Drawing.Size(763, 348);
+            this.metroGridListaContratos.Size = new System.Drawing.Size(682, 190);
             this.metroGridListaContratos.TabIndex = 2;
             this.metroGridListaContratos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGrid1_CellContentClick);
             this.metroGridListaContratos.SelectionChanged += new System.EventHandler(this.metroGridListaContratos_SelectionChanged);
@@ -152,6 +165,7 @@
             this.buttonCrearContrato.TabIndex = 9;
             this.buttonCrearContrato.Text = "Añadir";
             this.buttonCrearContrato.UseSelectable = true;
+            this.buttonCrearContrato.Click += new System.EventHandler(this.buttonCrearContrato_Click);
             // 
             // metroTextRutProductorContrato
             // 
@@ -185,7 +199,6 @@
             this.metroTextRutProductorContrato.WaterMark = "Sin puntos ni dígito verificador";
             this.metroTextRutProductorContrato.WaterMarkColor = System.Drawing.Color.Gray;
             this.metroTextRutProductorContrato.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.metroTextRutProductorContrato.Click += new System.EventHandler(this.metroTextBox1_Click);
             // 
             // metroLabel3
             // 
@@ -200,7 +213,7 @@
             this.metroFechaInicioContrato.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroFechaInicioContrato.ImeMode = System.Windows.Forms.ImeMode.On;
             this.metroFechaInicioContrato.Location = new System.Drawing.Point(121, 46);
-            this.metroFechaInicioContrato.MinimumSize = new System.Drawing.Size(0, 30);
+            this.metroFechaInicioContrato.MinimumSize = new System.Drawing.Size(4, 30);
             this.metroFechaInicioContrato.Name = "metroFechaInicioContrato";
             this.metroFechaInicioContrato.Size = new System.Drawing.Size(279, 30);
             this.metroFechaInicioContrato.TabIndex = 6;
@@ -211,7 +224,7 @@
             this.metroFechaTerminoContrato.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.metroFechaTerminoContrato.ImeMode = System.Windows.Forms.ImeMode.On;
             this.metroFechaTerminoContrato.Location = new System.Drawing.Point(121, 98);
-            this.metroFechaTerminoContrato.MinimumSize = new System.Drawing.Size(0, 30);
+            this.metroFechaTerminoContrato.MinimumSize = new System.Drawing.Size(4, 30);
             this.metroFechaTerminoContrato.Name = "metroFechaTerminoContrato";
             this.metroFechaTerminoContrato.Size = new System.Drawing.Size(279, 30);
             this.metroFechaTerminoContrato.TabIndex = 5;
@@ -231,7 +244,6 @@
             this.metroLabel1.Size = new System.Drawing.Size(95, 23);
             this.metroLabel1.TabIndex = 2;
             this.metroLabel1.Text = "Fecha Inicio";
-            this.metroLabel1.Click += new System.EventHandler(this.metroLabel1_Click);
             // 
             // metroTabModificarContrato
             // 
@@ -261,6 +273,8 @@
             this.metroTabPageCrearContrato.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private MetroFramework.Controls.MetroButton buttonEliminarContrato;
 
         private MetroFramework.Controls.MetroButton buttonCrearContrato;
 
