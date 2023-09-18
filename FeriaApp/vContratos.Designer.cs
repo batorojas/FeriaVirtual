@@ -44,10 +44,18 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroTabModificarContrato = new MetroFramework.Controls.MetroTabPage();
+            this.buttonModificarContrato = new MetroFramework.Controls.MetroButton();
+            this.textModificarRPContrato = new MetroFramework.Controls.MetroTextBox();
+            this.dateModificarFechaTermino = new MetroFramework.Controls.MetroDateTime();
+            this.dateModificarFechaInicio = new MetroFramework.Controls.MetroDateTime();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroTabControl1.SuspendLayout();
             this.metroTabContratos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGridListaContratos)).BeginInit();
             this.metroTabPageCrearContrato.SuspendLayout();
+            this.metroTabModificarContrato.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -57,7 +65,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabModificarContrato);
             this.metroTabControl1.Location = new System.Drawing.Point(3, 23);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 2;
             this.metroTabControl1.Size = new System.Drawing.Size(799, 520);
             this.metroTabControl1.TabIndex = 3;
             this.metroTabControl1.UseSelectable = true;
@@ -131,7 +139,6 @@
             this.metroGridListaContratos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.metroGridListaContratos.Size = new System.Drawing.Size(682, 190);
             this.metroGridListaContratos.TabIndex = 2;
-            this.metroGridListaContratos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGrid1_CellContentClick);
             this.metroGridListaContratos.SelectionChanged += new System.EventHandler(this.metroGridListaContratos_SelectionChanged);
             // 
             // metroTabPageCrearContrato
@@ -247,6 +254,13 @@
             // 
             // metroTabModificarContrato
             // 
+            this.metroTabModificarContrato.Controls.Add(this.buttonModificarContrato);
+            this.metroTabModificarContrato.Controls.Add(this.textModificarRPContrato);
+            this.metroTabModificarContrato.Controls.Add(this.dateModificarFechaTermino);
+            this.metroTabModificarContrato.Controls.Add(this.dateModificarFechaInicio);
+            this.metroTabModificarContrato.Controls.Add(this.metroLabel6);
+            this.metroTabModificarContrato.Controls.Add(this.metroLabel5);
+            this.metroTabModificarContrato.Controls.Add(this.metroLabel4);
             this.metroTabModificarContrato.HorizontalScrollbarBarColor = true;
             this.metroTabModificarContrato.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabModificarContrato.HorizontalScrollbarSize = 10;
@@ -258,6 +272,93 @@
             this.metroTabModificarContrato.VerticalScrollbarBarColor = true;
             this.metroTabModificarContrato.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabModificarContrato.VerticalScrollbarSize = 10;
+            // 
+            // buttonModificarContrato
+            // 
+            this.buttonModificarContrato.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonModificarContrato.ForeColor = System.Drawing.Color.Coral;
+            this.buttonModificarContrato.Location = new System.Drawing.Point(119, 236);
+            this.buttonModificarContrato.Name = "buttonModificarContrato";
+            this.buttonModificarContrato.Size = new System.Drawing.Size(150, 57);
+            this.buttonModificarContrato.TabIndex = 10;
+            this.buttonModificarContrato.Text = "Actualizar";
+            this.buttonModificarContrato.UseSelectable = true;
+            this.buttonModificarContrato.Click += new System.EventHandler(this.buttonModificarContrato_Click);
+            // 
+            // textModificarRPContrato
+            // 
+            // 
+            // 
+            // 
+            this.textModificarRPContrato.CustomButton.Image = null;
+            this.textModificarRPContrato.CustomButton.Location = new System.Drawing.Point(251, 2);
+            this.textModificarRPContrato.CustomButton.Name = "";
+            this.textModificarRPContrato.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.textModificarRPContrato.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.textModificarRPContrato.CustomButton.TabIndex = 1;
+            this.textModificarRPContrato.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.textModificarRPContrato.CustomButton.UseSelectable = true;
+            this.textModificarRPContrato.CustomButton.Visible = false;
+            this.textModificarRPContrato.Lines = new string[0];
+            this.textModificarRPContrato.Location = new System.Drawing.Point(119, 174);
+            this.textModificarRPContrato.MaxLength = 32767;
+            this.textModificarRPContrato.Name = "textModificarRPContrato";
+            this.textModificarRPContrato.PasswordChar = '\0';
+            this.textModificarRPContrato.PromptText = "Sin puntos ni dígito verificador";
+            this.textModificarRPContrato.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.textModificarRPContrato.SelectedText = "";
+            this.textModificarRPContrato.SelectionLength = 0;
+            this.textModificarRPContrato.SelectionStart = 0;
+            this.textModificarRPContrato.ShortcutsEnabled = true;
+            this.textModificarRPContrato.ShowClearButton = true;
+            this.textModificarRPContrato.Size = new System.Drawing.Size(279, 30);
+            this.textModificarRPContrato.TabIndex = 9;
+            this.textModificarRPContrato.UseSelectable = true;
+            this.textModificarRPContrato.WaterMark = "Sin puntos ni dígito verificador";
+            this.textModificarRPContrato.WaterMarkColor = System.Drawing.Color.Gray;
+            this.textModificarRPContrato.WaterMarkFont = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // dateModificarFechaTermino
+            // 
+            this.dateModificarFechaTermino.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateModificarFechaTermino.Location = new System.Drawing.Point(119, 119);
+            this.dateModificarFechaTermino.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dateModificarFechaTermino.Name = "dateModificarFechaTermino";
+            this.dateModificarFechaTermino.Size = new System.Drawing.Size(278, 30);
+            this.dateModificarFechaTermino.TabIndex = 6;
+            // 
+            // dateModificarFechaInicio
+            // 
+            this.dateModificarFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateModificarFechaInicio.Location = new System.Drawing.Point(120, 61);
+            this.dateModificarFechaInicio.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dateModificarFechaInicio.Name = "dateModificarFechaInicio";
+            this.dateModificarFechaInicio.Size = new System.Drawing.Size(278, 30);
+            this.dateModificarFechaInicio.TabIndex = 5;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.Location = new System.Drawing.Point(6, 183);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(100, 21);
+            this.metroLabel6.TabIndex = 4;
+            this.metroLabel6.Text = "Rut Productor";
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.Location = new System.Drawing.Point(6, 128);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(100, 21);
+            this.metroLabel5.TabIndex = 3;
+            this.metroLabel5.Text = "Fecha Término";
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.Location = new System.Drawing.Point(13, 70);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(93, 21);
+            this.metroLabel4.TabIndex = 2;
+            this.metroLabel4.Text = "Fecha Inicio";
             // 
             // vContratos
             // 
@@ -271,8 +372,23 @@
             this.metroTabContratos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroGridListaContratos)).EndInit();
             this.metroTabPageCrearContrato.ResumeLayout(false);
+            this.metroTabModificarContrato.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private MetroFramework.Controls.MetroButton buttonModificarContrato;
+
+        private MetroFramework.Controls.MetroTextBox textModificarRPContrato;
+
+        private MetroFramework.Controls.MetroDateTime dateModificarFechaTermino;
+
+        private MetroFramework.Controls.MetroDateTime dateModificarFechaInicio;
+
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+
+        private MetroFramework.Controls.MetroLabel metroLabel4;
 
         private MetroFramework.Controls.MetroButton buttonEliminarContrato;
 

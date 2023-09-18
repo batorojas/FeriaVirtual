@@ -108,7 +108,28 @@ namespace FeriaApp
             eliminarContrato();
         }
         
-
+        public void actualizarContrato()
+        {
+            try
+            {
+                Contrato contrato = new Contrato();
+                contrato.FechaInicio = dateModificarFechaInicio.Value;
+                contrato.FechaTermino = dateModificarFechaTermino.Value;
+                contrato.RutProductor = Convert.ToInt32(textModificarRPContrato.Text);
+                negocioContrato.actualizarContrato(contrato);
+                MessageBox.Show("Contrato Actualizado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR AL INTENTAR ACTUALIZAR CONTRATO");
+            }
+        }
+        
+        private void buttonModificarContrato_Click(object sender, EventArgs e)
+        {
+            actualizarContrato();
+        }
+        
         private void metroGridListaContratos_SelectionChanged(object sender, EventArgs e)
         {
             //Verificar si hay al menos una fila seleccionada
@@ -128,10 +149,6 @@ namespace FeriaApp
                     idContratoSeleccionado = 0;
                 }
             }
-        }
-    private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

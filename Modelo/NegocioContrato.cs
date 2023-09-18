@@ -119,6 +119,7 @@ namespace Negocios
 
             return ultimoIdContrato;
         }
+
         public void eliminarContrato(int idContrato)
         {
             try
@@ -141,7 +142,29 @@ namespace Negocios
                     con.cerrarConexion(); // Llamada al método personalizado CerrarConexion
                 }
             }
+        }
 
+        public void actualizarContrato(Contrato contrato)
+        {
+            try
+            {
+                this.configurarConexion();
+                String[] parametros = { "FECHAINICIO", "FECHATERMINO", "RUTPRODUCTOR" };
+                OracleDbType[] tipos = { OracleDbType.Date, OracleDbType.Date, OracleDbType.Int32 };
+                Object[] valores = { contrato.FechaInicio, contrato.FechaTermino, contrato.RutProductor };
+                this.con.ejecutarProcedimiento("SP_ACTUALIZAR_CONTRATO", parametros, tipos, valores);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR AL INTENTAR ACTUALIZAR CONTRATO");
+            }
+            finally
+            {
+                if (con != null)
+                {
+                    con.cerrarConexion(); // Llamada al método personalizado CerrarConexion
+                }
+            }
         }
     }
 }

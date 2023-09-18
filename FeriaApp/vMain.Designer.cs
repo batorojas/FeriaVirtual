@@ -23,8 +23,8 @@
         #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -41,6 +41,7 @@
             this.vTransportes1 = new FeriaApp.vTransportes();
             this.tabPageUsuarios = new System.Windows.Forms.TabPage();
             this.vUsuarios1 = new FeriaApp.vUsuarios();
+            this.vPagos = new System.Windows.Forms.TabPage();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.tabControlMenu1.SuspendLayout();
             this.tabPageInicio.SuspendLayout();
@@ -60,12 +61,14 @@
             this.tabControlMenu1.Controls.Add(this.tabPageContratos);
             this.tabControlMenu1.Controls.Add(this.tabPageTransportes);
             this.tabControlMenu1.Controls.Add(this.tabPageUsuarios);
+            this.tabControlMenu1.Controls.Add(this.vPagos);
             this.tabControlMenu1.ItemSize = new System.Drawing.Size(44, 136);
-            this.tabControlMenu1.Location = new System.Drawing.Point(0, 5);
+            this.tabControlMenu1.Location = new System.Drawing.Point(0, 6);
+            this.tabControlMenu1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControlMenu1.Multiline = true;
             this.tabControlMenu1.Name = "tabControlMenu1";
             this.tabControlMenu1.SelectedIndex = 0;
-            this.tabControlMenu1.Size = new System.Drawing.Size(800, 449);
+            this.tabControlMenu1.Size = new System.Drawing.Size(1067, 553);
             this.tabControlMenu1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlMenu1.TabIndex = 10;
             // 
@@ -73,9 +76,10 @@
             // 
             this.tabPageInicio.Controls.Add(this.vInicio1);
             this.tabPageInicio.Location = new System.Drawing.Point(140, 4);
+            this.tabPageInicio.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageInicio.Name = "tabPageInicio";
-            this.tabPageInicio.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageInicio.Size = new System.Drawing.Size(656, 441);
+            this.tabPageInicio.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageInicio.Size = new System.Drawing.Size(923, 545);
             this.tabPageInicio.TabIndex = 0;
             this.tabPageInicio.Text = "Inicio";
             this.tabPageInicio.UseVisualStyleBackColor = true;
@@ -83,18 +87,20 @@
             // vInicio1
             // 
             this.vInicio1.Location = new System.Drawing.Point(0, 0);
+            this.vInicio1.Margin = new System.Windows.Forms.Padding(5);
             this.vInicio1.Name = "vInicio1";
             this.vInicio1.NombreSesionStartPage = "Usuario";
-            this.vInicio1.Size = new System.Drawing.Size(650, 441);
+            this.vInicio1.Size = new System.Drawing.Size(867, 543);
             this.vInicio1.TabIndex = 0;
             // 
             // tabPageVentasLocales
             // 
             this.tabPageVentasLocales.Controls.Add(this.vVentasLocales1);
             this.tabPageVentasLocales.Location = new System.Drawing.Point(140, 4);
+            this.tabPageVentasLocales.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageVentasLocales.Name = "tabPageVentasLocales";
-            this.tabPageVentasLocales.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageVentasLocales.Size = new System.Drawing.Size(656, 441);
+            this.tabPageVentasLocales.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageVentasLocales.Size = new System.Drawing.Size(923, 545);
             this.tabPageVentasLocales.TabIndex = 1;
             this.tabPageVentasLocales.Text = "Ventas Locales";
             this.tabPageVentasLocales.UseVisualStyleBackColor = true;
@@ -102,17 +108,19 @@
             // vVentasLocales1
             // 
             this.vVentasLocales1.Location = new System.Drawing.Point(0, 0);
+            this.vVentasLocales1.Margin = new System.Windows.Forms.Padding(5);
             this.vVentasLocales1.Name = "vVentasLocales1";
-            this.vVentasLocales1.Size = new System.Drawing.Size(650, 441);
+            this.vVentasLocales1.Size = new System.Drawing.Size(867, 543);
             this.vVentasLocales1.TabIndex = 0;
             // 
             // tabPageVentasExternas
             // 
             this.tabPageVentasExternas.Controls.Add(this.vVentasExternas1);
             this.tabPageVentasExternas.Location = new System.Drawing.Point(140, 4);
+            this.tabPageVentasExternas.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageVentasExternas.Name = "tabPageVentasExternas";
-            this.tabPageVentasExternas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageVentasExternas.Size = new System.Drawing.Size(656, 441);
+            this.tabPageVentasExternas.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageVentasExternas.Size = new System.Drawing.Size(923, 545);
             this.tabPageVentasExternas.TabIndex = 2;
             this.tabPageVentasExternas.Text = "Ventas Externas";
             this.tabPageVentasExternas.UseVisualStyleBackColor = true;
@@ -120,17 +128,19 @@
             // vVentasExternas1
             // 
             this.vVentasExternas1.Location = new System.Drawing.Point(0, 0);
+            this.vVentasExternas1.Margin = new System.Windows.Forms.Padding(5);
             this.vVentasExternas1.Name = "vVentasExternas1";
-            this.vVentasExternas1.Size = new System.Drawing.Size(650, 441);
+            this.vVentasExternas1.Size = new System.Drawing.Size(867, 543);
             this.vVentasExternas1.TabIndex = 0;
             // 
             // tabPageContratos
             // 
             this.tabPageContratos.Controls.Add(this.vContratos1);
             this.tabPageContratos.Location = new System.Drawing.Point(140, 4);
+            this.tabPageContratos.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageContratos.Name = "tabPageContratos";
-            this.tabPageContratos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageContratos.Size = new System.Drawing.Size(656, 441);
+            this.tabPageContratos.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageContratos.Size = new System.Drawing.Size(923, 545);
             this.tabPageContratos.TabIndex = 3;
             this.tabPageContratos.Text = "Contratos";
             this.tabPageContratos.UseVisualStyleBackColor = true;
@@ -138,17 +148,19 @@
             // vContratos1
             // 
             this.vContratos1.Location = new System.Drawing.Point(0, 0);
+            this.vContratos1.Margin = new System.Windows.Forms.Padding(5);
             this.vContratos1.Name = "vContratos1";
-            this.vContratos1.Size = new System.Drawing.Size(650, 441);
+            this.vContratos1.Size = new System.Drawing.Size(867, 543);
             this.vContratos1.TabIndex = 0;
             // 
             // tabPageTransportes
             // 
             this.tabPageTransportes.Controls.Add(this.vTransportes1);
             this.tabPageTransportes.Location = new System.Drawing.Point(140, 4);
+            this.tabPageTransportes.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageTransportes.Name = "tabPageTransportes";
-            this.tabPageTransportes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTransportes.Size = new System.Drawing.Size(656, 441);
+            this.tabPageTransportes.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageTransportes.Size = new System.Drawing.Size(923, 545);
             this.tabPageTransportes.TabIndex = 4;
             this.tabPageTransportes.Text = "Transportes";
             this.tabPageTransportes.UseVisualStyleBackColor = true;
@@ -156,17 +168,19 @@
             // vTransportes1
             // 
             this.vTransportes1.Location = new System.Drawing.Point(0, 0);
+            this.vTransportes1.Margin = new System.Windows.Forms.Padding(5);
             this.vTransportes1.Name = "vTransportes1";
-            this.vTransportes1.Size = new System.Drawing.Size(650, 441);
+            this.vTransportes1.Size = new System.Drawing.Size(867, 543);
             this.vTransportes1.TabIndex = 0;
             // 
             // tabPageUsuarios
             // 
             this.tabPageUsuarios.Controls.Add(this.vUsuarios1);
             this.tabPageUsuarios.Location = new System.Drawing.Point(140, 4);
+            this.tabPageUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageUsuarios.Name = "tabPageUsuarios";
-            this.tabPageUsuarios.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageUsuarios.Size = new System.Drawing.Size(656, 441);
+            this.tabPageUsuarios.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageUsuarios.Size = new System.Drawing.Size(923, 545);
             this.tabPageUsuarios.TabIndex = 5;
             this.tabPageUsuarios.Text = "Usuarios";
             this.tabPageUsuarios.UseVisualStyleBackColor = true;
@@ -174,9 +188,20 @@
             // vUsuarios1
             // 
             this.vUsuarios1.Location = new System.Drawing.Point(0, 0);
+            this.vUsuarios1.Margin = new System.Windows.Forms.Padding(5);
             this.vUsuarios1.Name = "vUsuarios1";
-            this.vUsuarios1.Size = new System.Drawing.Size(656, 441);
+            this.vUsuarios1.Size = new System.Drawing.Size(875, 543);
             this.vUsuarios1.TabIndex = 0;
+            // 
+            // vPagos
+            // 
+            this.vPagos.Location = new System.Drawing.Point(140, 4);
+            this.vPagos.Name = "vPagos";
+            this.vPagos.Padding = new System.Windows.Forms.Padding(3);
+            this.vPagos.Size = new System.Drawing.Size(923, 545);
+            this.vPagos.TabIndex = 6;
+            this.vPagos.Text = "Pagos";
+            this.vPagos.UseVisualStyleBackColor = true;
             // 
             // metroTabPage1
             // 
@@ -193,12 +218,14 @@
             // 
             // vMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 450);
+            this.ClientSize = new System.Drawing.Size(1140, 554);
             this.Controls.Add(this.tabControlMenu1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "vMain";
+            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Resizable = false;
             this.Load += new System.EventHandler(this.Main_Load);
             this.tabControlMenu1.ResumeLayout(false);
@@ -209,8 +236,9 @@
             this.tabPageTransportes.ResumeLayout(false);
             this.tabPageUsuarios.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
+
+        private System.Windows.Forms.TabPage vPagos;
 
         #endregion
         private TabControls.DotNetBarTabControl tabControlMenu1;
@@ -223,7 +251,7 @@
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
         private vUsuarios vUsuarios1;
         private vVentasLocales vVentasLocales1;
-        private vVentasExternas vVentasExternas1;
+        private FeriaApp.vVentasExternas vVentasExternas1;
         private vContratos vContratos1;
         private vTransportes vTransportes1;
         private vInicio vInicio1;
