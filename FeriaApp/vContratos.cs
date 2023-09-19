@@ -43,7 +43,7 @@ namespace FeriaApp
 
         private void metroDateTime2_ValueChanged(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         private void tabContratos()
