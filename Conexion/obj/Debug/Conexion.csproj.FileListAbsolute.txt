@@ -106,3 +106,41 @@ C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\obj\Debug\Conex
 C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\obj\Debug\Conexion.csproj.CopyComplete
 C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\obj\Debug\Conexion.dll
 C:\Users\eden\Documents\Código Portafolio\FeriaVirtual\Conexion\obj\Debug\Conexion.pdb
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.barcodes.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.bouncy-castle-connector.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.commons.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.forms.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.io.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.kernel.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.layout.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.pdfa.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.sign.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.styledxmlparser.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.svg.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\Microsoft.Extensions.Options.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\Newtonsoft.Json.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.barcodes.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.bouncy-castle-connector.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.commons.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.forms.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.io.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.kernel.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.layout.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.pdfa.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.sign.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.styledxmlparser.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\itext.svg.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\Microsoft.Extensions.Options.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\Newtonsoft.Json.xml
+D:\Duoc\2023-02\Portafolio\Software\FeriaVirtual\Conexion\bin\Debug\System.Diagnostics.DiagnosticSource.xml
