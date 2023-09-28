@@ -73,9 +73,9 @@ namespace FeriaApp
                     tabModificarCliente();
                     break;
 
-                //default:
-                //    MessageBox.Show("Pestaña no reconocida");
-                //    break;
+                    //default:
+                    //    MessageBox.Show("Pestaña no reconocida");
+                    //    break;
             }
         }
 
@@ -170,7 +170,7 @@ namespace FeriaApp
                 // Empresa Transporte
                 metroLabelEmpresaTransporte.Visible = false;
                 metroTextBoxEmpresaTransporte.Visible = false;
-                
+
             }
             else if (selectedIndex == 2) // Condicion para usuario transportista
             {
@@ -346,7 +346,7 @@ namespace FeriaApp
         private bool ValidarCampos()
         {
             // Recorre cada TextBox para ver si hay datos en blanco
-            MetroTextBox[] textBoxes = { 
+            MetroTextBox[] textBoxes = {
                 metroTextBoxNombreUsuario,
                 metroTextBoxContrasena,
                 metroTextBoxRut,
@@ -472,12 +472,12 @@ namespace FeriaApp
 
                         NegocioUsuario negocioUsuario = new NegocioUsuario();
 
-                        Usuario nuevoUsuario = new Usuario();                        
+                        Usuario nuevoUsuario = new Usuario();
                         nuevoUsuario.UserName = this.metroTextBoxNombreUsuario.Text;
                         nuevoUsuario.Password = this.metroTextBoxContrasena.Text;
                         nuevoUsuario.IdPerfil = valorTipoCuenta;
                         nuevoUsuario.IdEstadoCuenta = estadoCuenta; // RadioButton Estado Cuenta
-                        
+
                         negocioUsuario.ingresarUsuario(nuevoUsuario);
 
                         MessageBox.Show("Usuario Agregado");
@@ -519,14 +519,14 @@ namespace FeriaApp
                         nuevoCliente.IdComunaCliente = valorComuna;
                         nuevoCliente.IdUsuarioCliente = negocioUsuario.obtenerUltimoIdUsuario();
                         nuevoCliente.IdTipoCliente = valorTipoCliente;
-                                                
+
                         negocioCliente.ingresarCliente(nuevoCliente);
-                        
+
                         MessageBox.Show("Usuario Agregado");
                     }
-                    catch (Exception ex) 
-                    { 
-                        MessageBox.Show("ERROR AL INTENTAR INGRESAR USUARIO" + ex); 
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR AL INTENTAR INGRESAR USUARIO" + ex);
                     }
                     break;
 
@@ -550,7 +550,7 @@ namespace FeriaApp
                         nuevoUsuario.Password = this.metroTextBoxContrasena.Text;
                         nuevoUsuario.IdPerfil = valorTipoCuenta;
                         nuevoUsuario.IdEstadoCuenta = estadoCuenta; // RadioButton Estado Cuenta
-                        
+
                         negocioUsuario.ingresarUsuario(nuevoUsuario);
 
                         EmpresaTransporte nuevoTransporte = new EmpresaTransporte();
@@ -802,7 +802,7 @@ namespace FeriaApp
 
         private void metroGridListaUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void Modificar_Click(object sender, EventArgs e)
@@ -819,7 +819,7 @@ namespace FeriaApp
                     metroTextBoxModAdminId.Text = metroGridListaUsuarios.SelectedRows[0].Cells["ID_USUARIO"].Value.ToString();
                     metroTextBoxModAdminNombre.Text = metroGridListaUsuarios.SelectedRows[0].Cells["NOMBRE_USUARIO"].Value.ToString();
                     metroTextBoxModAdminContrasena.Text = metroGridListaUsuarios.SelectedRows[0].Cells["PASSWORD"].Value.ToString();
-                    
+
                     int idPerfil = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_PERFIL"].Value.ToString());
                     metroComboBoxModAdminTipoCuenta.SelectedValue = idPerfil;
 
@@ -881,4 +881,5 @@ namespace FeriaApp
 
             }
         }
+    }
 }
