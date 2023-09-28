@@ -45,6 +45,10 @@ namespace FeriaApp
 
         private void vUsuarios_Load(object sender, EventArgs e)
         {
+            obtenerComunasDesdeDataSet();
+            obtenerTipoClienteDesdeDataSet();
+            obtenerTipoPerfilDesdeDataSet();
+
             //metroTabControl1.SelectedTab = null;
             metroTabControl1.SelectedIndex = 0;
         }
@@ -66,7 +70,7 @@ namespace FeriaApp
                     break;
 
                 case 2:
-                    // Pestaña Editar Clientes
+                    tabModificarCliente();
                     break;
 
                 //default:
@@ -88,9 +92,6 @@ namespace FeriaApp
         private void tabCrearCliente()
         {
             // PESTAÑA CREAR USUARIO
-            obtenerComunasDesdeDataSet();
-            obtenerTipoClienteDesdeDataSet();
-            obtenerTipoPerfilDesdeDataSet();
             metroRadioButtonEstadoCuentaActiva.Checked = true;
 
             // llenar el combobox con las Comunas
@@ -108,6 +109,29 @@ namespace FeriaApp
             metroComboBoxTipoCuenta.DataSource = perfiles;
             metroComboBoxTipoCuenta.DisplayMember = "DescPerfil"; // Muestra el nombre de la comuna
             metroComboBoxTipoCuenta.ValueMember = "IdPerfil"; // Utiliza el ID de la comuna como valor seleccionado
+
+            //metroComboBoxTipoCuenta.SelectedIndex = 1; // Seleciona automaticamente el tipo de cuenta a tipo Cliente
+        }
+
+        private void tabModificarCliente()
+        {
+            // PESTAÑA MODIFICAR USUARIO
+
+            //// llenar el combobox con las Comunas
+            //metroComboBoxComuna.DataSource = comunas;
+            //metroComboBoxComuna.DisplayMember = "NombreComuna"; // Muestra el nombre de la comuna
+            //metroComboBoxComuna.ValueMember = "IdComuna"; // Utiliza el ID de la comuna como valor seleccionado
+            //metroComboBoxComuna.DropDownHeight = 200; // Establece la altura máxima en píxeles
+
+            //// llenar combobox Tipo Cliente
+            //metroComboBoxTipoCliente.DataSource = tiposClientes;
+            //metroComboBoxTipoCliente.DisplayMember = "DescTipoCliente"; // Muestra el nombre de la comuna
+            //metroComboBoxTipoCliente.ValueMember = "IdTipoCliente"; // Utiliza el ID de la comuna como valor seleccionado
+
+            // llenar combobox Admin Tipo Cuenta
+            metroComboBoxModAdminTipoCuenta.DataSource = perfiles;
+            metroComboBoxModAdminTipoCuenta.DisplayMember = "DescPerfil"; // Muestra el nombre de la comuna
+            metroComboBoxModAdminTipoCuenta.ValueMember = "IdPerfil"; // Utiliza el ID de la comuna como valor seleccionado
 
             //metroComboBoxTipoCuenta.SelectedIndex = 1; // Seleciona automaticamente el tipo de cuenta a tipo Cliente
         }
@@ -780,5 +804,81 @@ namespace FeriaApp
         {
             
         }
-    }
+
+        private void Modificar_Click(object sender, EventArgs e)
+        {
+            int opcion = idTPerfilUsuarioSeleccionado; // Cambia el valor de 'opcion' según necesidades
+
+            switch (opcion)
+            {
+                case 1:
+                    // Opción Administrador
+                    metroTabControl1.SelectedIndex = 2;
+                    metroTabControl2.SelectedIndex = 0;
+
+                    metroTextBoxModAdminId.Text = metroGridListaUsuarios.SelectedRows[0].Cells["ID_USUARIO"].Value.ToString();
+                    metroTextBoxModAdminNombre.Text = metroGridListaUsuarios.SelectedRows[0].Cells["NOMBRE_USUARIO"].Value.ToString();
+                    metroTextBoxModAdminContrasena.Text = metroGridListaUsuarios.SelectedRows[0].Cells["PASSWORD"].Value.ToString();
+                    
+                    int idPerfil = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_PERFIL"].Value.ToString());
+                    metroComboBoxModAdminTipoCuenta.SelectedValue = idPerfil;
+
+                    int estadoCuenta = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_ESTD_CTA"].Value.ToString());
+                    if (estadoCuenta == 1)
+                    {
+                        metroRadioButtonModAdminEstadoCuentaActiva.Checked = true;
+                    }
+                    else
+                    {
+                        metroRadioButtonModAdminEstadoCuentaInactiva.Checked = true;
+                    }
+
+                    break;
+
+                case 2:
+                    // Opción Cliente
+                    metroTabControl1.SelectedIndex = 2;
+                    metroTabControl2.SelectedIndex = 1;
+                    break;
+
+                case 3:
+                    // Opción Transportista
+                    metroTabControl1.SelectedIndex = 2;
+                    metroTabControl2.SelectedIndex = 2;
+                    break;
+
+                case 4:
+                    // Opción Productor
+                    metroTabControl1.SelectedIndex = 2;
+                    metroTabControl2.SelectedIndex = 3;
+                    break;
+
+                default:
+                    MessageBox.Show("Primero seleccione al usuario que desea eliminar");
+                    break;
+            }
+        }
+
+        private void metroButtonActualizar_Click(object sender, EventArgs e)
+        {
+            // FIX THIS
+            try
+            {
+                Usuario nuevoUsuario = new Usuario();
+                nuevoUsuario.IdUser = Int32.Parse(this.metroTextBoxModAdminId.Text);
+                nuevoUsuario.UserName = this.metroTextBoxModAdminNombre.Text;
+                nuevoUsuario.Password = this.metroTextBoxModAdminContrasena.Text;
+                //nuevoUsuario.FechaCreacion = DateTime.Parse(this.txtFechaCreacionUsuario.Text);
+                //nuevoUsuario.IdPerfil = Int32.Parse(this.mcbPerfilUsuarioUsuario.Text); // Perfil cliente
+                //nuevoUsuario.IdEstadoCuenta = Int32.Parse(this.mcbEstadoUsuario.Text); // cuenta activa
+
+                NegocioUsuario negocioUsuario = new NegocioUsuario();
+                negocioUsuario.actualizarUsuario(nuevoUsuario);
+                MessageBox.Show("Usuario Actualizado");
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
 }
