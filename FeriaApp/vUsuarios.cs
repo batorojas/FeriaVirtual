@@ -817,7 +817,7 @@ namespace FeriaApp
                     metroTabControl2.SelectedIndex = 0;
 
                     metroTextBoxModAdminId.Text = metroGridListaUsuarios.SelectedRows[0].Cells["ID_USUARIO"].Value.ToString();
-                    metroTextBoxModAdminUser.Text = metroGridListaUsuarios.SelectedRows[0].Cells["NOMBRE_USUARIO"].Value.ToString();
+                    metroTextBoxModAdminNombre.Text = metroGridListaUsuarios.SelectedRows[0].Cells["NOMBRE_USUARIO"].Value.ToString();
                     metroTextBoxModAdminContrasena.Text = metroGridListaUsuarios.SelectedRows[0].Cells["PASSWORD"].Value.ToString();
                     
                     int idPerfil = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_PERFIL"].Value.ToString());
@@ -858,5 +858,27 @@ namespace FeriaApp
                     break;
             }
         }
-    }
+
+        private void metroButtonActualizar_Click(object sender, EventArgs e)
+        {
+            // FIX THIS
+            try
+            {
+                Usuario nuevoUsuario = new Usuario();
+                nuevoUsuario.IdUser = Int32.Parse(this.metroTextBoxModAdminId.Text);
+                nuevoUsuario.UserName = this.metroTextBoxModAdminNombre.Text;
+                nuevoUsuario.Password = this.metroTextBoxModAdminContrasena.Text;
+                //nuevoUsuario.FechaCreacion = DateTime.Parse(this.txtFechaCreacionUsuario.Text);
+                //nuevoUsuario.IdPerfil = Int32.Parse(this.mcbPerfilUsuarioUsuario.Text); // Perfil cliente
+                //nuevoUsuario.IdEstadoCuenta = Int32.Parse(this.mcbEstadoUsuario.Text); // cuenta activa
+
+                NegocioUsuario negocioUsuario = new NegocioUsuario();
+                negocioUsuario.actualizarUsuario(nuevoUsuario);
+                MessageBox.Show("Usuario Actualizado");
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
 }
