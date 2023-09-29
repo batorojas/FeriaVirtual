@@ -861,23 +861,72 @@ namespace FeriaApp
 
         private void metroButtonActualizar_Click(object sender, EventArgs e)
         {
-            // FIX THIS
-            try
-            {
-                Usuario nuevoUsuario = new Usuario();
-                nuevoUsuario.IdUser = Int32.Parse(this.metroTextBoxModAdminId.Text);
-                nuevoUsuario.UserName = this.metroTextBoxModAdminNombre.Text;
-                nuevoUsuario.Password = this.metroTextBoxModAdminContrasena.Text;
-                //nuevoUsuario.FechaCreacion = DateTime.Parse(this.txtFechaCreacionUsuario.Text);
-                //nuevoUsuario.IdPerfil = Int32.Parse(this.mcbPerfilUsuarioUsuario.Text); // Perfil cliente
-                //nuevoUsuario.IdEstadoCuenta = Int32.Parse(this.mcbEstadoUsuario.Text); // cuenta activa
 
-                NegocioUsuario negocioUsuario = new NegocioUsuario();
-                negocioUsuario.actualizarUsuario(nuevoUsuario);
-                MessageBox.Show("Usuario Actualizado");
-            }
-            catch (Exception ex)
+            int opcion = metroTabControl2.SelectedIndex; // Cambia el valor de 'opcion' según necesidades
+
+
+            switch (opcion)
             {
+                case 0:
+                    // Opción Administrador
+                    //actualizarUsuario();
+
+                    try
+                    {
+                        Usuario nuevoUsuario = new Usuario();
+                        nuevoUsuario.IdUser = Int32.Parse(this.metroTextBoxModAdminId.Text);
+                        nuevoUsuario.UserName = this.metroTextBoxModAdminNombre.Text;
+                        nuevoUsuario.Password = this.metroTextBoxModAdminContrasena.Text;
+
+                        int valorSeleccionado = retornarValorComboboxSeleccionado(metroComboBoxModAdminTipoCuenta);
+                        nuevoUsuario.IdPerfil = valorSeleccionado;
+
+                        if (metroRadioButtonModAdminEstadoCuentaActiva.Checked)
+                        {
+                            nuevoUsuario.IdEstadoCuenta = 1;
+                        }
+                        else
+                        {
+                            nuevoUsuario.IdEstadoCuenta = 2;
+                        }
+
+                        NegocioUsuario negocioUsuario = new NegocioUsuario();
+                        negocioUsuario.actualizarUsuario(nuevoUsuario);
+                        MessageBox.Show("Usuario Actualizado");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR AL INTENTAR ACTUALIZAR USUARIO " + ex);
+                    }
+
+                    break;
+
+                case 1:
+                    // Opción Cliente
+                    //actualizarCliente();
+
+                    //TO DO: corregir funcion/procedimiento almacenado actualizar Cliente
+
+                    MessageBox.Show("opcion cliente");
+                    break;
+
+                case 2:
+                    // Opción Transportista
+                    //actualizarTransportista();
+
+                    // TO DO: corregir funcion/procedimiento almacenado actualizar transporte
+
+                    MessageBox.Show("opcion Transportista");
+                    break;
+
+                case 3:
+                    // Opción Productor
+                    //actualizarProductor();
+
+                    // TO DO: corregir funcion/procedimiento almacenado actualizar Productor
+
+                    MessageBox.Show("opcion Productor");
+                    break;
 
             }
         }
