@@ -925,10 +925,15 @@ namespace FeriaApp
 
                     // TO DO: corregir funcion/procedimiento almacenado actualizar Productor
 
+
                     MessageBox.Show("opcion Productor");
                     break;
 
+                default:
+                    MessageBox.Show("No se a seleccionado ninguna opcion");
+                    break;
             }
+
         }
     }
 }
