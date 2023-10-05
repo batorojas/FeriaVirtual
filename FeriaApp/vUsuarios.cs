@@ -117,21 +117,47 @@ namespace FeriaApp
         {
             // PESTAÑA MODIFICAR USUARIO
 
-            //// llenar el combobox con las Comunas
-            //metroComboBoxComuna.DataSource = comunas;
-            //metroComboBoxComuna.DisplayMember = "NombreComuna"; // Muestra el nombre de la comuna
-            //metroComboBoxComuna.ValueMember = "IdComuna"; // Utiliza el ID de la comuna como valor seleccionado
-            //metroComboBoxComuna.DropDownHeight = 200; // Establece la altura máxima en píxeles
-
-            //// llenar combobox Tipo Cliente
-            //metroComboBoxTipoCliente.DataSource = tiposClientes;
-            //metroComboBoxTipoCliente.DisplayMember = "DescTipoCliente"; // Muestra el nombre de la comuna
-            //metroComboBoxTipoCliente.ValueMember = "IdTipoCliente"; // Utiliza el ID de la comuna como valor seleccionado
-
+            // ADMIN
             // llenar combobox Admin Tipo Cuenta
             metroComboBoxModAdminTipoCuenta.DataSource = perfiles;
             metroComboBoxModAdminTipoCuenta.DisplayMember = "DescPerfil"; // Muestra el nombre de la comuna
             metroComboBoxModAdminTipoCuenta.ValueMember = "IdPerfil"; // Utiliza el ID de la comuna como valor seleccionado
+
+            // llenar combobox Cliente Tipo Cuenta
+            metroComboBoxModClienteTipoCuenta.DataSource = perfiles;
+            metroComboBoxModClienteTipoCuenta.DisplayMember = "DescPerfil"; // Muestra el nombre de la comuna
+            metroComboBoxModClienteTipoCuenta.ValueMember = "IdPerfil"; // Utiliza el ID de la comuna como valor seleccionado
+
+            // CLIENTE
+            // llenar el combobox con las Comunas
+            metroComboBoxModClienteComuna.DataSource = comunas;
+            metroComboBoxModClienteComuna.DisplayMember = "NombreComuna"; // Muestra el nombre de la comuna
+            metroComboBoxModClienteComuna.ValueMember = "IdComuna"; // Utiliza el ID de la comuna como valor seleccionado
+            metroComboBoxModClienteComuna.DropDownHeight = 200; // Establece la altura máxima en píxeles
+
+            // llenar combobox Tipo Cliente
+            metroComboBoxModClienteTipoCliente.DataSource = tiposClientes;
+            metroComboBoxModClienteTipoCliente.DisplayMember = "DescTipoCliente"; // Muestra el nombre de la comuna
+            metroComboBoxModClienteTipoCliente.ValueMember = "IdTipoCliente"; // Utiliza el ID de la comuna como valor seleccionado
+
+            // TRANSPORTISTA
+            // llenar combobox Transportista Tipo Cuenta
+            metroComboBoxModTransportistaTipoCuenta.DataSource = perfiles;
+            metroComboBoxModTransportistaTipoCuenta.DisplayMember = "DescPerfil"; // Muestra el nombre de la comuna
+            metroComboBoxModTransportistaTipoCuenta.ValueMember = "IdPerfil"; // Utiliza el ID de la comuna como valor seleccionado
+
+            // PRODUCTOR
+            // llenar combobox Productor Tipo Cuenta
+            metroComboBoxModProductorTipoCuenta.DataSource = perfiles;
+            metroComboBoxModProductorTipoCuenta.DisplayMember = "DescPerfil"; // Muestra el nombre de la comuna
+            metroComboBoxModProductorTipoCuenta.ValueMember = "IdPerfil"; // Utiliza el ID de la comuna como valor seleccionado
+
+            // llenar el combobox con las Comunas
+            metroComboBoxModProductorComuna.DataSource = comunas;
+            metroComboBoxModProductorComuna.DisplayMember = "NombreComuna"; // Muestra el nombre de la comuna
+            metroComboBoxModProductorComuna.ValueMember = "IdComuna"; // Utiliza el ID de la comuna como valor seleccionado
+            metroComboBoxModProductorComuna.DropDownHeight = 200; // Establece la altura máxima en píxeles
+
 
             //metroComboBoxTipoCuenta.SelectedIndex = 1; // Seleciona automaticamente el tipo de cuenta a tipo Cliente
         }
@@ -816,21 +842,32 @@ namespace FeriaApp
                     metroTabControl1.SelectedIndex = 2;
                     metroTabControl2.SelectedIndex = 0;
 
-                    metroTextBoxModAdminId.Text = metroGridListaUsuarios.SelectedRows[0].Cells["ID_USUARIO"].Value.ToString();
-                    metroTextBoxModAdminNombre.Text = metroGridListaUsuarios.SelectedRows[0].Cells["NOMBRE_USUARIO"].Value.ToString();
-                    metroTextBoxModAdminContrasena.Text = metroGridListaUsuarios.SelectedRows[0].Cells["PASSWORD"].Value.ToString();
-
-                    int idPerfil = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_PERFIL"].Value.ToString());
-                    metroComboBoxModAdminTipoCuenta.SelectedValue = idPerfil;
-
-                    int estadoCuenta = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_ESTD_CTA"].Value.ToString());
-                    if (estadoCuenta == 1)
+                    try
                     {
-                        metroRadioButtonModAdminEstadoCuentaActiva.Checked = true;
+                        NegocioUsuario negocioUsuario = new NegocioUsuario();
+
+                        int idUsuario = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_USUARIO"].Value.ToString());
+                        Usuario user = negocioUsuario.buscarPorId(idUsuario);
+
+                        metroTextBoxModAdminId.Text = user.IdUser.ToString();
+                        metroTextBoxModAdminNombre.Text = user.UserName.ToString();
+                        metroTextBoxModAdminContrasena.Text = user.Password.ToString();
+
+                        metroComboBoxModAdminTipoCuenta.SelectedValue = user.IdPerfil;
+
+                        int estadoCuenta = user.IdEstadoCuenta;
+                        if (estadoCuenta == 1)
+                        {
+                            metroRadioButtonModAdminEstadoCuentaActiva.Checked = true;
+                        }
+                        else
+                        {
+                            metroRadioButtonModAdminEstadoCuentaInactiva.Checked = true;
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        metroRadioButtonModAdminEstadoCuentaInactiva.Checked = true;
+                        MessageBox.Show("ERROR AL INTENTAR MODIFICAR USUARIO ADMIN " + ex);
                     }
 
                     break;
@@ -839,18 +876,126 @@ namespace FeriaApp
                     // Opción Cliente
                     metroTabControl1.SelectedIndex = 2;
                     metroTabControl2.SelectedIndex = 1;
+
+                    try
+                    {
+                        NegocioUsuario negocioUsuario = new NegocioUsuario();
+                        NegocioCliente negocioCliente = new NegocioCliente();
+
+                        int idUsuario = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_USUARIO"].Value.ToString());
+                        Usuario user = negocioUsuario.buscarPorId(idUsuario);
+                        Cliente cliente = negocioCliente.buscarPorIdUsr(user.IdUser);
+
+                        metroTextBoxModClienteId.Text = user.IdUser.ToString();
+                        metroTextBoxModClienteNombre.Text = user.UserName.ToString();
+                        metroTextBoxModClienteContrasena.Text = user.Password.ToString();
+                        metroComboBoxModClienteTipoCuenta.SelectedValue = user.IdPerfil;
+
+                        metroTextBoxModClienteRut.Text = cliente.RutCliente.ToString();
+                        metroTextBoxModClienteRutDV.Text = cliente.DvRutCliente.ToString();
+                        metroTextBoxModClienteRazonSocial.Text = cliente.RazonSocialCliente.ToString();
+                        metroTextBoxModClienteGiro.Text = cliente.GiroCliente.ToString();
+                        metroComboBoxModClienteComuna.SelectedValue = cliente.IdComunaCliente;
+                        metroTextBoxModClienteDireccion.Text = cliente.DireccionCliente.ToString();
+                        metroComboBoxModClienteTipoCliente.SelectedValue = cliente.IdTipoCliente;
+
+                        int estadoCuenta = user.IdEstadoCuenta;
+                        if (estadoCuenta == 1)
+                        {
+                            metroRadioButtonModClienteEstadoCuentaActiva.Checked = true;
+                        }
+                        else
+                        {
+                            metroRadioButtonModClienteEstadoCuentaInactiva.Checked = true;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR AL INTENTAR MODIFICAR USUARIO CLIENTE " + ex);
+                    }
+
                     break;
 
                 case 3:
                     // Opción Transportista
                     metroTabControl1.SelectedIndex = 2;
                     metroTabControl2.SelectedIndex = 2;
+
+                    try
+                    {
+                        NegocioUsuario negocioUsuario = new NegocioUsuario();
+                        NegocioEmpresaTransporte negocioEmpresaTransporte = new NegocioEmpresaTransporte();
+
+                        int idUsuario = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_USUARIO"].Value.ToString());
+                        Usuario user = negocioUsuario.buscarPorId(idUsuario);
+                        EmpresaTransporte empresaTransporte = negocioEmpresaTransporte.buscarPorIdUsr(user.IdUser);
+
+                        metroTextBoxModTransportistaIdTransportista.Text = empresaTransporte.IdEmpresaTransporte.ToString();
+                        metroTextBoxModTransportistaId.Text = user.IdUser.ToString();
+                        metroTextBoxModTransportistaNombre.Text = user.UserName.ToString();
+                        metroTextBoxModTransportistaContrasena.Text = user.Password.ToString();
+                        metroComboBoxModTransportistaTipoCuenta.SelectedValue = user.IdPerfil;
+
+                        metroTextBoxModTransportistaEmpresa.Text = empresaTransporte.NombreEmpresaTransporte.ToString();
+
+                        int estadoCuenta = user.IdEstadoCuenta;
+                        if (estadoCuenta == 1)
+                        {
+                            metroRadioButtonModTransportistaEstadoCuentaActiva.Checked = true;
+                        }
+                        else
+                        {
+                            metroRadioButtonModTransportistaEstadoCuentaInactiva.Checked = true;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR AL INTENTAR MODIFICAR USUARIO TRANSPORTISTA " + ex);
+                    }
+
                     break;
 
                 case 4:
                     // Opción Productor
                     metroTabControl1.SelectedIndex = 2;
                     metroTabControl2.SelectedIndex = 3;
+
+                    try
+                    {
+                        NegocioUsuario negocioUsuario = new NegocioUsuario();
+                        NegocioProductor negocioProductor = new NegocioProductor();
+
+                        int idUsuario = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_USUARIO"].Value.ToString());
+                        Usuario user = negocioUsuario.buscarPorId(idUsuario);
+                        Productor productor = negocioProductor.buscarPorIdUsr(user.IdUser);
+
+                        metroTextBoxModProductorId.Text = user.IdUser.ToString();
+                        metroTextBoxModProductorNombre.Text = user.UserName.ToString();
+                        metroTextBoxModProductorContrasena.Text = user.Password.ToString();
+                        metroComboBoxModProductorTipoCuenta.SelectedValue = user.IdPerfil;
+
+                        metroTextBoxModProductorRut.Text = productor.RutProductor.ToString();
+                        metroTextBoxModProductorRutDV.Text = productor.DvRutProductor.ToString();
+                        metroTextBoxModProductorRazonSocial.Text = productor.RazonSocialProductor.ToString();
+                        metroTextBoxModProductorGiro.Text = productor.GiroProductor.ToString();
+                        metroComboBoxModProductorComuna.SelectedValue = productor.IdComunaProductor;
+                        metroTextBoxModProductorDireccion.Text = productor.DireccionProductor.ToString();
+
+                        int estadoCuenta = user.IdEstadoCuenta;
+                        if (estadoCuenta == 1)
+                        {
+                            metroRadioButtonModProductorEstadoCuentaActiva.Checked = true;
+                        }
+                        else
+                        {
+                            metroRadioButtonModProductorEstadoCuentaInactiva.Checked = true;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR AL INTENTAR MODIFICAR USUARIO PRODUCTOR " + ex);
+                    }
+
                     break;
 
                 default:
@@ -873,25 +1018,26 @@ namespace FeriaApp
 
                     try
                     {
-                        Usuario nuevoUsuario = new Usuario();
-                        nuevoUsuario.IdUser = Int32.Parse(this.metroTextBoxModAdminId.Text);
-                        nuevoUsuario.UserName = this.metroTextBoxModAdminNombre.Text;
-                        nuevoUsuario.Password = this.metroTextBoxModAdminContrasena.Text;
+                        Usuario nuevoUsuarioAdmin = new Usuario();
+
+                        nuevoUsuarioAdmin.IdUser = Int32.Parse(this.metroTextBoxModAdminId.Text);
+                        nuevoUsuarioAdmin.UserName = this.metroTextBoxModAdminNombre.Text;
+                        nuevoUsuarioAdmin.Password = this.metroTextBoxModAdminContrasena.Text;
 
                         int valorSeleccionado = retornarValorComboboxSeleccionado(metroComboBoxModAdminTipoCuenta);
-                        nuevoUsuario.IdPerfil = valorSeleccionado;
+                        nuevoUsuarioAdmin.IdPerfil = valorSeleccionado;
 
                         if (metroRadioButtonModAdminEstadoCuentaActiva.Checked)
                         {
-                            nuevoUsuario.IdEstadoCuenta = 1;
+                            nuevoUsuarioAdmin.IdEstadoCuenta = 1;
                         }
                         else
                         {
-                            nuevoUsuario.IdEstadoCuenta = 2;
+                            nuevoUsuarioAdmin.IdEstadoCuenta = 2;
                         }
 
                         NegocioUsuario negocioUsuario = new NegocioUsuario();
-                        negocioUsuario.actualizarUsuario(nuevoUsuario);
+                        negocioUsuario.actualizarUsuario(nuevoUsuarioAdmin);
                         MessageBox.Show("Usuario Actualizado");
                     }
                     catch (Exception ex)
@@ -904,19 +1050,94 @@ namespace FeriaApp
                 case 1:
                     // Opción Cliente
                     //actualizarCliente();
+                    
+                    try
+                    {
+                        Usuario nuevoUsuarioCliente = new Usuario();
+                        Cliente nuevoCliente = new Cliente();
 
-                    //TO DO: corregir funcion/procedimiento almacenado actualizar Cliente
+                        nuevoUsuarioCliente.IdUser = Int32.Parse(this.metroTextBoxModClienteId.Text);
+                        nuevoUsuarioCliente.UserName = this.metroTextBoxModClienteNombre.Text;
+                        nuevoUsuarioCliente.Password = this.metroTextBoxModClienteContrasena.Text;
 
-                    MessageBox.Show("opcion cliente");
+                        nuevoCliente.RutCliente = Int32.Parse(this.metroTextBoxModClienteRut.Text);
+                        nuevoCliente.DvRutCliente = this.metroTextBoxModClienteRutDV.Text;
+                        nuevoCliente.RazonSocialCliente = this.metroTextBoxModClienteRazonSocial.Text;
+                        nuevoCliente.GiroCliente = this.metroTextBoxModClienteGiro.Text;
+                        nuevoCliente.IdComunaCliente = retornarValorComboboxSeleccionado(metroComboBoxModClienteComuna);
+                        nuevoCliente.DireccionCliente = this.metroTextBoxModClienteDireccion.Text;
+                        nuevoCliente.IdTipoCliente = retornarValorComboboxSeleccionado(metroComboBoxModClienteTipoCliente);
+                        nuevoCliente.IdUsuarioCliente = Int32.Parse(this.metroTextBoxModClienteId.Text);
+
+                        int valorSeleccionado = retornarValorComboboxSeleccionado(metroComboBoxModClienteTipoCuenta);
+                        nuevoUsuarioCliente.IdPerfil = valorSeleccionado;
+
+                        if (metroRadioButtonModClienteEstadoCuentaActiva.Checked)
+                        {
+                            nuevoUsuarioCliente.IdEstadoCuenta = 1;
+                        }
+                        else
+                        {
+                            nuevoUsuarioCliente.IdEstadoCuenta = 2;
+                        }
+
+                        NegocioUsuario negocioUsuario = new NegocioUsuario();
+                        negocioUsuario.actualizarUsuario(nuevoUsuarioCliente);
+
+                        NegocioCliente negocioCliente = new NegocioCliente();
+                        negocioCliente.actualizarCliente(nuevoCliente);
+
+                        MessageBox.Show("Usuario Actualizado");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR AL INTENTAR ACTUALIZAR USUARIO " + ex);
+                    }
+
                     break;
 
                 case 2:
                     // Opción Transportista
                     //actualizarTransportista();
 
-                    // TO DO: corregir funcion/procedimiento almacenado actualizar transporte
+                    try
+                    {
+                        Usuario nuevoUsuarioTransportista = new Usuario();
+                        EmpresaTransporte nuevoTransportista = new EmpresaTransporte();
 
-                    MessageBox.Show("opcion Transportista");
+                        nuevoUsuarioTransportista.IdUser = Int32.Parse(this.metroTextBoxModTransportistaId.Text);
+                        nuevoUsuarioTransportista.UserName = this.metroTextBoxModTransportistaNombre.Text;
+                        nuevoUsuarioTransportista.Password = this.metroTextBoxModTransportistaContrasena.Text;
+
+                        nuevoTransportista.IdEmpresaTransporte = Int32.Parse(this.metroTextBoxModTransportistaIdTransportista.Text);
+                        nuevoTransportista.NombreEmpresaTransporte = this.metroTextBoxModTransportistaEmpresa.Text;
+                        nuevoTransportista.IdUsuarioEmpresaTransporte = Int32.Parse(this.metroTextBoxModTransportistaId.Text);
+
+                        int valorSeleccionado = retornarValorComboboxSeleccionado(metroComboBoxModTransportistaTipoCuenta);
+                        nuevoUsuarioTransportista.IdPerfil = valorSeleccionado;
+
+                        if (metroRadioButtonModTransportistaEstadoCuentaActiva.Checked)
+                        {
+                            nuevoUsuarioTransportista.IdEstadoCuenta = 1;
+                        }
+                        else
+                        {
+                            nuevoUsuarioTransportista.IdEstadoCuenta = 2;
+                        }
+
+                        NegocioUsuario negocioUsuario = new NegocioUsuario();
+                        negocioUsuario.actualizarUsuario(nuevoUsuarioTransportista);
+
+                        NegocioEmpresaTransporte negocioTransporte = new NegocioEmpresaTransporte();
+                        negocioTransporte.actualizarEmpresaTransporte(nuevoTransportista);
+
+                        MessageBox.Show("Usuario Actualizado");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR AL INTENTAR ACTUALIZAR TRANSPORTISTA " + ex);
+                    }
+
                     break;
 
                 case 3:
@@ -925,8 +1146,48 @@ namespace FeriaApp
 
                     // TO DO: corregir funcion/procedimiento almacenado actualizar Productor
 
+                    try
+                    {
+                        Usuario nuevoUsuarioCliente = new Usuario();
+                        Productor nuevoProductor = new Productor();
 
-                    MessageBox.Show("opcion Productor");
+                        nuevoUsuarioCliente.IdUser = Int32.Parse(this.metroTextBoxModProductorId.Text);
+                        nuevoUsuarioCliente.UserName = this.metroTextBoxModProductorNombre.Text;
+                        nuevoUsuarioCliente.Password = this.metroTextBoxModProductorContrasena.Text;
+
+                        nuevoProductor.RutProductor = Int32.Parse(this.metroTextBoxModProductorRut.Text);
+                        nuevoProductor.DvRutProductor = this.metroTextBoxModProductorRutDV.Text;
+                        nuevoProductor.RazonSocialProductor = this.metroTextBoxModProductorRazonSocial.Text;
+                        nuevoProductor.GiroProductor = this.metroTextBoxModProductorGiro.Text;
+                        nuevoProductor.IdComunaProductor = retornarValorComboboxSeleccionado(metroComboBoxModProductorComuna);
+                        nuevoProductor.DireccionProductor = this.metroTextBoxModProductorDireccion.Text;
+                        nuevoProductor.IdUsuarioProductor = Int32.Parse(this.metroTextBoxModProductorId.Text);
+
+                        int valorSeleccionado = retornarValorComboboxSeleccionado(metroComboBoxModProductorTipoCuenta);
+                        nuevoUsuarioCliente.IdPerfil = valorSeleccionado;
+
+                        if (metroRadioButtonModProductorEstadoCuentaActiva.Checked)
+                        {
+                            nuevoUsuarioCliente.IdEstadoCuenta = 1;
+                        }
+                        else
+                        {
+                            nuevoUsuarioCliente.IdEstadoCuenta = 2;
+                        }
+
+                        NegocioUsuario negocioUsuario = new NegocioUsuario();
+                        negocioUsuario.actualizarUsuario(nuevoUsuarioCliente);
+
+                        NegocioProductor negocioProductor = new NegocioProductor();
+                        negocioProductor.actualizarProductor(nuevoProductor);
+
+                        MessageBox.Show("Usuario Actualizado");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("ERROR AL INTENTAR ACTUALIZAR USUARIO " + ex);
+                    }
+
                     break;
 
                 default:

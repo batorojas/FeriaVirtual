@@ -179,6 +179,43 @@ namespace Negocios
 
             return usuario;
         }
+
+        public Usuario buscarPorId(int idUsuario)
+        {
+            Usuario usuario = new Usuario();
+            this.configurarConexion();
+            this.con.SqlString = "SELECT * FROM " + this.con.TableName + " "
+                                   + "WHERE ID_USUARIO = " + idUsuario;
+            this.con.EsSelect = true;
+            this.con.conectar();
+
+            DataTable dt = new DataTable();
+            dt = this.con.DbDataSet.Tables[this.con.TableName];
+
+            try
+            {
+                usuario.IdUser = (int)dt.Rows[0]["ID_USUARIO"];
+                usuario.UserName = (String)dt.Rows[0]["NOMBRE_USUARIO"];
+                usuario.Password = (String)dt.Rows[0]["PASSWORD"];
+                usuario.FechaCreacion = (DateTime)dt.Rows[0]["FECHA_CREACION"];
+                usuario.IdPerfil = (short)dt.Rows[0]["ID_PERFIL"];
+                usuario.IdEstadoCuenta = (short)dt.Rows[0]["ID_ESTD_CTA"];
+            }
+            catch (Exception ex)
+            {
+                // Tratar la excepción según lógica
+            }
+            finally
+            {
+                if (con != null)
+                {
+                    con.cerrarConexion(); // Llamada al método personalizado CerrarConexion
+                }
+            }
+
+            return usuario;
+        }
+
         public Usuario buscarUsuario(int idUsuario)
         {
             Usuario usuario = new Usuario();
