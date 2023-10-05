@@ -29,6 +29,8 @@ namespace FeriaApp
             //tabControlMenu1.SelectedTab = null;
             tabControlMenu1.SelectedTab = tabPageInicio;
             vInicio1.NombreSesionStartPage = char.ToUpper(ValorRecibidoSesionUsername[0]) + ValorRecibidoSesionUsername.Substring(1).ToLower(); // Transforma a mayusculas la primera letra de la String
+            vUsuarios1.LoginUsername = ValorRecibidoSesionUsername;
+
         }
 
         private void tabControlMenu1_SelectedIndexChanged(object sender, EventArgs e)
