@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.IO;
 using System.Windows.Forms;
 using Negocios;
 
@@ -67,5 +68,12 @@ namespace FeriaApp
             }
         }
 
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            DataSet listaPagosPendientes = negocioCabeceraProcesoVenta.listarPagosPendientes();
+
+            string rutaCompleta = Path.Combine("./reportes", "mi_archivo.csv");
+            negocioCabeceraProcesoVenta.ExportarDatosCSV(listaPagosPendientes, rutaCompleta);
+        }
     }
 }

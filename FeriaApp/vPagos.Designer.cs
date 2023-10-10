@@ -44,6 +44,7 @@ namespace FeriaApp
             this.dgvListaPagosPendientes = new MetroFramework.Controls.MetroGrid();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.dgvListaPagosRealizados = new MetroFramework.Controls.MetroGrid();
+            this.btnExportar = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaPagosPendientes)).BeginInit();
@@ -66,6 +67,7 @@ namespace FeriaApp
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.btnExportar);
             this.metroTabPage1.Controls.Add(this.metroButtonActualizarPago);
             this.metroTabPage1.Controls.Add(this.metroScrollBar1);
             this.metroTabPage1.Controls.Add(this.dgvListaPagosPendientes);
@@ -212,6 +214,16 @@ namespace FeriaApp
             this.dgvListaPagosRealizados.Size = new System.Drawing.Size(622, 250);
             this.dgvListaPagosRealizados.TabIndex = 2;
             // 
+            // btnExportar
+            // 
+            this.btnExportar.Location = new System.Drawing.Point(33, 294);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(75, 23);
+            this.btnExportar.TabIndex = 5;
+            this.btnExportar.Text = "Exportar";
+            this.btnExportar.UseSelectable = true;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
             // vPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,5 +257,7 @@ namespace FeriaApp
         private MetroFramework.Controls.MetroTabControl metroTabControl1;
 
         #endregion
+
+        private MetroFramework.Controls.MetroButton btnExportar;
     }
 }
