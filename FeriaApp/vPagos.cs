@@ -34,5 +34,14 @@ namespace FeriaApp
             cargaPagosRealizados();
             
         }
+
+        private void metroButtonActualizarPago_Click(object sender, EventArgs e)
+        {
+            int indiceFila = this.dgvListaPagosPendientes.SelectedCells[0].RowIndex;
+            DataGridViewRow filaSeleccionada = this.dgvListaPagosPendientes.Rows[indiceFila];
+            int idProcesoVenta = int.Parse(filaSeleccionada.Cells["ID_CABECERA_PV"].Value.ToString());
+            negocioCabeceraProcesoVenta.actualizarEstadoProcesoVenta(idProcesoVenta, 2); // Marcar como pagada
+            MessageBox.Show("Se ha registrado el proceso de venta como PAGADO.");
+        }
     }
 }
