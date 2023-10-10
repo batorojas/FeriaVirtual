@@ -30,9 +30,9 @@ namespace FeriaApp
 
         private void vPagos_Load(object sender, EventArgs e)
         {
-            cargaPagosPendientes();
-            cargaPagosRealizados();
-            
+            //cargaPagosPendientes();
+            //cargaPagosRealizados();
+
         }
 
         private void metroButtonActualizarPago_Click(object sender, EventArgs e)
@@ -43,5 +43,29 @@ namespace FeriaApp
             negocioCabeceraProcesoVenta.actualizarEstadoProcesoVenta(idProcesoVenta, 2); // Marcar como pagada
             MessageBox.Show("Se ha registrado el proceso de venta como PAGADO.");
         }
+
+        private void metroTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Obtén el índice de la pestaña actualmente seleccionada
+            int tabIndex = metroTabControl1.SelectedIndex;
+
+            // Ejecuta funciones basadas en la pestaña seleccionada
+            switch (tabIndex)
+            {
+                case 0:
+                    cargaPagosPendientes();
+                    break;
+
+                case 1:
+                    cargaPagosRealizados();
+                    break;
+
+                default:
+                    // Realizar acción predeterminada si no coincide con ninguna opción
+                    MessageBox.Show("Opción no reconocida");
+                    break;
+            }
+        }
+
     }
 }

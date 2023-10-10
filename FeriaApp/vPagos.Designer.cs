@@ -56,12 +56,13 @@ namespace FeriaApp
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Location = new System.Drawing.Point(10, 28);
-            this.metroTabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroTabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(647, 417);
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
+            this.metroTabControl1.SelectedIndexChanged += new System.EventHandler(this.metroTabControl1_SelectedIndexChanged);
             // 
             // metroTabPage1
             // 
@@ -72,7 +73,7 @@ namespace FeriaApp
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.HorizontalScrollbarSize = 8;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroTabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.metroTabPage1.Name = "metroTabPage1";
             this.metroTabPage1.Size = new System.Drawing.Size(639, 375);
             this.metroTabPage1.TabIndex = 0;
@@ -84,7 +85,7 @@ namespace FeriaApp
             // metroButtonActualizarPago
             // 
             this.metroButtonActualizarPago.Location = new System.Drawing.Point(235, 309);
-            this.metroButtonActualizarPago.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroButtonActualizarPago.Margin = new System.Windows.Forms.Padding(2);
             this.metroButtonActualizarPago.Name = "metroButtonActualizarPago";
             this.metroButtonActualizarPago.Size = new System.Drawing.Size(171, 49);
             this.metroButtonActualizarPago.TabIndex = 4;
@@ -96,7 +97,7 @@ namespace FeriaApp
             // 
             this.metroScrollBar1.LargeChange = 10;
             this.metroScrollBar1.Location = new System.Drawing.Point(235, 177);
-            this.metroScrollBar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroScrollBar1.Margin = new System.Windows.Forms.Padding(2);
             this.metroScrollBar1.Maximum = 100;
             this.metroScrollBar1.Minimum = 0;
             this.metroScrollBar1.MouseWheelBarPartitions = 10;
@@ -134,7 +135,7 @@ namespace FeriaApp
             this.dgvListaPagosPendientes.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvListaPagosPendientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvListaPagosPendientes.Location = new System.Drawing.Point(2, 19);
-            this.dgvListaPagosPendientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvListaPagosPendientes.Margin = new System.Windows.Forms.Padding(2);
             this.dgvListaPagosPendientes.Name = "dgvListaPagosPendientes";
             this.dgvListaPagosPendientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -157,7 +158,7 @@ namespace FeriaApp
             this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.HorizontalScrollbarSize = 8;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.metroTabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.metroTabPage2.Name = "metroTabPage2";
             this.metroTabPage2.Size = new System.Drawing.Size(639, 375);
             this.metroTabPage2.TabIndex = 1;
@@ -194,7 +195,7 @@ namespace FeriaApp
             this.dgvListaPagosRealizados.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvListaPagosRealizados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvListaPagosRealizados.Location = new System.Drawing.Point(13, 29);
-            this.dgvListaPagosRealizados.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvListaPagosRealizados.Margin = new System.Windows.Forms.Padding(2);
             this.dgvListaPagosRealizados.Name = "dgvListaPagosRealizados";
             this.dgvListaPagosRealizados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -216,7 +217,7 @@ namespace FeriaApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.metroTabControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "vPagos";
             this.Size = new System.Drawing.Size(647, 417);
             this.Load += new System.EventHandler(this.vPagos_Load);
