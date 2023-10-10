@@ -16,7 +16,7 @@ namespace FeriaApp
 {
     public partial class vUsuarios : UserControl
     {
-        private string logedUser;
+        private string loggedUser;
 
         NegocioComuna negocioComuna = new NegocioComuna();
         NegocioTipoCliente negocioTipoCliente = new NegocioTipoCliente();
@@ -57,8 +57,8 @@ namespace FeriaApp
 
         public string LoginUsername
         {
-            get { return logedUser; }
-            set { logedUser = value; }
+            get => loggedUser;
+            set => loggedUser = value;
         }
 
         private void metroTabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -784,63 +784,59 @@ namespace FeriaApp
                     // Opción Administrador
 
                     
-                    if (nombreUsuario == logedUser)
+                    if (nombreUsuario == loggedUser)
                     {
                         MessageBox.Show("No se puede eliminar el usuario con el que se ha iniciado sesión");
                         return;
                     }
-                    else
-                    {
-                        eliminarUsuario();
-                    }
+                    eliminarUsuario();
+                    
+                    tabClientes();
+
                     break;
 
                 case 2:
                     // Opción Cliente
 
-                    if (nombreUsuario == logedUser)
+                    if (nombreUsuario == loggedUser)
                     {
                         MessageBox.Show("No se puede eliminar el usuario con el que se ha iniciado sesión");
                         return;
                     }
-                    else
-                    {
-                        eliminarCliente();
-                        eliminarUsuario();
-                    }
+                    eliminarCliente();
+                    eliminarUsuario();
+
+                    tabClientes();
 
                     break;
 
                 case 3:
                     // Opción Transportista
 
-                    if (nombreUsuario == logedUser)
+                    if (nombreUsuario == loggedUser)
                     {
                         MessageBox.Show("No se puede eliminar el usuario con el que se ha iniciado sesión");
                         return;
                     }
-                    else
-                    {
+                    eliminarTransportista();
+                    eliminarUsuario();
 
-                        eliminarTransportista();
-                        eliminarUsuario();
-                    }
+                    tabClientes();
 
                     break;
 
                 case 4:
                     // Opción Productor
 
-                    if (nombreUsuario == logedUser)
+                    if (nombreUsuario == loggedUser)
                     {
                         MessageBox.Show("No se puede eliminar el usuario con el que se ha iniciado sesión");
                         return;
                     }
-                    else
-                    {
-                        eliminarProductor();
-                        eliminarUsuario();
-                    }
+                    eliminarProductor();
+                    eliminarUsuario();
+
+                    tabClientes();
 
                     break;
 
