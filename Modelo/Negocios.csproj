@@ -134,6 +134,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NegocioCabeceraProcesoVenta.cs" />
     <Compile Include="NegocioCliente.cs" />
     <Compile Include="NegocioComuna.cs" />
     <Compile Include="NegocioContrato.cs" />

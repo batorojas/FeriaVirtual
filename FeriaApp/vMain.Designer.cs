@@ -42,6 +42,7 @@
             this.tabPageUsuarios = new System.Windows.Forms.TabPage();
             this.vUsuarios1 = new FeriaApp.vUsuarios();
             this.vPagos = new System.Windows.Forms.TabPage();
+            this.vPagos1 = new FeriaApp.vPagos();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.tabControlMenu1.SuspendLayout();
             this.tabPageInicio.SuspendLayout();
@@ -50,6 +51,7 @@
             this.tabPageContratos.SuspendLayout();
             this.tabPageTransportes.SuspendLayout();
             this.tabPageUsuarios.SuspendLayout();
+            this.vPagos.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlMenu1
@@ -188,6 +190,7 @@
             // vUsuarios1
             // 
             this.vUsuarios1.Location = new System.Drawing.Point(0, 0);
+            this.vUsuarios1.LoginUsername = null;
             this.vUsuarios1.Margin = new System.Windows.Forms.Padding(5);
             this.vUsuarios1.Name = "vUsuarios1";
             this.vUsuarios1.Size = new System.Drawing.Size(875, 543);
@@ -195,6 +198,7 @@
             // 
             // vPagos
             // 
+            this.vPagos.Controls.Add(this.vPagos1);
             this.vPagos.Location = new System.Drawing.Point(140, 4);
             this.vPagos.Name = "vPagos";
             this.vPagos.Padding = new System.Windows.Forms.Padding(3);
@@ -202,6 +206,13 @@
             this.vPagos.TabIndex = 6;
             this.vPagos.Text = "Pagos";
             this.vPagos.UseVisualStyleBackColor = true;
+            // 
+            // vPagos1
+            // 
+            this.vPagos1.Location = new System.Drawing.Point(0, 2);
+            this.vPagos1.Name = "vPagos1";
+            this.vPagos1.Size = new System.Drawing.Size(916, 547);
+            this.vPagos1.TabIndex = 0;
             // 
             // metroTabPage1
             // 
@@ -235,8 +246,11 @@
             this.tabPageContratos.ResumeLayout(false);
             this.tabPageTransportes.ResumeLayout(false);
             this.tabPageUsuarios.ResumeLayout(false);
+            this.vPagos.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private FeriaApp.vPagos vPagos1;
 
         private System.Windows.Forms.TabPage vPagos;
 
