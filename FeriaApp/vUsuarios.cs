@@ -1118,14 +1118,16 @@ namespace FeriaApp
                         int valorSeleccionado = retornarValorComboboxSeleccionado(metroComboBoxModClienteTipoCuenta);
                         nuevoUsuarioCliente.IdPerfil = valorSeleccionado;
 
-                        if (metroRadioButtonModClienteEstadoCuentaActiva.Checked)
-                        {
-                            nuevoUsuarioCliente.IdEstadoCuenta = 1;
-                        }
-                        else
-                        {
-                            nuevoUsuarioCliente.IdEstadoCuenta = 2;
-                        }
+                        //if (metroRadioButtonModClienteEstadoCuentaActiva.Checked)
+                        //{
+                        //    nuevoUsuarioCliente.IdEstadoCuenta = 1;
+                        //}
+                        //else
+                        //{
+                        //    nuevoUsuarioCliente.IdEstadoCuenta = 2;
+                        //}
+
+                        nuevoUsuarioCliente.IdEstadoCuenta = metroRadioButtonModClienteEstadoCuentaActiva.Checked ? 1 : 2;
 
                         NegocioUsuario negocioUsuario = new NegocioUsuario();
                         negocioUsuario.actualizarUsuario(nuevoUsuarioCliente);
@@ -1162,14 +1164,16 @@ namespace FeriaApp
                         int valorSeleccionado = retornarValorComboboxSeleccionado(metroComboBoxModTransportistaTipoCuenta);
                         nuevoUsuarioTransportista.IdPerfil = valorSeleccionado;
 
-                        if (metroRadioButtonModTransportistaEstadoCuentaActiva.Checked)
-                        {
-                            nuevoUsuarioTransportista.IdEstadoCuenta = 1;
-                        }
-                        else
-                        {
-                            nuevoUsuarioTransportista.IdEstadoCuenta = 2;
-                        }
+                        //if (metroRadioButtonModTransportistaEstadoCuentaActiva.Checked)
+                        //{
+                        //    nuevoUsuarioTransportista.IdEstadoCuenta = 1;
+                        //}
+                        //else
+                        //{
+                        //    nuevoUsuarioTransportista.IdEstadoCuenta = 2;
+                        //}
+
+                        nuevoUsuarioTransportista.IdEstadoCuenta = metroRadioButtonModTransportistaEstadoCuentaActiva.Checked ? 1 : 2;
 
                         NegocioUsuario negocioUsuario = new NegocioUsuario();
                         negocioUsuario.actualizarUsuario(nuevoUsuarioTransportista);
@@ -1212,14 +1216,16 @@ namespace FeriaApp
                         int valorSeleccionado = retornarValorComboboxSeleccionado(metroComboBoxModProductorTipoCuenta);
                         nuevoUsuarioCliente.IdPerfil = valorSeleccionado;
 
-                        if (metroRadioButtonModProductorEstadoCuentaActiva.Checked)
-                        {
-                            nuevoUsuarioCliente.IdEstadoCuenta = 1;
-                        }
-                        else
-                        {
-                            nuevoUsuarioCliente.IdEstadoCuenta = 2;
-                        }
+                        //if (metroRadioButtonModProductorEstadoCuentaActiva.Checked)
+                        //{
+                        //    nuevoUsuarioCliente.IdEstadoCuenta = 1;
+                        //}
+                        //else
+                        //{
+                        //    nuevoUsuarioCliente.IdEstadoCuenta = 2;
+                        //}
+
+                        nuevoUsuarioCliente.IdEstadoCuenta = metroRadioButtonModProductorEstadoCuentaActiva.Checked ? 1 : 2;
 
                         NegocioUsuario negocioUsuario = new NegocioUsuario();
                         negocioUsuario.actualizarUsuario(nuevoUsuarioCliente);
