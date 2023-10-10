@@ -122,7 +122,7 @@ namespace Negocios
             return dataSet;
         }
 
-        public void ExportDataSetToPdf(DataSet dataSet, string pdfFileName)
+        public void ExportDataSetToPdf(DataSet dataSet, string pdfFileName, string title)
         {
             string folderPath = "reportes";
 
@@ -138,6 +138,11 @@ namespace Negocios
             Document doc = new Document();
             PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(pdfFilePath, FileMode.Create));
             doc.Open();
+            
+            Paragraph titleParagraph = new Paragraph(title, new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD));
+            titleParagraph.Alignment = Element.ALIGN_CENTER;
+            doc.Add(titleParagraph);
+            doc.Add(new Paragraph(" "));
 
             PdfPTable table = new PdfPTable(dataSet.Tables[0].Columns.Count);
 
@@ -160,19 +165,18 @@ namespace Negocios
             doc.Close();
         }
 
-        public void ExportPaymentsToPdf(int estadoPV, string pdfFileName)
+        public void ExportPaymentsToPdf(int estadoPV, string pdfFileName, string title)
         {
             DataSet dataSet = listarPagos(estadoPV);
 
             if (dataSet != null && dataSet.Tables.Count > 0)
             {
-                ExportDataSetToPdf(dataSet, pdfFileName);
+                ExportDataSetToPdf(dataSet, pdfFileName, title);
             }
             else
             {
                 MessageBox.Show("No data to export.");
             }
         }
-
     }
 }

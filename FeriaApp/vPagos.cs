@@ -72,7 +72,8 @@ namespace FeriaApp
             DataSet listaPagosPendientes = negocioCabeceraProcesoVenta.listarPagosPendientes();
 
             string pdfFileName = "reports.pdf";
-            negocioCabeceraProcesoVenta.ExportDataSetToPdf(listaPagosPendientes, pdfFileName);
+            string title = "Reporte de ventas externas";
+            negocioCabeceraProcesoVenta.ExportDataSetToPdf(listaPagosPendientes, pdfFileName, title);
         }
     }
 }
