@@ -46,7 +46,7 @@ namespace Negocios
             catch (Exception ex)
             {
                 // CORREGIR MENSAJE DE ERROR
-                MessageBox.Show("ERROR ID:002PRO NAME:NEGOCIO PRODUCTO " + ex);
+                MessageBox.Show("ERROR ID:002PRO NAME:NEGOCIO CABECERA PV " + ex);
             }
             finally
             {
@@ -56,6 +56,7 @@ namespace Negocios
                 }
 
             }
+
             return this.con.DbDataSet;
         }
 
@@ -71,7 +72,7 @@ namespace Negocios
             catch (Exception ex)
             {
                 // CORREGIR MENSAJE DE ERROR
-                MessageBox.Show("ERROR ID:002PRO NAME:NEGOCIO PRODUCTO " + ex);
+                MessageBox.Show("ERROR ID:002PRO NAME:NEGOCIO CABECERA PV " + ex);
             }
             finally
             {
@@ -81,17 +82,25 @@ namespace Negocios
                 }
 
             }
+
             return this.con.DbDataSet;
         }
 
         public void actualizarEstadoProcesoVenta(int idCabeceraProcesoVenta, int idEstado)
         {
-            this.configurarConexion();
-            this.con.SqlString = "UPDATE " + this.con.TableName +
-                                 " SET ESTADO_PV = " + idEstado +
-                                 " WHERE ID_CABECERA_PV = " + idCabeceraProcesoVenta;
-            this.con.EsSelect = false;
-            this.con.conectar();
+            try
+            {
+                this.configurarConexion();
+                this.con.SqlString = "UPDATE " + this.con.TableName +
+                                     " SET ESTADO_PV = " + idEstado +
+                                     " WHERE ID_CABECERA_PV = " + idCabeceraProcesoVenta;
+                this.con.EsSelect = true;
+                this.con.conectar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR ID:005CLI NAME:NEGOCIO CABECERA PV " + ex);
+            }
         }
 
         public DataSet listarPagos(int estadoPV)
