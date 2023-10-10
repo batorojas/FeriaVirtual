@@ -67,5 +67,12 @@ namespace FeriaApp
             }
         }
 
+        private void btnExportarPDF_Click(object sender, EventArgs e)
+        {
+            DataSet listaPagosPendientes = negocioCabeceraProcesoVenta.listarPagosPendientes();
+
+            string pdfFileName = "reports.pdf";
+            negocioCabeceraProcesoVenta.ExportDataSetToPdf(listaPagosPendientes, pdfFileName);
+        }
     }
 }
