@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FeriaApp">
+      <HintPath>bin\Debug\FeriaApp.exe</HintPath>
+    </Reference>
     <Reference Include="itext.barcodes, Version=8.0.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\itext.8.0.1\lib\net461\itext.barcodes.dll</HintPath>
     </Reference>
@@ -184,6 +187,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vPagos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="vPagos.Designer.cs">
+      <DependentUpon>vPagos.cs</DependentUpon>
+    </Compile>
     <Compile Include="vTransportes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -229,6 +238,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="vPagos.resx">
+      <DependentUpon>vPagos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vTransportes.resx">
       <DependentUpon>vTransportes.cs</DependentUpon>
     </EmbeddedResource>
