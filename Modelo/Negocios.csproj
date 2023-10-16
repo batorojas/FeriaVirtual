@@ -144,7 +144,9 @@
     <Compile Include="NegocioCliente.cs" />
     <Compile Include="NegocioComuna.cs" />
     <Compile Include="NegocioContrato.cs" />
+    <Compile Include="NegocioDetalleProcesoVenta.cs" />
     <Compile Include="NegocioEmpresaTransporte.cs" />
+    <Compile Include="NegocioEstadoVenta.cs" />
     <Compile Include="NegocioPerfil.cs" />
     <Compile Include="NegocioProductor.cs" />
     <Compile Include="NegocioTipoCliente.cs" />

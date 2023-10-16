@@ -126,6 +126,7 @@
     <Compile Include="Comuna.cs" />
     <Compile Include="Contrato.cs" />
     <Compile Include="EmpresaTransporte.cs" />
+    <Compile Include="EstadoVenta.cs" />
     <Compile Include="Pais.cs" />
     <Compile Include="Perfil.cs" />
     <Compile Include="Productor.cs" />
