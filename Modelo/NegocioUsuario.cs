@@ -166,8 +166,7 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-                //Usuario auxUsuario = new Usuario();
-                //return auxUsuario;
+                MessageBox.Show("ERROR: NEGOCIO USUARIO  " + ex);
             }
             finally
             {
@@ -203,7 +202,7 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-                // Tratar la excepción según lógica
+                MessageBox.Show("ERROR: NEGOCIO USUARIO  " + ex);
             }
             finally
             {
@@ -240,8 +239,7 @@ namespace Negocios
             }
             catch (Exception ex)
             {
-                //Usuario auxUsuario = new Usuario();
-                //return auxUsuario;
+                MessageBox.Show("ERROR: NEGOCIO USUARIO  " + ex);
             }
             finally
             {

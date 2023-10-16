@@ -33,6 +33,9 @@ namespace FeriaApp
             //cargaPagosPendientes();
             //cargaPagosRealizados();
 
+            // define la pestaña actual seleccionada como null
+            metroTabControl1.SelectedTab = null;
+            metroTabControl1.SelectedIndex = 0;
         }
 
         private void metroButtonActualizarPago_Click(object sender, EventArgs e)
@@ -79,6 +82,8 @@ namespace FeriaApp
             {
                 MessageBox.Show("Ninguna celda seleccionada.");
             }
+
+            cargaPagosPendientes();
         }
 
 
@@ -97,12 +102,33 @@ namespace FeriaApp
                 case 1:
                     cargaPagosRealizados();
                     break;
-
-                default:
-                    // Realizar acción predeterminada si no coincide con ninguna opción
-                    MessageBox.Show("Opción no reconocida");
-                    break;
             }
+        }
+
+        private void btnExportarPagosPendientes_Click(object sender, EventArgs e)
+        {
+            DataSet listaPagosPendientes = negocioCabeceraProcesoVenta.listarPagosPendientes();
+
+            string fechaActual = DateTime.Now.ToString("yyyyMMdd_HHmmss"); // Formato: AñoMesDia_HoraMinutoSegundo
+            string pdfFileName = $"Reporte_PagosPendientes_{fechaActual}.pdf";
+
+            string title = "Reporte de pagos pendientes";
+            negocioCabeceraProcesoVenta.ExportDataSetToPdf(listaPagosPendientes, pdfFileName, title);
+
+            MessageBox.Show("Se ha exportado el reporte de pagos pendientes.");
+        }
+
+        private void btnExportarHistorialPagos_Click(object sender, EventArgs e)
+        {
+            DataSet listaPagosRealizados = negocioCabeceraProcesoVenta.listarPagosRealizados();
+
+            string fechaActual = DateTime.Now.ToString("yyyyMMdd_HHmmss"); // Formato: AñoMesDia_HoraMinutoSegundo
+            string pdfFileName = $"Reporte_VentasExternas_{fechaActual}.pdf";
+
+            string title = "Reporte de ventas externas";
+            negocioCabeceraProcesoVenta.ExportDataSetToPdf(listaPagosRealizados, pdfFileName, title);
+
+            MessageBox.Show("Se ha exportado el reporte de pagos realizados.");
         }
     }
 }
