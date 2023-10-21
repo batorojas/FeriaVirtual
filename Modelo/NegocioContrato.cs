@@ -59,6 +59,34 @@ namespace Negocios
 
             return this.con.DbDataSet;
         }
+        
+        public Contrato buscarContrato(int idContrato)
+        {
+            Contrato contrato = new Contrato();
+            this.configurarConexion();
+            this.con.SqlString = "SELECT * FROM " + this.con.TableName + " "
+                                 + "WHERE ID_CONTRATO = " + idContrato;
+            this.con.EsSelect = true;
+            this.con.conectar();
+
+            DataTable dt = new DataTable();
+            dt = this.con.DbDataSet.Tables[this.con.TableName];
+
+            try
+            {
+                contrato.IdContrato = (int)dt.Rows[0]["ID_CONTRATO"];
+                contrato.FechaInicio = (DateTime)dt.Rows[0]["FECHA_INICIO"];
+                contrato.FechaTermino = (DateTime)dt.Rows[0]["FECHA_TERMINO"];
+                contrato.RutProductor = (int)dt.Rows[0]["RUT_PRODUCTOR"];
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("ERROR ID:006CON NAME:NEGOCIO CONTRATO " + ex);
+            }
+
+            return contrato;
+        }
 
         public void ingresarContrato(Contrato contrato)
         {
@@ -149,22 +177,17 @@ namespace Negocios
             try
             {
                 this.configurarConexion();
-                String[] parametros = { "FECHAINICIO", "FECHATERMINO", "RUTPRODUCTOR" };
-                OracleDbType[] tipos = { OracleDbType.Date, OracleDbType.Date, OracleDbType.Int32 };
-                Object[] valores = { contrato.FechaInicio, contrato.FechaTermino, contrato.RutProductor };
+                String[] parametros = { "ID", "F_INICIO", "F_TERMINO", "PRODUCTOR" };
+                OracleDbType[] tipos = { OracleDbType.Int32, OracleDbType.Date, OracleDbType.Date, OracleDbType.Int32 };
+                Object[] valores = { contrato.IdContrato, contrato.FechaInicio, contrato.FechaTermino, contrato.RutProductor };
+
                 this.con.ejecutarProcedimiento("SP_ACTUALIZAR_CONTRATO", parametros, tipos, valores);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR AL INTENTAR ACTUALIZAR CONTRATO");
+                MessageBox.Show("ERROR ID:005CON NAME:NEGOCIO CONTRATO " + ex);
             }
-            finally
-            {
-                if (con != null)
-                {
-                    con.cerrarConexion(); // Llamada al método personalizado CerrarConexion
-                }
-            }
+
         }
     }
 }

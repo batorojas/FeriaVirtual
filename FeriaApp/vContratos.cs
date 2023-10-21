@@ -51,29 +51,54 @@ namespace FeriaApp
             // Pestaña Contratos
             
             // Listar Contratos
-            
             DataSet listaContratos = negocioContrato.retornarContratos();
             metroGridListaContratos.AutoGenerateColumns = true;
             metroGridListaContratos.DataSource = listaContratos.Tables["CONTRATO"];
         }
+        
 
         private void CrearContrato()
         {
             try
             {
+                // Create a new contract
                 Contrato contrato = new Contrato();
+
+                // Get the latest contract ID
                 contrato.IdContrato = negocioContrato.obtenerUltimoIDContrato();
+
+                // Set the contract start and end dates
                 contrato.FechaInicio = metroFechaInicioContrato.Value;
                 contrato.FechaTermino = metroFechaTerminoContrato.Value;
-                contrato.RutProductor = Convert.ToInt32(metroTextRutProductorContrato.Text);
-                negocioContrato.ingresarContrato(contrato);
-                MessageBox.Show("Contrato Agregado");
+
+                // Convert the producer's Rut to an integer
+                if (int.TryParse(metroTextRutProductorContrato.Text, out int rut))
+                {
+                    contrato.RutProductor = rut;
+
+                    // Insert the contract into the business logic
+                    negocioContrato.ingresarContrato(contrato);
+
+                    // Display a success message
+                    MessageBox.Show("Contrato Agregado");
+                }
+                else
+                {
+                    // Handle invalid producer Rut input
+                    MessageBox.Show("Rut del productor no válido");
+                }
             }
             catch (Exception ex)
             {
+                // Log the exception for debugging purposes
+                // You may want to use a logging framework like NLog or log4net
+                Console.WriteLine("Error: " + ex.Message);
+
+                // Display an error message
                 MessageBox.Show("ERROR AL INTENTAR INGRESAR CONTRATO");
             }
         }
+
         private void buttonCrearContrato_Click(object sender, EventArgs e)
         {
             CrearContrato();
@@ -113,15 +138,17 @@ namespace FeriaApp
             try
             {
                 Contrato contrato = new Contrato();
-                contrato.FechaInicio = dateModificarFechaInicio.Value;
-                contrato.FechaTermino = dateModificarFechaTermino.Value;
-                contrato.RutProductor = Convert.ToInt32(textModificarRPContrato.Text);
+                contrato.IdContrato = Int32.Parse(this.txtbIdProductor.Text);
+                contrato.FechaInicio = this.dateFechaInicioContrato.Value;
+                contrato.FechaTermino = this.dateFechaTerminoContrato.Value;
+                contrato.RutProductor = Int32.Parse(this.textbRutProductorContrato.Text);
+                NegocioContrato negocioContrato = new NegocioContrato();
                 negocioContrato.actualizarContrato(contrato);
-                MessageBox.Show("Contrato Actualizado");
+                MessageBox.Show("El contrato se ha actualizado con éxito.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR AL INTENTAR ACTUALIZAR CONTRATO");
+                MessageBox.Show("ERROR AL INTENTAR ACTUALIZAR CONTRATO: "+ex);
             }
         }
         
@@ -149,6 +176,26 @@ namespace FeriaApp
                     idContratoSeleccionado = 0;
                 }
             }
+        }
+
+        private void metroButtonModificarContrato_Click(object sender, EventArgs e)
+        {
+            int indiceFila = this.metroGridListaContratos.SelectedCells[0].RowIndex;
+            DataGridViewRow filaSeleccionada = this.metroGridListaContratos.Rows[indiceFila];
+            int idContrato = int.Parse(filaSeleccionada.Cells["ID_CONTRATO"].Value.ToString());
+            metroTabControl1.SelectedIndex = 2;
+            cargarDetalleContrato(idContrato);
+        }
+
+        private void cargarDetalleContrato(int id)
+        {
+            NegocioContrato ven = new NegocioContrato();
+            Contrato contrato = ven.buscarContrato(id);
+
+            this.txtbIdProductor.Text = contrato.IdContrato.ToString();
+            this.dateFechaInicioContrato.Value = contrato.FechaInicio;
+            this.dateFechaTerminoContrato.Value = contrato.FechaTermino;
+            this.textbRutProductorContrato.Text = contrato.RutProductor.ToString();
         }
     }
 }

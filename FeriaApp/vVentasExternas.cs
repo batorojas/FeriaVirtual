@@ -38,32 +38,41 @@ namespace FeriaApp
             int indiceFila = this.dgvListaVentas.SelectedCells[0].RowIndex;
             DataGridViewRow filaSeleccionada = this.dgvListaVentas.Rows[indiceFila];
             int ProcesoVenta = int.Parse(filaSeleccionada.Cells["ID_CABECERA_PV"].Value.ToString());
+            metroTabControl1.SelectedIndex = 1;
+            cargaDetalles(ProcesoVenta);
         }
 
-        private void vDetalleVentasExternas_Load(object sender, EventArgs e)
+        private void cargaDetalles(int pventa)
         {
-            NegocioCabeceraProcesoVenta negocioCabeceraPV = new NegocioCabeceraProcesoVenta();
-            CabeceraProcesoVenta procesoVenta = negocioCabeceraPV.buscarCabeceraProcesoVenta(this.IdProcesoVenta);
-            
-            NegocioCliente negocioCliente = new NegocioCliente();
-            Cliente cliente = negocioCliente.buscarCliente(procesoVenta.RutCliente);
-            
-            NegocioEstadoVenta negocioEstadoVenta = new NegocioEstadoVenta();
-            EstadoVenta estadoVenta = negocioEstadoVenta.buscarEstado(procesoVenta.IdEstado);
-            
-            NegocioEmpresaTransporte negocioTransporte = new NegocioEmpresaTransporte();
-            EmpresaTransporte empresaTransporte = negocioTransporte.buscarEmpresaTransporte(procesoVenta.IdEmpresaTransporte);
+            try { 
+                NegocioCabeceraProcesoVenta negocioCabeceraPV = new NegocioCabeceraProcesoVenta();
+                CabeceraProcesoVenta procesoVenta = negocioCabeceraPV.buscarCabeceraProcesoVenta(pventa);
 
-            this.txtbIDProcesoVenta.Text = procesoVenta.IdCabeceraVenta.ToString();
-            this.txtbRutCliente.Text = cliente.RutCliente.ToString()+"-"+cliente.DvRutCliente;
-            this.txtbRazonSocial.Text = cliente.RazonSocialCliente;
-            this.mdtFechaEmisionPV.Value = procesoVenta.FechaEmision;
-            this.txtbEstado.Text = estadoVenta.Descripcion;
-            this.txtbEmpresaTransporte.Text = empresaTransporte.NombreEmpresaTransporte;
-            this.txtbObservacionesPV.Text = procesoVenta.Observaciones.ToString();
+                NegocioCliente negocioCliente = new NegocioCliente();
+                Cliente cliente = negocioCliente.buscarCliente(procesoVenta.RutCliente);
             
-            NegocioDetalleProcesoVenta negocioDetallePV = new NegocioDetalleProcesoVenta();
-            DataSet detalleProcesoVenta = negocioDetallePV.ListarDetallesProcesoVenta(procesoVenta.IdCabeceraVenta);
+                NegocioEstadoVenta negocioEstadoVenta = new NegocioEstadoVenta();
+                EstadoVenta estadoVenta = negocioEstadoVenta.buscarEstado(procesoVenta.IdEstado);
+            
+                NegocioEmpresaTransporte negocioTransporte = new NegocioEmpresaTransporte();
+                EmpresaTransporte empresaTransporte = negocioTransporte.buscarEmpresaTransporte(procesoVenta.IdEmpresaTransporte);
+
+                this.txtbIDProcesoVenta.Text = procesoVenta.IdCabeceraVenta.ToString();
+                this.txtbRutCliente.Text = cliente.RutCliente.ToString()+"-"+cliente.DvRutCliente;
+                this.txtbRazonSocial.Text = cliente.RazonSocialCliente;
+                this.mdtFechaEmisionPV.Value = procesoVenta.FechaEmision;
+                this.txtbEstado.Text = estadoVenta.Descripcion;
+                this.txtbEmpresaTransporte.Text = empresaTransporte.NombreEmpresaTransporte;
+                this.txtbObservacionesPV.Text = procesoVenta.Observaciones.ToString();
+            
+                NegocioDetalleProcesoVenta negocioDetallePV = new NegocioDetalleProcesoVenta();
+                DataSet detalleProcesoVenta = negocioDetallePV.ListarDetallesProcesoVenta(procesoVenta.IdCabeceraVenta);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dgvListaVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
