@@ -15,6 +15,8 @@ namespace FeriaApp
 {
     public partial class vVentasExternas : UserControl
     {
+        NegocioCabeceraProcesoVenta negocioCabeceraPV = new NegocioCabeceraProcesoVenta();
+
         private int idProcesoVenta;
         
         public int IdProcesoVenta { get => idProcesoVenta; set => idProcesoVenta = value; }
@@ -26,7 +28,6 @@ namespace FeriaApp
 
         public void vVentasExternas_Load(object sender, EventArgs e)
         {
-            NegocioCabeceraProcesoVenta negocioCabeceraPV = new NegocioCabeceraProcesoVenta();
             DataSet listarProcesosVenta = negocioCabeceraPV.ListarProcesosVenta();
             this.dgvListaVentas.AutoGenerateColumns = true;
             this.dgvListaVentas.DataSource = listarProcesosVenta.Tables["CABECERA_PV"];
@@ -78,6 +79,25 @@ namespace FeriaApp
         {
 
         }
-        
+
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            DataSet listaVentasExternas = negocioCabeceraPV.ListarProcesosVenta();
+
+            string fechaActual = DateTime.Now.ToString("yyyyMMdd_HHmmss"); // Formato: AñoMesDia_HoraMinutoSegundo
+            string pdfFileName = $"Reporte_VentasExternas_{fechaActual}.pdf";
+
+            string title = "Reporte de ventas externas";
+            negocioCabeceraPV.ExportDataSetToPdf(listaVentasExternas, pdfFileName, title);
+
+            MessageBox.Show("Se ha generado el reporte de ventas externas.");
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            DataSet listarProcesosVenta = negocioCabeceraPV.ListarProcesosVenta();
+            this.dgvListaVentas.AutoGenerateColumns = true;
+            this.dgvListaVentas.DataSource = listarProcesosVenta.Tables["CABECERA_PV"];
+        }
     }
 }
