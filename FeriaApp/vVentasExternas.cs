@@ -67,7 +67,6 @@ namespace FeriaApp
             
                 NegocioDetalleProcesoVenta negocioDetallePV = new NegocioDetalleProcesoVenta();
                 DataSet detalleProcesoVenta = negocioDetallePV.ListarDetallesProcesoVenta(procesoVenta.IdCabeceraVenta);
-
                 this.dgvDetalleProcesoVenta.DataSource = detalleProcesoVenta.Tables["DETALLE_PV"];
 
 
