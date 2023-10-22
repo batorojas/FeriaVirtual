@@ -152,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CabeceraProcesoVenta.cs" />
+    <Compile Include="CabeceraSubastaTransporte.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Comuna.cs" />
     <Compile Include="Contrato.cs" />

@@ -17,9 +17,9 @@ namespace FeriaApp
     {
         NegocioCabeceraProcesoVenta negocioCabeceraPV = new NegocioCabeceraProcesoVenta();
 
-        private int idProcesoVenta;
+        // private int idProcesoVenta;
         
-        public int IdProcesoVenta { get => idProcesoVenta; set => idProcesoVenta = value; }
+        // public int IdProcesoVenta { get => idProcesoVenta; set => idProcesoVenta = value; }
 
         public vVentasExternas()
         {
@@ -67,6 +67,8 @@ namespace FeriaApp
             
                 NegocioDetalleProcesoVenta negocioDetallePV = new NegocioDetalleProcesoVenta();
                 DataSet detalleProcesoVenta = negocioDetallePV.ListarDetallesProcesoVenta(procesoVenta.IdCabeceraVenta);
+                this.dgvDetalleProcesoVenta.DataSource = detalleProcesoVenta.Tables["DETALLE_PV"];
+
 
             }
             catch (Exception ex)
@@ -98,6 +100,19 @@ namespace FeriaApp
             DataSet listarProcesosVenta = negocioCabeceraPV.ListarProcesosVenta();
             this.dgvListaVentas.AutoGenerateColumns = true;
             this.dgvListaVentas.DataSource = listarProcesosVenta.Tables["CABECERA_PV"];
+        }
+
+        private void btnTransporte_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTransporte_Click_1(object sender, EventArgs e)
+        {
+            int idproceso = int.Parse(txtbIDProcesoVenta.Text);
+
+            vSubastasTransporte vistaPostulacionesTransporte = new vSubastasTransporte(idproceso);
+            vistaPostulacionesTransporte.ShowDialog();
         }
     }
 }
