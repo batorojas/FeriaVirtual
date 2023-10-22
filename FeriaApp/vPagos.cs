@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Data;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocios;
+using Telegram.Bot;
 
 namespace FeriaApp
 {
@@ -60,7 +62,8 @@ namespace FeriaApp
                         try
                         {
                             // Assuming negocioCabeceraProcesoVenta is properly initialized
-                            negocioCabeceraProcesoVenta.actualizarEstadoProcesoVenta(idProcesoVenta, 2); // Marcar como pagada
+                            negocioCabeceraProcesoVenta.actualizarEstadoProcesoVenta(idProcesoVenta,
+                                2); // Marcar como pagada
                             MessageBox.Show("Se ha registrado el proceso de venta como PAGADO.");
                         }
                         catch (Exception ex)
@@ -105,6 +108,8 @@ namespace FeriaApp
             }
         }
 
+
+
         private void btnExportarPagosPendientes_Click(object sender, EventArgs e)
         {
             DataSet listaPagosPendientes = negocioCabeceraProcesoVenta.listarPagosPendientes();
@@ -129,6 +134,29 @@ namespace FeriaApp
             negocioCabeceraProcesoVenta.ExportDataSetToPdf(listaPagosRealizados, pdfFileName, title);
 
             MessageBox.Show("Se ha exportado el reporte de pagos realizados.");
+        }
+
+        private async void metroEnviarCorreo_Click(object sender, EventArgs e)
+        {
+            var botToken = "6762818327:AAHOiQlDwmDucqKgRacNDUBY7VRlHVNkYkA";
+
+            var botClient = new TelegramBotClient(botToken);
+
+            // Replace "CHAT_ID" with the chat ID of the user or chat where you want to send the message
+            var chatId = 902743181;
+
+            // The message you want to send
+            var message = "Su pago ha sido aceptado. ¡Gracias por su compra!";
+
+            try
+            {
+                await botClient.SendTextMessageAsync(chatId, message);
+                MessageBox.Show("El mensaje se ha enviado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al enviar el mensaje: {ex.Message}");
+            }
         }
     }
 }
