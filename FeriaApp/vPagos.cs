@@ -138,24 +138,36 @@ namespace FeriaApp
 
         private async void metroEnviarCorreo_Click(object sender, EventArgs e)
         {
+            // Reemplaza "YOUR_BOT_TOKEN" con tu token de bot real
             var botToken = "6762818327:AAHOiQlDwmDucqKgRacNDUBY7VRlHVNkYkA";
-
+    
             var botClient = new TelegramBotClient(botToken);
-
-            // Replace "CHAT_ID" with the chat ID of the user or chat where you want to send the message
+    
+            // Reemplaza "CHAT_ID" con el chat ID del usuario al que deseas enviar el mensaje
             var chatId = 902743181;
 
-            // The message you want to send
-            var message = "Su pago ha sido aceptado. ¡Gracias por su compra!";
-
-            try
+            // Obtiene la fila seleccionada en el dgvListaPagosRealizados
+            if (dgvListaPagosRealizados.SelectedRows.Count > 0)
             {
-                await botClient.SendTextMessageAsync(chatId, message);
-                MessageBox.Show("El mensaje se ha enviado correctamente.");
+                // Obtiene el valor de "ID_CABECERA_PV" de la fila seleccionada
+                var pagoId = dgvListaPagosRealizados.SelectedRows[0].Cells["ID_CABECERA_PV"].Value.ToString();
+        
+                // Crea un mensaje personalizado
+                var message = $"El pago de su pedido #{pagoId} ha sido aceptado, ¡gracias por elegirnos!";
+        
+                try
+                {
+                    await botClient.SendTextMessageAsync(chatId, message);
+                    MessageBox.Show("Mensaje enviado con éxito.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al enviar el mensaje: {ex.Message}");
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Error al enviar el mensaje: {ex.Message}");
+                MessageBox.Show("Por favor, selecciona uno de los pagos.");
             }
         }
     }
