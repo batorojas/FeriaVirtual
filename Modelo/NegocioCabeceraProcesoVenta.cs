@@ -48,6 +48,13 @@ namespace Negocios
                 // CORREGIR MENSAJE DE ERROR
                 MessageBox.Show("ERROR ID:002PRO NAME:NEGOCIO PRODUCTO " + ex);
             }
+            finally
+            {
+                if (con != null)
+                {
+                    con.cerrarConexion(); // Llamada al método personalizado CerrarConexion
+                }
+            }
 
             return this.con.DbDataSet;
         }
@@ -129,6 +136,13 @@ namespace Negocios
                 CabeceraProcesoVenta auxCabeceraProcesoVenta = new CabeceraProcesoVenta();
                 return auxCabeceraProcesoVenta;
             }
+            finally
+            {
+                if (con != null)
+                {
+                    con.cerrarConexion(); // Llamada al método personalizado CerrarConexion
+                }
+            }
 
             return procesoVenta;
         }
@@ -146,6 +160,13 @@ namespace Negocios
             catch (Exception ex)
             {
                 MessageBox.Show("ERROR ID:005CLI NAME:NEGOCIO CABECERA PV " + ex);
+            }
+            finally
+            {
+                if (con != null)
+                {
+                    con.cerrarConexion(); // Llamada al método personalizado CerrarConexion
+                }
             }
         }
 

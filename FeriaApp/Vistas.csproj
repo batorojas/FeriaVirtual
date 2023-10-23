@@ -189,6 +189,12 @@
     <Compile Include="vContratos.Designer.cs">
       <DependentUpon>vContratos.cs</DependentUpon>
     </Compile>
+    <Compile Include="vDetallePostulacionProductor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="vDetallePostulacionProductor.Designer.cs">
+      <DependentUpon>vDetallePostulacionProductor.cs</DependentUpon>
+    </Compile>
     <Compile Include="vInicio.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -214,6 +220,12 @@
     </Compile>
     <Compile Include="vPagos.Designer.cs">
       <DependentUpon>vPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vPostulacionesProductores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vPostulacionesProductores.Designer.cs">
+      <DependentUpon>vPostulacionesProductores.cs</DependentUpon>
     </Compile>
     <Compile Include="vSubastasTransporte.cs">
       <SubType>Form</SubType>
@@ -248,6 +260,9 @@
     <EmbeddedResource Include="vContratos.resx">
       <DependentUpon>vContratos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="vDetallePostulacionProductor.resx">
+      <DependentUpon>vDetallePostulacionProductor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="vInicio.resx">
       <DependentUpon>vInicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -268,6 +283,9 @@
     </Compile>
     <EmbeddedResource Include="vPagos.resx">
       <DependentUpon>vPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vPostulacionesProductores.resx">
+      <DependentUpon>vPostulacionesProductores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vSubastasTransporte.resx">
       <DependentUpon>vSubastasTransporte.cs</DependentUpon>

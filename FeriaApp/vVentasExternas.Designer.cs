@@ -41,6 +41,7 @@
             this.btnExportar = new MetroFramework.Controls.MetroButton();
             this.metroButtonDetallesPV = new MetroFramework.Controls.MetroButton();
             this.metroTabDetallePV = new MetroFramework.Controls.MetroTabPage();
+            this.btnProductores = new MetroFramework.Controls.MetroButton();
             this.btnTransporte = new MetroFramework.Controls.MetroButton();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.dgvDetalleProcesoVenta = new MetroFramework.Controls.MetroGrid();
@@ -119,9 +120,8 @@
             this.metroTabControl1.Location = new System.Drawing.Point(6, 21);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(647, 417);
-            this.metroTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.metroTabControl1.TabIndex = 3;
             this.metroTabControl1.UseSelectable = true;
             // 
@@ -179,6 +179,7 @@
             // 
             // metroTabDetallePV
             // 
+            this.metroTabDetallePV.Controls.Add(this.btnProductores);
             this.metroTabDetallePV.Controls.Add(this.btnTransporte);
             this.metroTabDetallePV.Controls.Add(this.metroLabel8);
             this.metroTabDetallePV.Controls.Add(this.dgvDetalleProcesoVenta);
@@ -208,6 +209,20 @@
             this.metroTabDetallePV.VerticalScrollbarBarColor = true;
             this.metroTabDetallePV.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabDetallePV.VerticalScrollbarSize = 8;
+            // 
+            // btnProductores
+            // 
+            this.btnProductores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.btnProductores.ForeColor = System.Drawing.Color.White;
+            this.btnProductores.Location = new System.Drawing.Point(519, 279);
+            this.btnProductores.Name = "btnProductores";
+            this.btnProductores.Size = new System.Drawing.Size(100, 37);
+            this.btnProductores.TabIndex = 20;
+            this.btnProductores.Text = "Selecionar\r\nProductores";
+            this.btnProductores.UseCustomBackColor = true;
+            this.btnProductores.UseCustomForeColor = true;
+            this.btnProductores.UseSelectable = true;
+            this.btnProductores.Click += new System.EventHandler(this.btnProductores_Click);
             // 
             // btnTransporte
             // 
@@ -633,5 +648,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroGrid dgvDetalleProcesoVenta;
         private MetroFramework.Controls.MetroButton btnTransporte;
+        private MetroFramework.Controls.MetroButton btnProductores;
     }
 }

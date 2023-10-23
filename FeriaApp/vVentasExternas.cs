@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Clases;
 using Negocios;
+using MetroFramework.Controls;
 
 namespace FeriaApp
 {
@@ -28,6 +29,9 @@ namespace FeriaApp
 
         public void vVentasExternas_Load(object sender, EventArgs e)
         {
+            metroTabControl1.SelectedTab = null;
+            metroTabControl1.SelectedIndex = 0;
+
             DataSet listarProcesosVenta = negocioCabeceraPV.ListarProcesosVenta();
             this.dgvListaVentas.AutoGenerateColumns = true;
             this.dgvListaVentas.DataSource = listarProcesosVenta.Tables["CABECERA_PV"];
@@ -113,6 +117,13 @@ namespace FeriaApp
 
             vSubastasTransporte vistaPostulacionesTransporte = new vSubastasTransporte(idproceso);
             vistaPostulacionesTransporte.ShowDialog();
+        }
+
+        private void btnProductores_Click(object sender, EventArgs e)
+        {
+            int idproceso = int.Parse(txtbIDProcesoVenta.Text);
+            vPostulacionesProductores vistaPostulacionesProductores = new vPostulacionesProductores(idproceso);
+            vistaPostulacionesProductores.ShowDialog();
         }
     }
 }

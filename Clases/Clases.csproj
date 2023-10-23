@@ -151,12 +151,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CabeceraPostulacion.cs" />
     <Compile Include="CabeceraProcesoVenta.cs" />
     <Compile Include="CabeceraSubastaTransporte.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Comuna.cs" />
     <Compile Include="Contrato.cs" />
+    <Compile Include="DetallePostulacion.cs" />
     <Compile Include="EmpresaTransporte.cs" />
+    <Compile Include="EstadoPostulacion.cs" />
     <Compile Include="EstadoVenta.cs" />
     <Compile Include="Pais.cs" />
     <Compile Include="Perfil.cs" />
