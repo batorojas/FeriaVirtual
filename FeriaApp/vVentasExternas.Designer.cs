@@ -1,4 +1,4 @@
-﻿namespace FeriaApp
+namespace FeriaApp
 {
     partial class vVentasExternas
     {
@@ -214,7 +214,7 @@
             // 
             this.btnProductores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             this.btnProductores.ForeColor = System.Drawing.Color.White;
-            this.btnProductores.Location = new System.Drawing.Point(519, 279);
+            this.btnProductores.Location = new System.Drawing.Point(530, 279);
             this.btnProductores.Name = "btnProductores";
             this.btnProductores.Size = new System.Drawing.Size(100, 37);
             this.btnProductores.TabIndex = 20;
@@ -228,7 +228,7 @@
             // 
             this.btnTransporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             this.btnTransporte.ForeColor = System.Drawing.Color.White;
-            this.btnTransporte.Location = new System.Drawing.Point(519, 226);
+            this.btnTransporte.Location = new System.Drawing.Point(530, 226);
             this.btnTransporte.Name = "btnTransporte";
             this.btnTransporte.Size = new System.Drawing.Size(100, 37);
             this.btnTransporte.TabIndex = 19;

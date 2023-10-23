@@ -1,4 +1,4 @@
-﻿using MetroFramework.Forms;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,17 +51,16 @@ namespace FeriaApp
                 // Esto carga el Control de Usuario (vDetallePostulacionProductor) dentro de la pestaña (metroTabPage2)
                 if (!metroTabPage2.Controls.Contains(detallePostulacionProductor))
                 {
+                    // Elimina el Label metroLabelDetalles del formulario
+                    this.Controls.Remove(metroLabelDetalles);
+                    metroLabelDetalles.Dispose();
+                    
                     metroTabPage2.Controls.Add(detallePostulacionProductor);
                 }
 
                 detallePostulacionProductor.IdCabezera = valorIdCabezera;
                 detallePostulacionProductor.cargarDatos();
-
-
-                // Elimina el Label metroLabelDetalles del formulario
-                this.Controls.Remove(metroLabelDetalles);
-                metroLabelDetalles.Dispose();
-
+                
                 metroTabControl1.SelectedIndex = 1;
             }
             else
