@@ -164,6 +164,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NegocioCabeceraPostulacion.cs" />
     <Compile Include="NegocioCabeceraProcesoVenta.cs" />
     <Compile Include="NegocioCabeceraSubastaTransporte.cs" />
     <Compile Include="NegocioCliente.cs" />

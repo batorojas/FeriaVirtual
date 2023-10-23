@@ -114,5 +114,12 @@ namespace FeriaApp
             vSubastasTransporte vistaPostulacionesTransporte = new vSubastasTransporte(idproceso);
             vistaPostulacionesTransporte.ShowDialog();
         }
+
+        private void btnProductores_Click(object sender, EventArgs e)
+        {
+            int idproceso = int.Parse(txtbIDProcesoVenta.Text);
+            vPostulacionesProductores vistaPostulacionesProductores = new vPostulacionesProductores(idproceso);
+            vistaPostulacionesProductores.ShowDialog();
+        }
     }
 }
