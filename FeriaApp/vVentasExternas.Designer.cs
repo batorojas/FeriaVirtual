@@ -1,4 +1,4 @@
-﻿namespace FeriaApp
+namespace FeriaApp
 {
     partial class vVentasExternas
     {
@@ -120,7 +120,7 @@
             this.metroTabControl1.Location = new System.Drawing.Point(6, 21);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(647, 417);
             this.metroTabControl1.TabIndex = 3;
             this.metroTabControl1.UseSelectable = true;

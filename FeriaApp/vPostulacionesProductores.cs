@@ -1,4 +1,4 @@
-﻿using MetroFramework.Forms;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,13 +54,13 @@ namespace FeriaApp
                     // Elimina el Label metroLabelDetalles del formulario
                     this.Controls.Remove(metroLabelDetalles);
                     metroLabelDetalles.Dispose();
-
+                    
                     metroTabPage2.Controls.Add(detallePostulacionProductor);
                 }
 
                 detallePostulacionProductor.IdCabezera = valorIdCabezera;
                 detallePostulacionProductor.cargarDatos();
-
+                
                 metroTabControl1.SelectedIndex = 1;
             }
             else
