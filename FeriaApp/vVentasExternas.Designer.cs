@@ -120,7 +120,7 @@
             this.metroTabControl1.Location = new System.Drawing.Point(6, 21);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(647, 417);
             this.metroTabControl1.TabIndex = 3;
             this.metroTabControl1.UseSelectable = true;
@@ -214,7 +214,7 @@
             // 
             this.btnProductores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             this.btnProductores.ForeColor = System.Drawing.Color.White;
-            this.btnProductores.Location = new System.Drawing.Point(519, 279);
+            this.btnProductores.Location = new System.Drawing.Point(530, 279);
             this.btnProductores.Name = "btnProductores";
             this.btnProductores.Size = new System.Drawing.Size(100, 37);
             this.btnProductores.TabIndex = 20;
@@ -228,7 +228,7 @@
             // 
             this.btnTransporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             this.btnTransporte.ForeColor = System.Drawing.Color.White;
-            this.btnTransporte.Location = new System.Drawing.Point(519, 226);
+            this.btnTransporte.Location = new System.Drawing.Point(530, 226);
             this.btnTransporte.Name = "btnTransporte";
             this.btnTransporte.Size = new System.Drawing.Size(100, 37);
             this.btnTransporte.TabIndex = 19;
