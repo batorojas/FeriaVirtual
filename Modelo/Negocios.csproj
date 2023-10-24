@@ -166,12 +166,14 @@
   <ItemGroup>
     <Compile Include="NegocioCabeceraPostulacion.cs" />
     <Compile Include="NegocioCabeceraProcesoVenta.cs" />
+    <Compile Include="NegocioCabeceraSobrante.cs" />
     <Compile Include="NegocioCabeceraSubastaTransporte.cs" />
     <Compile Include="NegocioCliente.cs" />
     <Compile Include="NegocioComuna.cs" />
     <Compile Include="NegocioContrato.cs" />
     <Compile Include="NegocioDetallePostulacion.cs" />
     <Compile Include="NegocioDetalleProcesoVenta.cs" />
+    <Compile Include="NegocioDetalleSobrante.cs" />
     <Compile Include="NegocioDetalleSubastaTransporte.cs" />
     <Compile Include="NegocioEmpresaTransporte.cs" />
     <Compile Include="NegocioEstadoPostulacion.cs" />

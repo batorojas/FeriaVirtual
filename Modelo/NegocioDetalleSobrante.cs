@@ -1,17 +1,16 @@
-﻿using Conexion;
+﻿using Clases;
+using Conexion;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Clases;
-
 
 namespace Negocios
 {
-    public class NegocioEstadoPostulacion
+    public class NegocioDetalleSobrante
     {
         private ConexionOracle con;
 
@@ -22,9 +21,8 @@ namespace Negocios
             try
             {
                 this.con = new ConexionOracle();
-
                 this.con.NombreBaseDeDatos = "maipo_grande";
-                this.con.TableName = "ESTADO_POSTULACION";
+                this.con.TableName = "CABECERA_SOBRANTE";
                 this.con.ConnectionString = "Data Source=localhost:1521/xe;User Id=maipogrande;Password=123;";
             }
 
@@ -36,27 +34,22 @@ namespace Negocios
             }
         }
 
-        public EstadoPostulacion buscarEstado(int idEstado)
+        public void ingresarDetalleSobrante(DetalleSobrante detalleSobrante)
         {
-            EstadoPostulacion estadoPostulacion = new EstadoPostulacion();
-            this.configurarConexion();
-            this.con.SqlString = "SELECT * FROM " + this.con.TableName + " "
-                                   + "WHERE ID_ESTADO_POSTULACION = " + idEstado;
-            this.con.EsSelect = true;
-            this.con.conectar();
-
-            DataTable dt = new DataTable();
-            dt = this.con.DbDataSet.Tables[this.con.TableName];
-
             try
             {
-                estadoPostulacion.IdEstadoPostulacion = (short)dt.Rows[0]["ID_ESTADO_POSTULACION"];
-                estadoPostulacion.Descripcion = (String)dt.Rows[0]["DESC_ESTADO_POSTULACION"];
+                this.configurarConexion();
+                String[] parametros = { "ID_CAB_SOBRANTE", "ID_PRODUCTO", "CANTIDAD" };
+                OracleDbType[] tipos = { OracleDbType.Int32, OracleDbType.Int32, OracleDbType.Int32 };
+                Object[] valores = { detalleSobrante.IdCabeceraSobrante, detalleSobrante.IdProducto, detalleSobrante.Cantidad };
+
+                this.con.ejecutarProcedimiento("SP_INGRESAR_DET_SOBRANTE", parametros, tipos, valores);
+
             }
-            catch (Exception ex)
+
+            catch (Exception exingresocliente)
             {
-                // CORREGIR MENSAJE DE ERROR
-                MessageBox.Show("ERROR ID:006CON NAME:NEGOCIO CONTRATO " + ex);
+                MessageBox.Show("ERROR ID:003CLI NAME:NEGOCIO CLIENTE" + exingresocliente);
             }
             finally
             {
@@ -66,7 +59,8 @@ namespace Negocios
                 }
             }
 
-            return estadoPostulacion;
         }
+
+
     }
 }
