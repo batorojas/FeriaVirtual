@@ -36,5 +36,33 @@ namespace FeriaApp
             this.dgvListaTransporte.AutoGenerateColumns = true;
             this.dgvListaTransporte.DataSource = listaSubastasTransporte.Tables["DETALLE_SUBASTA"];
         }
+
+        private void btnSeleccionarTransporte_Click(object sender, EventArgs e)
+        {
+            if (dgvListaTransporte.SelectedCells.Count > 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Se seleccionará este transporte para el proceso de venta. ¿Está seguro que desea seleccionar este transporte?", "Confirmación", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    int indiceFila = this.dgvListaTransporte.SelectedCells[0].RowIndex;
+                    DataGridViewRow filaSeleccionada = this.dgvListaTransporte.Rows[indiceFila];
+
+                    int idEmpresaTransporte = int.Parse(filaSeleccionada.Cells["ID_EMPRESA_TRANS"].Value.ToString());
+
+                    NegocioCabeceraProcesoVenta negocioProcesoVenta = new NegocioCabeceraProcesoVenta();
+                    negocioProcesoVenta.asignarTransporte(this.IdProcesoVenta, idEmpresaTransporte);
+
+                    MessageBox.Show("Transporte seleccionado correctamente.");
+
+                    this.Dispose();
+                    System.GC.Collect();
+                }
+            }
+            else
+            {
+                // Manejar el caso en el que no se ha seleccionado ninguna celda
+                MessageBox.Show("No se ha seleccionado ninguna celda.");
+            }
+        }
     }
 }

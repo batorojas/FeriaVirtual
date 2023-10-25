@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvListaTransporte = new MetroFramework.Controls.MetroGrid();
+            this.btnSeleccionarTransporte = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaTransporte)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,14 +82,29 @@
             this.dgvListaTransporte.Size = new System.Drawing.Size(754, 275);
             this.dgvListaTransporte.TabIndex = 2;
             // 
+            // btnSeleccionarTransporte
+            // 
+            this.btnSeleccionarTransporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.btnSeleccionarTransporte.ForeColor = System.Drawing.Color.White;
+            this.btnSeleccionarTransporte.Location = new System.Drawing.Point(677, 390);
+            this.btnSeleccionarTransporte.Name = "btnSeleccionarTransporte";
+            this.btnSeleccionarTransporte.Size = new System.Drawing.Size(100, 37);
+            this.btnSeleccionarTransporte.TabIndex = 23;
+            this.btnSeleccionarTransporte.Text = "Seleccionar\r\nTransporte";
+            this.btnSeleccionarTransporte.UseCustomBackColor = true;
+            this.btnSeleccionarTransporte.UseCustomForeColor = true;
+            this.btnSeleccionarTransporte.UseSelectable = true;
+            this.btnSeleccionarTransporte.Click += new System.EventHandler(this.btnSeleccionarTransporte_Click);
+            // 
             // vSubastasTransporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSeleccionarTransporte);
             this.Controls.Add(this.dgvListaTransporte);
             this.Name = "vSubastasTransporte";
-            this.Text = "vSubastasTransporte";
+            this.Text = "Subastas de Transporte";
             this.Load += new System.EventHandler(this.vSubastasTransporte_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaTransporte)).EndInit();
             this.ResumeLayout(false);
@@ -98,5 +114,6 @@
         #endregion
 
         private MetroFramework.Controls.MetroGrid dgvListaTransporte;
+        private MetroFramework.Controls.MetroButton btnSeleccionarTransporte;
     }
 }
