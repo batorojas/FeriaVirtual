@@ -78,7 +78,7 @@
             this.btnDetalles.Name = "btnDetalles";
             this.btnDetalles.Size = new System.Drawing.Size(100, 37);
             this.btnDetalles.TabIndex = 22;
-            this.btnDetalles.Text = "Ver Transporte";
+            this.btnDetalles.Text = "Ver Detalles";
             this.btnDetalles.UseCustomBackColor = true;
             this.btnDetalles.UseCustomForeColor = true;
             this.btnDetalles.UseSelectable = true;

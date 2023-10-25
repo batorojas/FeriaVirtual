@@ -146,6 +146,17 @@ namespace Negocios
 
             return procesoVenta;
         }
+
+        public void asignarTransporte(int idCabeceraProcesoVenta, int idTransporte)
+        {
+            this.configurarConexion();
+            this.con.SqlString = "UPDATE " + this.con.TableName +
+                                 " SET EMPRESA_TRANS = " + idTransporte +
+                                 " WHERE ID_CABECERA_PV = " + idCabeceraProcesoVenta;
+            this.con.EsSelect = false;
+            this.con.conectar();
+        }
+
         public void actualizarEstadoProcesoVenta(int idCabeceraProcesoVenta, int idEstado)
         {
             try
