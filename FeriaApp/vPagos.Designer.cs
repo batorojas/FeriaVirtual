@@ -61,7 +61,7 @@ namespace FeriaApp
             this.metroTabControl1.Location = new System.Drawing.Point(13, 34);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(859, 506);
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
@@ -192,7 +192,7 @@ namespace FeriaApp
             this.metroEnviarCorreo.Name = "metroEnviarCorreo";
             this.metroEnviarCorreo.Size = new System.Drawing.Size(75, 23);
             this.metroEnviarCorreo.TabIndex = 7;
-            this.metroEnviarCorreo.Text = "Enviar mensaje";
+            this.metroEnviarCorreo.Text = "Notificar";
             this.metroEnviarCorreo.UseSelectable = true;
             this.metroEnviarCorreo.Click += new System.EventHandler(this.metroEnviarCorreo_Click);
             // 
