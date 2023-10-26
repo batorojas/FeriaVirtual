@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocios;
 using Clases;
+using Telegram.Bot;
 
 namespace FeriaApp
 {
@@ -37,7 +38,7 @@ namespace FeriaApp
             this.dgvListaTransporte.DataSource = listaSubastasTransporte.Tables["DETALLE_SUBASTA"];
         }
 
-        private void btnSeleccionarTransporte_Click(object sender, EventArgs e)
+        private async void metroButton1_Click(object sender, EventArgs e)
         {
             if (dgvListaTransporte.SelectedCells.Count > 0)
             {
@@ -48,12 +49,30 @@ namespace FeriaApp
                     DataGridViewRow filaSeleccionada = this.dgvListaTransporte.Rows[indiceFila];
 
                     int idEmpresaTransporte = int.Parse(filaSeleccionada.Cells["ID_EMPRESA_TRANS"].Value.ToString());
-
+                    String empresaTransporte = String.Empty;
+                    
                     NegocioCabeceraProcesoVenta negocioProcesoVenta = new NegocioCabeceraProcesoVenta();
                     negocioProcesoVenta.asignarTransporte(this.IdProcesoVenta, idEmpresaTransporte);
+                    
 
                     MessageBox.Show("Transporte seleccionado correctamente.");
-
+                    var botToken = "6762818327:AAHOiQlDwmDucqKgRacNDUBY7VRlHVNkYkA";
+    
+                    var botClient = new TelegramBotClient(botToken);
+    
+                    // Reemplaza "CHAT_ID" con el chat ID del usuario al que deseas enviar el mensaje
+                    var chatId = 902743181;
+                    var nomTrans = idEmpresaTransporte.ToString();
+                    var message = $"Su pedido se ha asignado a la empresa de transportes y se encuentra en camino.";
+                    try
+                    {
+                        await botClient.SendTextMessageAsync(chatId, message);
+                        MessageBox.Show("La notificación se ha enviado al cliente.");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al notificar estado: {ex.Message}");
+                    }
                     this.Dispose();
                     System.GC.Collect();
                 }

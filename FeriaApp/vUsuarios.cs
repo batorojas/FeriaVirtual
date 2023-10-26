@@ -95,8 +95,9 @@ namespace FeriaApp
             DataSet listaUsuarios = negocioUsuarios.retornarUsuarios();
             metroGridListaUsuarios.AutoGenerateColumns = true;
             metroGridListaUsuarios.DataSource = listaUsuarios.Tables["USUARIO"]; // Listar usuarios
-            
         }
+
+
 
         private void tabCrearCliente()
         {

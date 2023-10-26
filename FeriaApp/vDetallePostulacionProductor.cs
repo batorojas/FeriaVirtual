@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Telegram.Bot;
 namespace FeriaApp
 {
     public partial class vDetallePostulacionProductor : UserControl
@@ -52,7 +52,7 @@ namespace FeriaApp
 
         }
 
-        private void btnSeleccionarProductor_Click(object sender, EventArgs e)
+        private async void btnSeleccionarProductor_Click(object sender, EventArgs e)
         {
             // Buscar Postulacion Productor
             NegocioCabeceraPostulacion negocioCabeceraPostulacion = new NegocioCabeceraPostulacion();
@@ -136,6 +136,27 @@ namespace FeriaApp
                 negocioCabeceraPostulacion.actualizarEstadoPostulacion(postulacion.IdCabeceraPostulacion, 2); // Aceptada
 
                 MessageBox.Show("La postulación ha sido aceptada exitosamente.");
+                
+                // Reemplaza "YOUR_BOT_TOKEN" con tu token de bot real
+                var botToken = "6762818327:AAHOiQlDwmDucqKgRacNDUBY7VRlHVNkYkA";
+    
+                var botClient = new TelegramBotClient(botToken);
+    
+                // Reemplaza "CHAT_ID" con el chat ID del usuario al que deseas enviar el mensaje
+                var chatId = 902743181;
+                var rutProd = txtRutProductor.Text;
+                var nomProd = txtRazonSocial.Text;
+                var message = $"Su pedido se ha asignado al productor {nomProd} con rut {rutProd}";
+                try
+                {
+                    await botClient.SendTextMessageAsync(chatId, message);
+                    MessageBox.Show("La notificación se ha enviado al cliente.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al notificar estado: {ex.Message}");
+                }
+
 
                 // Cerrar proceso de venta
                 if (cerrarProcesoVenta == true)
