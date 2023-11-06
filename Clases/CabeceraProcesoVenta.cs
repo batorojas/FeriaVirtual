@@ -10,6 +10,7 @@ namespace Clases
         private String observaciones;
         private int idEstado;
         private int rutCliente;
+        private int idTipoVenta;
 
         public int IdCabeceraVenta { get => idCabeceraVenta; set => idCabeceraVenta = value; }
         public int IdEmpresaTransporte { get => idEmpresaTransporte; set => idEmpresaTransporte = value; }
@@ -17,5 +18,6 @@ namespace Clases
         public string Observaciones { get => observaciones; set => observaciones = value; }
         public int IdEstado { get => idEstado; set => idEstado = value; }
         public int RutCliente { get => rutCliente; set => rutCliente = value; }
+        public int IdTipoVenta { get => idTipoVenta; set => idTipoVenta = value; }
     }
 }

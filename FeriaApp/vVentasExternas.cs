@@ -32,7 +32,7 @@ namespace FeriaApp
             metroTabControl1.SelectedTab = null;
             metroTabControl1.SelectedIndex = 0;
 
-            DataSet listarProcesosVenta = negocioCabeceraPV.ListarProcesosVenta();
+            DataSet listarProcesosVenta = negocioCabeceraPV.ListarProcesosVentaExterna();
             this.dgvListaVentas.AutoGenerateColumns = true;
             this.dgvListaVentas.DataSource = listarProcesosVenta.Tables["CABECERA_PV"];
         }
@@ -88,7 +88,7 @@ namespace FeriaApp
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-            DataSet listaVentasExternas = negocioCabeceraPV.ListarProcesosVenta();
+            DataSet listaVentasExternas = negocioCabeceraPV.ListarProcesosVentaExterna();
 
             string fechaActual = DateTime.Now.ToString("yyyyMMdd_HHmmss"); // Formato: AñoMesDia_HoraMinutoSegundo
             string pdfFileName = $"Reporte_VentasExternas_{fechaActual}.pdf";
@@ -101,7 +101,7 @@ namespace FeriaApp
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            DataSet listarProcesosVenta = negocioCabeceraPV.ListarProcesosVenta();
+            DataSet listarProcesosVenta = negocioCabeceraPV.ListarProcesosVentaExterna();
             this.dgvListaVentas.AutoGenerateColumns = true;
             this.dgvListaVentas.DataSource = listarProcesosVenta.Tables["CABECERA_PV"];
         }
@@ -122,6 +122,7 @@ namespace FeriaApp
         private void btnProductores_Click(object sender, EventArgs e)
         {
             int idproceso = int.Parse(txtbIDProcesoVenta.Text);
+
             vPostulacionesProductores vistaPostulacionesProductores = new vPostulacionesProductores(idproceso);
             vistaPostulacionesProductores.ShowDialog();
         }
