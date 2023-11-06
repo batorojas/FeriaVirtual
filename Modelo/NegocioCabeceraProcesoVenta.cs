@@ -34,12 +34,37 @@ namespace Negocios
                 MessageBox.Show("ERROR ID:001PRO NAME:NEGOCIO PRODUCTO " + ex);
             }
         }
-        public DataSet ListarProcesosVenta()
+        public DataSet ListarProcesosVentaExterna()
         {
             try
             {
                 this.configurarConexion();
-                this.con.SqlString = "SELECT * FROM " + this.con.TableName;
+                this.con.SqlString = "SELECT * FROM " + this.con.TableName + " WHERE ID_TIPO_VENTA = 1";
+                this.con.EsSelect = true;
+                this.con.conectar();
+            }
+            catch (Exception ex)
+            {
+                // CORREGIR MENSAJE DE ERROR
+                MessageBox.Show("ERROR ID:002PRO NAME:NEGOCIO PRODUCTO " + ex);
+            }
+            finally
+            {
+                if (con != null)
+                {
+                    con.cerrarConexion(); // Llamada al método personalizado CerrarConexion
+                }
+            }
+
+            return this.con.DbDataSet;
+        }
+
+        public DataSet ListarProcesosVentaLocal()
+        {
+            try
+            {
+                this.configurarConexion();
+                this.con.SqlString = "SELECT * FROM " + this.con.TableName + " WHERE ID_TIPO_VENTA = 2";
                 this.con.EsSelect = true;
                 this.con.conectar();
             }
