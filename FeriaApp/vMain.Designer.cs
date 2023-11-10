@@ -30,7 +30,6 @@
         {
             this.tabControlMenu1 = new TabControls.DotNetBarTabControl();
             this.tabPageInicio = new System.Windows.Forms.TabPage();
-            this.vInicio1 = new FeriaApp.vInicio();
             this.tabPageVentasLocales = new System.Windows.Forms.TabPage();
             this.vVentasLocales1 = new FeriaApp.vVentasLocales();
             this.tabPageVentasExternas = new System.Windows.Forms.TabPage();
@@ -44,6 +43,7 @@
             this.vPagos = new System.Windows.Forms.TabPage();
             this.vPagos1 = new FeriaApp.vPagos();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.vInicio1 = new FeriaApp.vInicio();
             this.tabControlMenu1.SuspendLayout();
             this.tabPageInicio.SuspendLayout();
             this.tabPageVentasLocales.SuspendLayout();
@@ -85,15 +85,6 @@
             this.tabPageInicio.TabIndex = 0;
             this.tabPageInicio.Text = "Inicio";
             this.tabPageInicio.UseVisualStyleBackColor = true;
-            // 
-            // vInicio1
-            // 
-            this.vInicio1.Location = new System.Drawing.Point(0, 0);
-            this.vInicio1.Margin = new System.Windows.Forms.Padding(5);
-            this.vInicio1.Name = "vInicio1";
-            this.vInicio1.NombreSesionStartPage = "Usuario";
-            this.vInicio1.Size = new System.Drawing.Size(867, 543);
-            this.vInicio1.TabIndex = 0;
             // 
             // tabPageVentasLocales
             // 
@@ -210,6 +201,7 @@
             // vPagos1
             // 
             this.vPagos1.Location = new System.Drawing.Point(0, 2);
+            this.vPagos1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.vPagos1.Name = "vPagos1";
             this.vPagos1.Size = new System.Drawing.Size(916, 547);
             this.vPagos1.TabIndex = 0;
@@ -226,6 +218,14 @@
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
+            // 
+            // vInicio1
+            // 
+            this.vInicio1.Location = new System.Drawing.Point(0, 0);
+            this.vInicio1.Margin = new System.Windows.Forms.Padding(5);
+            this.vInicio1.Name = "vInicio1";
+            this.vInicio1.Size = new System.Drawing.Size(867, 543);
+            this.vInicio1.TabIndex = 0;
             // 
             // vMain
             // 
@@ -268,7 +268,7 @@
         private FeriaApp.vVentasExternas vVentasExternas1;
         private vContratos vContratos1;
         private vTransportes vTransportes1;
-        private vInicio vInicio1;
+        private FeriaApp.vInicio vInicio1;
     }
 }
 

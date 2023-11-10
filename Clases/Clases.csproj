@@ -155,6 +155,7 @@
     <Compile Include="CabeceraProcesoVenta.cs" />
     <Compile Include="CabeceraSobrante.cs" />
     <Compile Include="CabeceraSubastaTransporte.cs" />
+    <Compile Include="Categoria.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Comuna.cs" />
     <Compile Include="Contrato.cs" />
@@ -165,6 +166,7 @@
     <Compile Include="EstadoVenta.cs" />
     <Compile Include="Pais.cs" />
     <Compile Include="Perfil.cs" />
+    <Compile Include="Producto.cs" />
     <Compile Include="Productor.cs" />
     <Compile Include="Provincia.cs" />
     <Compile Include="Region.cs" />
