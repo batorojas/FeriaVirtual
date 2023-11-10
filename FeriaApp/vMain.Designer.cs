@@ -30,6 +30,7 @@
         {
             this.tabControlMenu1 = new TabControls.DotNetBarTabControl();
             this.tabPageInicio = new System.Windows.Forms.TabPage();
+            this.vInicio1 = new FeriaApp.vInicio();
             this.tabPageVentasLocales = new System.Windows.Forms.TabPage();
             this.vVentasLocales1 = new FeriaApp.vVentasLocales();
             this.tabPageVentasExternas = new System.Windows.Forms.TabPage();
@@ -43,7 +44,6 @@
             this.vPagos = new System.Windows.Forms.TabPage();
             this.vPagos1 = new FeriaApp.vPagos();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.vInicio1 = new FeriaApp.vInicio();
             this.tabControlMenu1.SuspendLayout();
             this.tabPageInicio.SuspendLayout();
             this.tabPageVentasLocales.SuspendLayout();
@@ -86,11 +86,18 @@
             this.tabPageInicio.Text = "Inicio";
             this.tabPageInicio.UseVisualStyleBackColor = true;
             // 
+            // vInicio1
+            // 
+            this.vInicio1.Location = new System.Drawing.Point(0, 0);
+            this.vInicio1.Margin = new System.Windows.Forms.Padding(5);
+            this.vInicio1.Name = "vInicio1";
+            this.vInicio1.Size = new System.Drawing.Size(867, 543);
+            this.vInicio1.TabIndex = 0;
+            // 
             // tabPageVentasLocales
             // 
             this.tabPageVentasLocales.Controls.Add(this.vVentasLocales1);
             this.tabPageVentasLocales.Location = new System.Drawing.Point(140, 4);
-            this.tabPageVentasLocales.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageVentasLocales.Name = "tabPageVentasLocales";
             this.tabPageVentasLocales.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageVentasLocales.Size = new System.Drawing.Size(923, 545);
@@ -218,14 +225,6 @@
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 10;
-            // 
-            // vInicio1
-            // 
-            this.vInicio1.Location = new System.Drawing.Point(0, 0);
-            this.vInicio1.Margin = new System.Windows.Forms.Padding(5);
-            this.vInicio1.Name = "vInicio1";
-            this.vInicio1.Size = new System.Drawing.Size(867, 543);
-            this.vInicio1.TabIndex = 0;
             // 
             // vMain
             // 
