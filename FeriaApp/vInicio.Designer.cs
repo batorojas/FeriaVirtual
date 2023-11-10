@@ -97,7 +97,7 @@
 
             this.Controls.Add(this.chartProductos);
         }
-
+        #endregion
         private MetroFramework.Controls.MetroLabel metroLabel2;
 
         private System.Windows.Forms.PictureBox pictureBox1;
