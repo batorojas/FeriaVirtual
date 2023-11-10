@@ -91,7 +91,6 @@
             this.vInicio1.Location = new System.Drawing.Point(0, 0);
             this.vInicio1.Margin = new System.Windows.Forms.Padding(5);
             this.vInicio1.Name = "vInicio1";
-            this.vInicio1.NombreSesionStartPage = "Usuario";
             this.vInicio1.Size = new System.Drawing.Size(867, 543);
             this.vInicio1.TabIndex = 0;
             // 
@@ -99,7 +98,6 @@
             // 
             this.tabPageVentasLocales.Controls.Add(this.vVentasLocales1);
             this.tabPageVentasLocales.Location = new System.Drawing.Point(140, 4);
-            this.tabPageVentasLocales.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageVentasLocales.Name = "tabPageVentasLocales";
             this.tabPageVentasLocales.Padding = new System.Windows.Forms.Padding(4);
             this.tabPageVentasLocales.Size = new System.Drawing.Size(923, 545);
@@ -210,6 +208,7 @@
             // vPagos1
             // 
             this.vPagos1.Location = new System.Drawing.Point(0, 2);
+            this.vPagos1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.vPagos1.Name = "vPagos1";
             this.vPagos1.Size = new System.Drawing.Size(916, 547);
             this.vPagos1.TabIndex = 0;
@@ -268,7 +267,7 @@
         private FeriaApp.vVentasExternas vVentasExternas1;
         private vContratos vContratos1;
         private vTransportes vTransportes1;
-        private vInicio vInicio1;
+        private FeriaApp.vInicio vInicio1;
     }
 }
 

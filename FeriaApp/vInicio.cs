@@ -19,11 +19,7 @@ namespace FeriaApp
             InitializeComponent();
         }
 
-        public string NombreSesionStartPage
-        {
-            get { return metroLabel1.Text; }
-            set { metroLabel1.Text = value; }
-        }
+       
 
 
         private void vInicio_Load(object sender, EventArgs e)
