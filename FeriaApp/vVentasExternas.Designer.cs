@@ -28,12 +28,12 @@ namespace FeriaApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvListaVentas = new MetroFramework.Controls.MetroGrid();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabProcesosVenta = new MetroFramework.Controls.MetroTabPage();
@@ -41,6 +41,7 @@ namespace FeriaApp
             this.btnExportar = new MetroFramework.Controls.MetroButton();
             this.metroButtonDetallesPV = new MetroFramework.Controls.MetroButton();
             this.metroTabDetallePV = new MetroFramework.Controls.MetroTabPage();
+            this.btnExportarDetalles = new MetroFramework.Controls.MetroButton();
             this.btnProductores = new MetroFramework.Controls.MetroButton();
             this.btnTransporte = new MetroFramework.Controls.MetroButton();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
@@ -73,43 +74,43 @@ namespace FeriaApp
             this.dgvListaVentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListaVentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvListaVentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListaVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListaVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListaVentas.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListaVentas.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListaVentas.EnableHeadersVisualStyles = false;
             this.dgvListaVentas.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvListaVentas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvListaVentas.Location = new System.Drawing.Point(2, 21);
-            this.dgvListaVentas.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvListaVentas.Location = new System.Drawing.Point(3, 26);
+            this.dgvListaVentas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvListaVentas.Name = "dgvListaVentas";
             this.dgvListaVentas.ReadOnly = true;
             this.dgvListaVentas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListaVentas.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListaVentas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListaVentas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvListaVentas.RowTemplate.Height = 24;
             this.dgvListaVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaVentas.Size = new System.Drawing.Size(637, 254);
+            this.dgvListaVentas.Size = new System.Drawing.Size(849, 313);
             this.dgvListaVentas.TabIndex = 2;
             this.dgvListaVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListaVentas_CellContentClick);
             // 
@@ -117,11 +118,11 @@ namespace FeriaApp
             // 
             this.metroTabControl1.Controls.Add(this.metroTabProcesosVenta);
             this.metroTabControl1.Controls.Add(this.metroTabDetallePV);
-            this.metroTabControl1.Location = new System.Drawing.Point(7, 22);
-            this.metroTabControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.metroTabControl1.Location = new System.Drawing.Point(9, 27);
+            this.metroTabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(647, 417);
+            this.metroTabControl1.Size = new System.Drawing.Size(863, 513);
             this.metroTabControl1.TabIndex = 3;
             this.metroTabControl1.UseSelectable = true;
             // 
@@ -133,23 +134,23 @@ namespace FeriaApp
             this.metroTabProcesosVenta.Controls.Add(this.dgvListaVentas);
             this.metroTabProcesosVenta.HorizontalScrollbarBarColor = true;
             this.metroTabProcesosVenta.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabProcesosVenta.HorizontalScrollbarSize = 8;
+            this.metroTabProcesosVenta.HorizontalScrollbarSize = 10;
             this.metroTabProcesosVenta.Location = new System.Drawing.Point(4, 38);
-            this.metroTabProcesosVenta.Margin = new System.Windows.Forms.Padding(2);
+            this.metroTabProcesosVenta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroTabProcesosVenta.Name = "metroTabProcesosVenta";
-            this.metroTabProcesosVenta.Size = new System.Drawing.Size(639, 375);
+            this.metroTabProcesosVenta.Size = new System.Drawing.Size(855, 471);
             this.metroTabProcesosVenta.TabIndex = 0;
             this.metroTabProcesosVenta.Text = "Procesos de Venta";
             this.metroTabProcesosVenta.VerticalScrollbarBarColor = true;
             this.metroTabProcesosVenta.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabProcesosVenta.VerticalScrollbarSize = 8;
+            this.metroTabProcesosVenta.VerticalScrollbarSize = 11;
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(29, 307);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnActualizar.Location = new System.Drawing.Point(39, 378);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(63, 52);
+            this.btnActualizar.Size = new System.Drawing.Size(84, 64);
             this.btnActualizar.TabIndex = 8;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseSelectable = true;
@@ -157,10 +158,10 @@ namespace FeriaApp
             // 
             // btnExportar
             // 
-            this.btnExportar.Location = new System.Drawing.Point(532, 307);
-            this.btnExportar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExportar.Location = new System.Drawing.Point(709, 378);
+            this.btnExportar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(63, 52);
+            this.btnExportar.Size = new System.Drawing.Size(84, 64);
             this.btnExportar.TabIndex = 7;
             this.btnExportar.Text = "Exportar";
             this.btnExportar.UseSelectable = true;
@@ -168,10 +169,10 @@ namespace FeriaApp
             // 
             // metroButtonDetallesPV
             // 
-            this.metroButtonDetallesPV.Location = new System.Drawing.Point(209, 307);
-            this.metroButtonDetallesPV.Margin = new System.Windows.Forms.Padding(2);
+            this.metroButtonDetallesPV.Location = new System.Drawing.Point(279, 378);
+            this.metroButtonDetallesPV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroButtonDetallesPV.Name = "metroButtonDetallesPV";
-            this.metroButtonDetallesPV.Size = new System.Drawing.Size(194, 52);
+            this.metroButtonDetallesPV.Size = new System.Drawing.Size(259, 64);
             this.metroButtonDetallesPV.TabIndex = 3;
             this.metroButtonDetallesPV.Text = "Ver Detalles";
             this.metroButtonDetallesPV.UseSelectable = true;
@@ -179,6 +180,7 @@ namespace FeriaApp
             // 
             // metroTabDetallePV
             // 
+            this.metroTabDetallePV.Controls.Add(this.btnExportarDetalles);
             this.metroTabDetallePV.Controls.Add(this.btnProductores);
             this.metroTabDetallePV.Controls.Add(this.btnTransporte);
             this.metroTabDetallePV.Controls.Add(this.metroLabel8);
@@ -199,24 +201,40 @@ namespace FeriaApp
             this.metroTabDetallePV.Controls.Add(this.metroLabel1);
             this.metroTabDetallePV.HorizontalScrollbarBarColor = true;
             this.metroTabDetallePV.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabDetallePV.HorizontalScrollbarSize = 8;
+            this.metroTabDetallePV.HorizontalScrollbarSize = 10;
             this.metroTabDetallePV.Location = new System.Drawing.Point(4, 38);
-            this.metroTabDetallePV.Margin = new System.Windows.Forms.Padding(2);
+            this.metroTabDetallePV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroTabDetallePV.Name = "metroTabDetallePV";
-            this.metroTabDetallePV.Size = new System.Drawing.Size(639, 375);
+            this.metroTabDetallePV.Size = new System.Drawing.Size(855, 471);
             this.metroTabDetallePV.TabIndex = 1;
             this.metroTabDetallePV.Text = "Detalle Venta";
             this.metroTabDetallePV.VerticalScrollbarBarColor = true;
             this.metroTabDetallePV.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabDetallePV.VerticalScrollbarSize = 8;
+            this.metroTabDetallePV.VerticalScrollbarSize = 11;
+            // 
+            // btnExportarDetalles
+            // 
+            this.btnExportarDetalles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            this.btnExportarDetalles.ForeColor = System.Drawing.Color.White;
+            this.btnExportarDetalles.Location = new System.Drawing.Point(707, 408);
+            this.btnExportarDetalles.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExportarDetalles.Name = "btnExportarDetalles";
+            this.btnExportarDetalles.Size = new System.Drawing.Size(133, 46);
+            this.btnExportarDetalles.TabIndex = 21;
+            this.btnExportarDetalles.Text = "Exportar";
+            this.btnExportarDetalles.UseCustomBackColor = true;
+            this.btnExportarDetalles.UseCustomForeColor = true;
+            this.btnExportarDetalles.UseSelectable = true;
+            this.btnExportarDetalles.Click += new System.EventHandler(this.btnExportarDetalles_Click);
             // 
             // btnProductores
             // 
             this.btnProductores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             this.btnProductores.ForeColor = System.Drawing.Color.White;
-            this.btnProductores.Location = new System.Drawing.Point(530, 279);
+            this.btnProductores.Location = new System.Drawing.Point(707, 343);
+            this.btnProductores.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductores.Name = "btnProductores";
-            this.btnProductores.Size = new System.Drawing.Size(100, 37);
+            this.btnProductores.Size = new System.Drawing.Size(133, 46);
             this.btnProductores.TabIndex = 20;
             this.btnProductores.Text = "Selecionar\r\nProductores";
             this.btnProductores.UseCustomBackColor = true;
@@ -228,9 +246,10 @@ namespace FeriaApp
             // 
             this.btnTransporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             this.btnTransporte.ForeColor = System.Drawing.Color.White;
-            this.btnTransporte.Location = new System.Drawing.Point(530, 226);
+            this.btnTransporte.Location = new System.Drawing.Point(707, 278);
+            this.btnTransporte.Margin = new System.Windows.Forms.Padding(4);
             this.btnTransporte.Name = "btnTransporte";
-            this.btnTransporte.Size = new System.Drawing.Size(100, 37);
+            this.btnTransporte.Size = new System.Drawing.Size(133, 46);
             this.btnTransporte.TabIndex = 19;
             this.btnTransporte.Text = "Ver Transporte";
             this.btnTransporte.UseCustomBackColor = true;
@@ -242,10 +261,9 @@ namespace FeriaApp
             // 
             this.metroLabel8.BackColor = System.Drawing.SystemColors.Info;
             this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel8.Location = new System.Drawing.Point(20, 194);
-            this.metroLabel8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel8.Location = new System.Drawing.Point(27, 239);
             this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(136, 19);
+            this.metroLabel8.Size = new System.Drawing.Size(181, 23);
             this.metroLabel8.TabIndex = 18;
             this.metroLabel8.Text = "Productos:";
             this.metroLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -259,40 +277,41 @@ namespace FeriaApp
             this.dgvDetalleProcesoVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDetalleProcesoVenta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvDetalleProcesoVenta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleProcesoVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleProcesoVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDetalleProcesoVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetalleProcesoVenta.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetalleProcesoVenta.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDetalleProcesoVenta.EnableHeadersVisualStyles = false;
             this.dgvDetalleProcesoVenta.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvDetalleProcesoVenta.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvDetalleProcesoVenta.Location = new System.Drawing.Point(32, 216);
+            this.dgvDetalleProcesoVenta.Location = new System.Drawing.Point(43, 266);
+            this.dgvDetalleProcesoVenta.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDetalleProcesoVenta.Name = "dgvDetalleProcesoVenta";
             this.dgvDetalleProcesoVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleProcesoVenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleProcesoVenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDetalleProcesoVenta.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvDetalleProcesoVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalleProcesoVenta.Size = new System.Drawing.Size(481, 125);
+            this.dgvDetalleProcesoVenta.Size = new System.Drawing.Size(641, 154);
             this.dgvDetalleProcesoVenta.TabIndex = 17;
             // 
             // mdtFechaEmisionPV
@@ -300,11 +319,11 @@ namespace FeriaApp
             this.mdtFechaEmisionPV.Cursor = System.Windows.Forms.Cursors.No;
             this.mdtFechaEmisionPV.Enabled = false;
             this.mdtFechaEmisionPV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.mdtFechaEmisionPV.Location = new System.Drawing.Point(391, 5);
-            this.mdtFechaEmisionPV.Margin = new System.Windows.Forms.Padding(2);
-            this.mdtFechaEmisionPV.MinimumSize = new System.Drawing.Size(0, 29);
+            this.mdtFechaEmisionPV.Location = new System.Drawing.Point(521, 6);
+            this.mdtFechaEmisionPV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mdtFechaEmisionPV.MinimumSize = new System.Drawing.Size(4, 30);
             this.mdtFechaEmisionPV.Name = "mdtFechaEmisionPV";
-            this.mdtFechaEmisionPV.Size = new System.Drawing.Size(228, 29);
+            this.mdtFechaEmisionPV.Size = new System.Drawing.Size(303, 30);
             this.mdtFechaEmisionPV.TabIndex = 16;
             // 
             // txtbObservacionesPV
@@ -313,10 +332,10 @@ namespace FeriaApp
             // 
             // 
             this.txtbObservacionesPV.CustomButton.Image = null;
-            this.txtbObservacionesPV.CustomButton.Location = new System.Drawing.Point(492, 1);
-            this.txtbObservacionesPV.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbObservacionesPV.CustomButton.Location = new System.Drawing.Point(663, 2);
+            this.txtbObservacionesPV.CustomButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtbObservacionesPV.CustomButton.Name = "";
-            this.txtbObservacionesPV.CustomButton.Size = new System.Drawing.Size(63, 63);
+            this.txtbObservacionesPV.CustomButton.Size = new System.Drawing.Size(75, 75);
             this.txtbObservacionesPV.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtbObservacionesPV.CustomButton.TabIndex = 1;
             this.txtbObservacionesPV.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -324,8 +343,8 @@ namespace FeriaApp
             this.txtbObservacionesPV.CustomButton.Visible = false;
             this.txtbObservacionesPV.Enabled = false;
             this.txtbObservacionesPV.Lines = new string[0];
-            this.txtbObservacionesPV.Location = new System.Drawing.Point(48, 118);
-            this.txtbObservacionesPV.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbObservacionesPV.Location = new System.Drawing.Point(64, 145);
+            this.txtbObservacionesPV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtbObservacionesPV.MaxLength = 32767;
             this.txtbObservacionesPV.Name = "txtbObservacionesPV";
             this.txtbObservacionesPV.PasswordChar = '\0';
@@ -336,7 +355,7 @@ namespace FeriaApp
             this.txtbObservacionesPV.SelectionLength = 0;
             this.txtbObservacionesPV.SelectionStart = 0;
             this.txtbObservacionesPV.ShortcutsEnabled = true;
-            this.txtbObservacionesPV.Size = new System.Drawing.Size(556, 65);
+            this.txtbObservacionesPV.Size = new System.Drawing.Size(741, 80);
             this.txtbObservacionesPV.TabIndex = 15;
             this.txtbObservacionesPV.UseSelectable = true;
             this.txtbObservacionesPV.WaterMark = "No posee observaciones";
@@ -347,10 +366,9 @@ namespace FeriaApp
             // 
             this.metroLabel7.BackColor = System.Drawing.SystemColors.Info;
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel7.Location = new System.Drawing.Point(20, 97);
-            this.metroLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel7.Location = new System.Drawing.Point(27, 119);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(136, 19);
+            this.metroLabel7.Size = new System.Drawing.Size(181, 23);
             this.metroLabel7.TabIndex = 14;
             this.metroLabel7.Text = "Observaciones:";
             this.metroLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -361,10 +379,10 @@ namespace FeriaApp
             // 
             // 
             this.txtbEstado.CustomButton.Image = null;
-            this.txtbEstado.CustomButton.Location = new System.Drawing.Point(203, 1);
-            this.txtbEstado.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbEstado.CustomButton.Location = new System.Drawing.Point(274, 2);
+            this.txtbEstado.CustomButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtbEstado.CustomButton.Name = "";
-            this.txtbEstado.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtbEstado.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtbEstado.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtbEstado.CustomButton.TabIndex = 1;
             this.txtbEstado.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -372,8 +390,8 @@ namespace FeriaApp
             this.txtbEstado.CustomButton.Visible = false;
             this.txtbEstado.Enabled = false;
             this.txtbEstado.Lines = new string[0];
-            this.txtbEstado.Location = new System.Drawing.Point(391, 65);
-            this.txtbEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbEstado.Location = new System.Drawing.Point(521, 80);
+            this.txtbEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtbEstado.MaxLength = 32767;
             this.txtbEstado.Name = "txtbEstado";
             this.txtbEstado.PasswordChar = '\0';
@@ -383,7 +401,7 @@ namespace FeriaApp
             this.txtbEstado.SelectionLength = 0;
             this.txtbEstado.SelectionStart = 0;
             this.txtbEstado.ShortcutsEnabled = true;
-            this.txtbEstado.Size = new System.Drawing.Size(225, 23);
+            this.txtbEstado.Size = new System.Drawing.Size(300, 28);
             this.txtbEstado.TabIndex = 13;
             this.txtbEstado.UseSelectable = true;
             this.txtbEstado.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -391,10 +409,9 @@ namespace FeriaApp
             // 
             // metroLabel6
             // 
-            this.metroLabel6.Location = new System.Drawing.Point(283, 69);
-            this.metroLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel6.Location = new System.Drawing.Point(377, 85);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(104, 19);
+            this.metroLabel6.Size = new System.Drawing.Size(139, 23);
             this.metroLabel6.TabIndex = 12;
             this.metroLabel6.Text = "Estado";
             this.metroLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -405,10 +422,10 @@ namespace FeriaApp
             // 
             // 
             this.txtbEmpresaTransporte.CustomButton.Image = null;
-            this.txtbEmpresaTransporte.CustomButton.Location = new System.Drawing.Point(122, 1);
-            this.txtbEmpresaTransporte.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbEmpresaTransporte.CustomButton.Location = new System.Drawing.Point(166, 2);
+            this.txtbEmpresaTransporte.CustomButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtbEmpresaTransporte.CustomButton.Name = "";
-            this.txtbEmpresaTransporte.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtbEmpresaTransporte.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtbEmpresaTransporte.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtbEmpresaTransporte.CustomButton.TabIndex = 1;
             this.txtbEmpresaTransporte.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -416,8 +433,8 @@ namespace FeriaApp
             this.txtbEmpresaTransporte.CustomButton.Visible = false;
             this.txtbEmpresaTransporte.Enabled = false;
             this.txtbEmpresaTransporte.Lines = new string[0];
-            this.txtbEmpresaTransporte.Location = new System.Drawing.Point(119, 63);
-            this.txtbEmpresaTransporte.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbEmpresaTransporte.Location = new System.Drawing.Point(159, 78);
+            this.txtbEmpresaTransporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtbEmpresaTransporte.MaxLength = 32767;
             this.txtbEmpresaTransporte.Name = "txtbEmpresaTransporte";
             this.txtbEmpresaTransporte.PasswordChar = '\0';
@@ -427,7 +444,7 @@ namespace FeriaApp
             this.txtbEmpresaTransporte.SelectionLength = 0;
             this.txtbEmpresaTransporte.SelectionStart = 0;
             this.txtbEmpresaTransporte.ShortcutsEnabled = true;
-            this.txtbEmpresaTransporte.Size = new System.Drawing.Size(144, 23);
+            this.txtbEmpresaTransporte.Size = new System.Drawing.Size(192, 28);
             this.txtbEmpresaTransporte.TabIndex = 11;
             this.txtbEmpresaTransporte.UseSelectable = true;
             this.txtbEmpresaTransporte.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -435,10 +452,9 @@ namespace FeriaApp
             // 
             // metroLabel5
             // 
-            this.metroLabel5.Location = new System.Drawing.Point(3, 65);
-            this.metroLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel5.Location = new System.Drawing.Point(4, 80);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(112, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(149, 23);
             this.metroLabel5.TabIndex = 10;
             this.metroLabel5.Text = "Emp. Transporte";
             this.metroLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -449,10 +465,10 @@ namespace FeriaApp
             // 
             // 
             this.txtbRazonSocial.CustomButton.Image = null;
-            this.txtbRazonSocial.CustomButton.Location = new System.Drawing.Point(203, 1);
-            this.txtbRazonSocial.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbRazonSocial.CustomButton.Location = new System.Drawing.Point(274, 2);
+            this.txtbRazonSocial.CustomButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtbRazonSocial.CustomButton.Name = "";
-            this.txtbRazonSocial.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtbRazonSocial.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtbRazonSocial.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtbRazonSocial.CustomButton.TabIndex = 1;
             this.txtbRazonSocial.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -460,8 +476,8 @@ namespace FeriaApp
             this.txtbRazonSocial.CustomButton.Visible = false;
             this.txtbRazonSocial.Enabled = false;
             this.txtbRazonSocial.Lines = new string[0];
-            this.txtbRazonSocial.Location = new System.Drawing.Point(391, 38);
-            this.txtbRazonSocial.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbRazonSocial.Location = new System.Drawing.Point(521, 47);
+            this.txtbRazonSocial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtbRazonSocial.MaxLength = 32767;
             this.txtbRazonSocial.Name = "txtbRazonSocial";
             this.txtbRazonSocial.PasswordChar = '\0';
@@ -471,7 +487,7 @@ namespace FeriaApp
             this.txtbRazonSocial.SelectionLength = 0;
             this.txtbRazonSocial.SelectionStart = 0;
             this.txtbRazonSocial.ShortcutsEnabled = true;
-            this.txtbRazonSocial.Size = new System.Drawing.Size(225, 23);
+            this.txtbRazonSocial.Size = new System.Drawing.Size(300, 28);
             this.txtbRazonSocial.TabIndex = 9;
             this.txtbRazonSocial.UseSelectable = true;
             this.txtbRazonSocial.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -479,10 +495,9 @@ namespace FeriaApp
             // 
             // metroLabel4
             // 
-            this.metroLabel4.Location = new System.Drawing.Point(283, 40);
-            this.metroLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel4.Location = new System.Drawing.Point(377, 49);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(104, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(139, 23);
             this.metroLabel4.TabIndex = 8;
             this.metroLabel4.Text = "Razón Social";
             this.metroLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -493,10 +508,10 @@ namespace FeriaApp
             // 
             // 
             this.txtbRutCliente.CustomButton.Image = null;
-            this.txtbRutCliente.CustomButton.Location = new System.Drawing.Point(122, 1);
-            this.txtbRutCliente.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbRutCliente.CustomButton.Location = new System.Drawing.Point(166, 2);
+            this.txtbRutCliente.CustomButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtbRutCliente.CustomButton.Name = "";
-            this.txtbRutCliente.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtbRutCliente.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtbRutCliente.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtbRutCliente.CustomButton.TabIndex = 1;
             this.txtbRutCliente.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -504,8 +519,8 @@ namespace FeriaApp
             this.txtbRutCliente.CustomButton.Visible = false;
             this.txtbRutCliente.Enabled = false;
             this.txtbRutCliente.Lines = new string[0];
-            this.txtbRutCliente.Location = new System.Drawing.Point(119, 36);
-            this.txtbRutCliente.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbRutCliente.Location = new System.Drawing.Point(159, 44);
+            this.txtbRutCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtbRutCliente.MaxLength = 32767;
             this.txtbRutCliente.Name = "txtbRutCliente";
             this.txtbRutCliente.PasswordChar = '\0';
@@ -516,7 +531,7 @@ namespace FeriaApp
             this.txtbRutCliente.SelectionLength = 0;
             this.txtbRutCliente.SelectionStart = 0;
             this.txtbRutCliente.ShortcutsEnabled = true;
-            this.txtbRutCliente.Size = new System.Drawing.Size(144, 23);
+            this.txtbRutCliente.Size = new System.Drawing.Size(192, 28);
             this.txtbRutCliente.TabIndex = 7;
             this.txtbRutCliente.UseSelectable = true;
             this.txtbRutCliente.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -524,20 +539,18 @@ namespace FeriaApp
             // 
             // metroLabel3
             // 
-            this.metroLabel3.Location = new System.Drawing.Point(-3, 38);
-            this.metroLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel3.Location = new System.Drawing.Point(-4, 47);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(118, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(157, 23);
             this.metroLabel3.TabIndex = 6;
             this.metroLabel3.Text = "RUT Cliente";
             this.metroLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // metroLabel2
             // 
-            this.metroLabel2.Location = new System.Drawing.Point(258, 10);
-            this.metroLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel2.Location = new System.Drawing.Point(344, 12);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(129, 20);
+            this.metroLabel2.Size = new System.Drawing.Size(172, 25);
             this.metroLabel2.TabIndex = 4;
             this.metroLabel2.Text = "Fecha";
             this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -548,10 +561,10 @@ namespace FeriaApp
             // 
             // 
             this.txtbIDProcesoVenta.CustomButton.Image = null;
-            this.txtbIDProcesoVenta.CustomButton.Location = new System.Drawing.Point(30, 1);
-            this.txtbIDProcesoVenta.CustomButton.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbIDProcesoVenta.CustomButton.Location = new System.Drawing.Point(43, 2);
+            this.txtbIDProcesoVenta.CustomButton.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txtbIDProcesoVenta.CustomButton.Name = "";
-            this.txtbIDProcesoVenta.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtbIDProcesoVenta.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.txtbIDProcesoVenta.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtbIDProcesoVenta.CustomButton.TabIndex = 1;
             this.txtbIDProcesoVenta.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -559,8 +572,8 @@ namespace FeriaApp
             this.txtbIDProcesoVenta.CustomButton.Visible = false;
             this.txtbIDProcesoVenta.Enabled = false;
             this.txtbIDProcesoVenta.Lines = new string[0];
-            this.txtbIDProcesoVenta.Location = new System.Drawing.Point(119, 9);
-            this.txtbIDProcesoVenta.Margin = new System.Windows.Forms.Padding(2);
+            this.txtbIDProcesoVenta.Location = new System.Drawing.Point(159, 11);
+            this.txtbIDProcesoVenta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtbIDProcesoVenta.MaxLength = 32767;
             this.txtbIDProcesoVenta.Name = "txtbIDProcesoVenta";
             this.txtbIDProcesoVenta.PasswordChar = '\0';
@@ -570,7 +583,7 @@ namespace FeriaApp
             this.txtbIDProcesoVenta.SelectionLength = 0;
             this.txtbIDProcesoVenta.SelectionStart = 0;
             this.txtbIDProcesoVenta.ShortcutsEnabled = true;
-            this.txtbIDProcesoVenta.Size = new System.Drawing.Size(52, 23);
+            this.txtbIDProcesoVenta.Size = new System.Drawing.Size(69, 28);
             this.txtbIDProcesoVenta.TabIndex = 3;
             this.txtbIDProcesoVenta.UseSelectable = true;
             this.txtbIDProcesoVenta.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -578,21 +591,21 @@ namespace FeriaApp
             // 
             // metroLabel1
             // 
-            this.metroLabel1.Location = new System.Drawing.Point(-3, 11);
-            this.metroLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.metroLabel1.Location = new System.Drawing.Point(-4, 14);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(118, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(157, 23);
             this.metroLabel1.TabIndex = 2;
             this.metroLabel1.Text = "Cod. Identificador";
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // vVentasExternas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.metroTabControl1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "vVentasExternas";
-            this.Size = new System.Drawing.Size(656, 441);
+            this.Size = new System.Drawing.Size(875, 543);
             this.Load += new System.EventHandler(this.vVentasExternas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaVentas)).EndInit();
             this.metroTabControl1.ResumeLayout(false);
@@ -600,8 +613,9 @@ namespace FeriaApp
             this.metroTabDetallePV.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleProcesoVenta)).EndInit();
             this.ResumeLayout(false);
-
         }
+
+        private MetroFramework.Controls.MetroButton btnExportarDetalles;
 
         private MetroFramework.Controls.MetroDateTime mdtFechaEmisionPV;
 

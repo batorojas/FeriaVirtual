@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <LangVersion>8.0</LangVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -179,6 +180,7 @@
     <Compile Include="NegocioEstadoPostulacion.cs" />
     <Compile Include="NegocioEstadoVenta.cs" />
     <Compile Include="NegocioPerfil.cs" />
+    <Compile Include="NegocioProducto.cs" />
     <Compile Include="NegocioProductor.cs" />
     <Compile Include="NegocioTipoCliente.cs" />
     <Compile Include="NegocioUsuario.cs" />

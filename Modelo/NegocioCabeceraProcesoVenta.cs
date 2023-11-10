@@ -1,6 +1,7 @@
 ﻿using Conexion;
 using iText.Kernel.Pdf;
 using System;
+using System.Text;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
@@ -12,6 +13,7 @@ using Clases;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using PdfWriter = iTextSharp.text.pdf.PdfWriter;
+using iTextSharp.text.html.simpleparser;
 
 namespace Negocios
 {
@@ -233,6 +235,103 @@ namespace Negocios
 
             return dataSet;
         }
+        
+        public DataSet listarDetalleVenta(int idCabeceraPV)
+        {
+            DataSet dataSet = null;
+
+            try
+            {
+                configurarConexion();
+                con.SqlString = "SELECT\n    V.ID_CABECERA_PV AS \"N\u00b0 VENTA\",\n    V.FECHA_EMISION AS \"FECHA\",\n    V.OBS_PV AS \"OBSERVACIONES\",\n    V.RUT_CLIENTE AS \"RUT CLIENTE\",\n    E.DESC_ESTADO AS \"ESTADO VENTA\",\n    T.NOMBRE_EMPRESA AS \"EMPRESA TRANSPORTE\",\n    TV.DESC_TIPO AS \"TIPO VENTA\",\n    D.ID_PRODUCTO AS \"CÓDIGO PRODUCTO\",\n    P.NOMBRE_PRODUCTO AS \"NOMBRE PRODUCTO\",\n    D.CANTIDAD AS \"CANTIDAD\",\n    D.CANTIDAD * D.PRECIO_UNITARIO AS \"TOTAL\"\nFROM CABECERA_PV V\n         INNER JOIN ESTADO_VENTA E ON V.ESTADO_PV = E.ID_ESTADO_PV\n         INNER JOIN TIPO_VENTA TV ON V.ID_TIPO_VENTA = TV.ID_TIPO_VENTA\n         INNER JOIN DETALLE_PV D ON V.ID_CABECERA_PV = D.ID_DETALLE_PV\n         INNER JOIN PRODUCTO P ON D.ID_PRODUCTO = P.ID_PRODUCTO\n         INNER JOIN EMPRESA_TRANSPORTE T ON V.EMPRESA_TRANS = T.ID_EMPRESA\nWHERE V.ID_CABECERA_PV = " + idCabeceraPV;
+                con.EsSelect = true;
+                con.conectar();
+
+                dataSet = con.DbDataSet;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR ID:002PRO NAME:NEGOCIO PRODUCTO " + ex);
+            }
+            finally
+            {
+                if (con != null)
+                {
+                    con.cerrarConexion(); // Assuming a method to close the database connection in your ConexionOracle class
+                }
+            }
+
+            return dataSet;
+        }
+
+        public void exportarDetallePedidoPDF(DataSet dataSet, string pdfFileName, string title)
+        {
+            string folderPath = "facturas";
+
+            // Crear el directorio si no existe
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+
+            // Construir la ruta completa, incluyendo el directorio "./facturas/" y el nombre del archivo
+            string pdfFilePath = Path.Combine(folderPath, pdfFileName);
+
+            Document doc = new Document();
+            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(pdfFilePath, FileMode.Create));
+            doc.Open();
+
+            // Título de la factura
+            Paragraph titleParagraph = new Paragraph(title, new Font(Font.FontFamily.HELVETICA, 16, Font.BOLD));
+            titleParagraph.Alignment = Element.ALIGN_CENTER;
+            doc.Add(titleParagraph);
+            doc.Add(Chunk.NEWLINE); // Agregar espacio entre el título y la tabla
+
+            // Crear una tabla para los detalles de la factura
+            PdfPTable table = new PdfPTable(dataSet.Tables[0].Columns.Count);
+            table.WidthPercentage = 100; // Establecer el ancho de la tabla al 100% del ancho disponible
+
+            // Obtener el ancho relativo de cada columna basado en el tamaño del texto
+            float[] columnWidths = new float[dataSet.Tables[0].Columns.Count];
+            for (int i = 0; i < dataSet.Tables[0].Columns.Count; i++)
+            {
+                columnWidths[i] = 1f; // Establecer un ancho inicial igual para todas las columnas
+            }
+
+            table.SetWidths(columnWidths);
+
+            // Agregar encabezados
+            foreach (DataColumn column in dataSet.Tables[0].Columns)
+            {
+                PdfPCell headerCell = new PdfPCell(new Phrase(column.ColumnName,
+                    new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD)));
+                headerCell.HorizontalAlignment = Element.ALIGN_CENTER;
+                table.AddCell(headerCell);
+            }
+
+            // Agregar filas con datos
+            foreach (DataRow row in dataSet.Tables[0].Rows)
+            {
+                foreach (var cell in row.ItemArray)
+                {
+                    PdfPCell dataCell =
+                        new PdfPCell(new Phrase(cell.ToString(), new Font(Font.FontFamily.HELVETICA, 12)));
+                    dataCell.HorizontalAlignment = Element.ALIGN_CENTER;
+                    table.AddCell(dataCell);
+                }
+            }
+
+            doc.Add(table);
+
+            // Información adicional, como el total, se puede agregar aquí debajo de la tabla
+
+            // Cerrar el documento
+            doc.Close();
+        }
+
+
+
+
 
         public void ExportDataSetToPdf(DataSet dataSet, string pdfFileName, string title)
         {

@@ -108,8 +108,6 @@ namespace FeriaApp
             }
         }
 
-
-
         private void btnExportarPagosPendientes_Click(object sender, EventArgs e)
         {
             DataSet listaPagosPendientes = negocioCabeceraProcesoVenta.listarPagosPendientes();
