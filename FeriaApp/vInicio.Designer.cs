@@ -67,21 +67,35 @@
             this.metroLabel2.TabIndex = 2;
             this.metroLabel2.Text = "Elija una opción del menu lateral";
             this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.chartProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.chartProductos)).BeginInit();
+            this.SuspendLayout();
             // 
-            // vInicio
+            // chartProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            chartArea1.Name = "ChartArea1";
+            this.chartProductos.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartProductos.Legends.Add(legend1);
+            this.chartProductos.Location = new System.Drawing.Point(24, 78);
+            this.chartProductos.Name = "chartProductos";
+            this.chartProductos.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartProductos.Series.Add(series1);
+            this.chartProductos.Size = new System.Drawing.Size(449, 246);
+            this.chartProductos.TabIndex = 0;
+            this.chartProductos.Text = "Productos más vendidos";
+
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "vInicio";
-            this.Size = new System.Drawing.Size(875, 543);
-            this.Load += new System.EventHandler(this.vInicio_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+
+            this.Controls.Add(this.chartProductos);
         }
 
         private MetroFramework.Controls.MetroLabel metroLabel2;
@@ -90,6 +104,7 @@
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
 
-        #endregion
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartProductos;
+
     }
 }
