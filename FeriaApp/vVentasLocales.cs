@@ -36,7 +36,7 @@ namespace FeriaApp
         {
             int indiceFila = this.dgvListaVentas.SelectedCells[0].RowIndex;
             DataGridViewRow filaSeleccionada = this.dgvListaVentas.Rows[indiceFila];
-            int ProcesoVenta = int.Parse(filaSeleccionada.Cells["ID_CABECERA_PV"].Value.ToString());
+            int ProcesoVenta = int.Parse(filaSeleccionada.Cells["ID"].Value.ToString());
             metroTabControl1.SelectedIndex = 1;
             cargaDetalles(ProcesoVenta);
         }
