@@ -41,7 +41,21 @@ namespace Negocios
             try
             {
                 this.configurarConexion();
-                this.con.SqlString = "SELECT * FROM " + this.con.TableName + " WHERE ID_TIPO_VENTA = 1";
+                this.con.SqlString = @$"
+                    SELECT 
+                        CA.ID_CABECERA_PV AS ""ID"", 
+                        CA.FECHA_EMISION AS ""FECHA EMISION"", 
+                        CA.OBS_PV AS ""OBSERVACIONES"", 
+                        CA.RUT_CLIENTE AS ""RUT CLIENTE"", 
+                        ES.DESC_ESTADO_POSTULACION AS ""ESTADO POSTULACION"", 
+                        ET.NOMBRE_EMPRESA AS ""EMPRESA TRANSPORTE"", 
+                        TI.DESC_TIPO AS ""TIPO VENTA"" 
+                    FROM {this.con.TableName} CA
+                    JOIN TIPO_VENTA TI ON (CA.ID_TIPO_VENTA = TI.ID_TIPO_VENTA)
+                    JOIN ESTADO_POSTULACION ES ON (CA.ESTADO_PV = ES.ID_ESTADO_POSTULACION)
+                    JOIN EMPRESA_TRANSPORTE ET ON (CA.EMPRESA_TRANS = ET.ID_EMPRESA) 
+                    WHERE CA.ID_TIPO_VENTA = 1";
+
                 this.con.EsSelect = true;
                 this.con.conectar();
             }
@@ -66,7 +80,21 @@ namespace Negocios
             try
             {
                 this.configurarConexion();
-                this.con.SqlString = "SELECT * FROM " + this.con.TableName + " WHERE ID_TIPO_VENTA = 2";
+                this.con.SqlString = @$"
+                    SELECT 
+                        CA.ID_CABECERA_PV AS ""ID"", 
+                        CA.FECHA_EMISION AS ""FECHA EMISION"", 
+                        CA.OBS_PV AS ""OBSERVACIONES"", 
+                        CA.RUT_CLIENTE AS ""RUT CLIENTE"", 
+                        ES.DESC_ESTADO_POSTULACION AS ""ESTADO POSTULACION"", 
+                        ET.NOMBRE_EMPRESA AS ""EMPRESA TRANSPORTE"", 
+                        TI.DESC_TIPO AS ""TIPO VENTA"" 
+                    FROM {this.con.TableName} CA
+                    JOIN TIPO_VENTA TI ON (CA.ID_TIPO_VENTA = TI.ID_TIPO_VENTA)
+                    JOIN ESTADO_POSTULACION ES ON (CA.ESTADO_PV = ES.ID_ESTADO_POSTULACION)
+                    JOIN EMPRESA_TRANSPORTE ET ON (CA.EMPRESA_TRANS = ET.ID_EMPRESA) 
+                    WHERE CA.ID_TIPO_VENTA = 2";
+
                 this.con.EsSelect = true;
                 this.con.conectar();
             }
