@@ -238,12 +238,6 @@
     <Compile Include="vSubastasTransporte.Designer.cs">
       <DependentUpon>vSubastasTransporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="vTransportes.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="vTransportes.Designer.cs">
-      <DependentUpon>vTransportes.cs</DependentUpon>
-    </Compile>
     <Compile Include="vUsuarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -294,9 +288,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="vSubastasTransporte.resx">
       <DependentUpon>vSubastasTransporte.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="vTransportes.resx">
-      <DependentUpon>vTransportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vUsuarios.resx">
       <DependentUpon>vUsuarios.cs</DependentUpon>
