@@ -36,8 +36,21 @@ namespace Negocios
             try
             {
                 this.configurarConexion();
-                this.con.SqlString = "SELECT * FROM " + this.con.TableName
-                                + " WHERE ID_CABECERA_SUBASTA = " + idSubasta;
+                this.con.SqlString = @$"
+                    SELECT 
+                        DS.ID_DETALLE_SUBASTA AS ""ID"", 
+                        DS.FECHA_ESTIMADA_ENTREGA AS ""FECHA ESTIMADA"", 
+                        DS.CAPACIDAD_CARGA AS ""CAPACIDAD CARGA"", 
+                        DS.REFRIGERACION AS ""REFRIGERACION"", 
+                        DS.PESO_MAX AS ""PESO MAX"", 
+                        DS.EXTRAS AS ""EXTRAS"", 
+                        DS.PRECIO AS ""PRECIO"", 
+                        DS.ID_CABECERA_SUBASTA AS ""ID CABECERA SUBASTA"", 
+                        DS.ID_EMPRESA_TRANS AS ""ID_EMPRESA_TRANS"", 
+                        ET.NOMBRE_EMPRESA AS ""EMPRESA"" 
+                    FROM {this.con.TableName} DS
+                    JOIN EMPRESA_TRANSPORTE ET ON (DS.ID_EMPRESA_TRANS = ET.ID_EMPRESA)
+                    WHERE ID_CABECERA_SUBASTA = {idSubasta}";
                 this.con.EsSelect = true;
                 this.con.conectar();
             }
