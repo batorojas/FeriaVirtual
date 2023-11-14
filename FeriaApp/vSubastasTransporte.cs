@@ -36,6 +36,7 @@ namespace FeriaApp
 
             this.dgvListaTransporte.AutoGenerateColumns = true;
             this.dgvListaTransporte.DataSource = listaSubastasTransporte.Tables["DETALLE_SUBASTA"];
+            this.dgvListaTransporte.Columns["ID_EMPRESA_TRANS"].Visible = false;
         }
 
         private async void metroButton1_Click(object sender, EventArgs e)
