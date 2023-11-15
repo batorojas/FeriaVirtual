@@ -95,6 +95,8 @@ namespace FeriaApp
             DataSet listaUsuarios = negocioUsuarios.retornarUsuarios();
             metroGridListaUsuarios.AutoGenerateColumns = true;
             metroGridListaUsuarios.DataSource = listaUsuarios.Tables["USUARIO"]; // Listar usuarios
+            metroGridListaUsuarios.Columns["ID_PERFIL"].Visible = false;
+            metroGridListaUsuarios.Columns["ID_ESTD_CTA"].Visible = false;
         }
 
 
@@ -778,7 +780,7 @@ namespace FeriaApp
         {
 
             int opcion = idTPerfilUsuarioSeleccionado; // Cambia el valor de 'opcion' según necesidades
-            string nombreUsuario = metroGridListaUsuarios.SelectedRows[0].Cells["NOMBRE_USUARIO"].Value.ToString();
+            string nombreUsuario = metroGridListaUsuarios.SelectedRows[0].Cells["NOMBRE"].Value.ToString();
 
             switch (opcion)
             {
@@ -854,12 +856,12 @@ namespace FeriaApp
             // Verificar si hay al menos una fila seleccionada
             if (metroGridListaUsuarios.SelectedRows.Count > 0)
             {
-                object idUsuarioValue = metroGridListaUsuarios.SelectedRows[0].Cells["ID_USUARIO"].Value;
+                object idUsuarioValue = metroGridListaUsuarios.SelectedRows[0].Cells["ID"].Value;
 
                 if (idUsuarioValue != DBNull.Value)
                 {
                     // Obtener el ID del usuario seleccionado
-                    int idUsuario = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_USUARIO"].Value);
+                    int idUsuario = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID"].Value);
                     int idPerfil = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_PERFIL"].Value);
 
                     idUsuarioSeleccionado = idUsuario;
@@ -894,7 +896,7 @@ namespace FeriaApp
                     {
                         NegocioUsuario negocioUsuario = new NegocioUsuario();
 
-                        int idUsuario = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_USUARIO"].Value.ToString());
+                        int idUsuario = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID"].Value.ToString());
                         Usuario user = negocioUsuario.buscarPorId(idUsuario);
 
                         metroTextBoxModAdminId.Text = user.IdUser.ToString();
@@ -930,7 +932,7 @@ namespace FeriaApp
                         NegocioUsuario negocioUsuario = new NegocioUsuario();
                         NegocioCliente negocioCliente = new NegocioCliente();
 
-                        int idUsuario = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_USUARIO"].Value.ToString());
+                        int idUsuario = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID"].Value.ToString());
                         Usuario user = negocioUsuario.buscarPorId(idUsuario);
                         Cliente cliente = negocioCliente.buscarPorIdUsr(user.IdUser);
 
@@ -974,7 +976,7 @@ namespace FeriaApp
                         NegocioUsuario negocioUsuario = new NegocioUsuario();
                         NegocioEmpresaTransporte negocioEmpresaTransporte = new NegocioEmpresaTransporte();
 
-                        int idUsuario = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_USUARIO"].Value.ToString());
+                        int idUsuario = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID"].Value.ToString());
                         Usuario user = negocioUsuario.buscarPorId(idUsuario);
                         EmpresaTransporte empresaTransporte = negocioEmpresaTransporte.buscarPorIdUsr(user.IdUser);
 
@@ -1013,7 +1015,7 @@ namespace FeriaApp
                         NegocioUsuario negocioUsuario = new NegocioUsuario();
                         NegocioProductor negocioProductor = new NegocioProductor();
 
-                        int idUsuario = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID_USUARIO"].Value.ToString());
+                        int idUsuario = Convert.ToInt32(metroGridListaUsuarios.SelectedRows[0].Cells["ID"].Value.ToString());
                         Usuario user = negocioUsuario.buscarPorId(idUsuario);
                         Productor productor = negocioProductor.buscarPorIdUsr(user.IdUser);
 
