@@ -139,7 +139,7 @@ namespace FeriaApp
         {
             int indiceFila = this.dgvListaVentas.SelectedCells[0].RowIndex;
             DataGridViewRow filaSeleccionada = this.dgvListaVentas.Rows[indiceFila];
-            int ProcesoVenta = int.Parse(filaSeleccionada.Cells["ID_CABECERA_PV"].Value.ToString());
+            int ProcesoVenta = int.Parse(filaSeleccionada.Cells["ID"].Value.ToString());
             DataSet listarDetallePagoVenta = negocioCabeceraPV.listarDetalleVenta(ProcesoVenta);
             string fechaActual = DateTime.Now.ToString("yyyyMMdd_HHmmss"); // Formato: AñoMesDia_HoraMinutoSegundo
             string pdfFileName = $"Detalle_Pedido_{fechaActual}.pdf";

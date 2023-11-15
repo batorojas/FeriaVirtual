@@ -34,15 +34,24 @@ namespace Negocios
             try
             {
                 this.configurarConexion();
-                this.con.SqlString = "SELECT * FROM " + this.con.TableName + " WHERE ID_CABECERA_PV = " + idProcesoVenta;
+                this.con.SqlString = $@"SELECT
+            P.NOMBRE_PRODUCTO AS ""PRODUCTO"",
+            DV.CANTIDAD,
+            DV.PRECIO_UNITARIO AS ""PRECIO UNIDAD"",
+            DV.CANTIDAD * DV.PRECIO_UNITARIO AS ""TOTAL""
+        FROM DETALLE_PV DV
+        JOIN PRODUCTO P ON (DV.ID_PRODUCTO = P.ID_PRODUCTO) 
+        WHERE DV.ID_CABECERA_PV = {idProcesoVenta}";
+
                 this.con.EsSelect = true;
                 this.con.conectar();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR ID:002PRO NAME:NEGOCIO PRODUCTO " + ex);
+                MessageBox.Show("ERROR ID:002PRO NAME:NEGOCIO PRODUCTO " + ex.Message);
             }
             return this.con.DbDataSet;
         }
+
     }
 }

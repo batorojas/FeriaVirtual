@@ -49,7 +49,7 @@ namespace FeriaApp
                 DataGridViewRow filaSeleccionada = this.dgvListaPagosPendientes.Rows[indiceFila];
 
                 // Get the value from the "ID_CABECERA_PV" cell
-                object idCabeceraPVObject = filaSeleccionada.Cells["ID_CABECERA_PV"].Value;
+                object idCabeceraPVObject = filaSeleccionada.Cells["ID"].Value;
 
                 // Check if the value is not null
                 if (idCabeceraPVObject != null)
@@ -128,7 +128,7 @@ namespace FeriaApp
             string fechaActual = DateTime.Now.ToString("yyyyMMdd_HHmmss"); // Formato: AñoMesDia_HoraMinutoSegundo
             string pdfFileName = $"Reporte_VentasExternas_{fechaActual}.pdf";
 
-            string title = "Reporte de ventas externas";
+            string title = "Reporte de ventas";
             negocioCabeceraProcesoVenta.ExportDataSetToPdf(listaPagosRealizados, pdfFileName, title);
 
             MessageBox.Show("Se ha exportado el reporte de pagos realizados.");
@@ -147,8 +147,8 @@ namespace FeriaApp
             // Obtiene la fila seleccionada en el dgvListaPagosRealizados
             if (dgvListaPagosRealizados.SelectedRows.Count > 0)
             {
-                // Obtiene el valor de "ID_CABECERA_PV" de la fila seleccionada
-                var pagoId = dgvListaPagosRealizados.SelectedRows[0].Cells["ID_CABECERA_PV"].Value.ToString();
+                // Obtiene el valor de ID de la fila seleccionada
+                var pagoId = dgvListaPagosRealizados.SelectedRows[0].Cells["ID"].Value.ToString();
         
                 // Crea un mensaje personalizado
                 var message = $"El pago de su pedido #{pagoId} ha sido aceptado, ¡gracias por elegirnos!";

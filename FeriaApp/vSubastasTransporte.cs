@@ -50,7 +50,8 @@ namespace FeriaApp
                     DataGridViewRow filaSeleccionada = this.dgvListaTransporte.Rows[indiceFila];
 
                     int idEmpresaTransporte = int.Parse(filaSeleccionada.Cells["ID_EMPRESA_TRANS"].Value.ToString());
-                    String empresaTransporte = String.Empty;
+                    object empresaTransporte = filaSeleccionada.Cells["EMPRESA"].Value;
+                    
                     
                     NegocioCabeceraProcesoVenta negocioProcesoVenta = new NegocioCabeceraProcesoVenta();
                     negocioProcesoVenta.asignarTransporte(this.IdProcesoVenta, idEmpresaTransporte);
@@ -63,8 +64,8 @@ namespace FeriaApp
     
                     // Reemplaza "CHAT_ID" con el chat ID del usuario al que deseas enviar el mensaje
                     var chatId = 902743181;
-                    var nomTrans = idEmpresaTransporte.ToString();
-                    var message = $"Su pedido se ha asignado a la empresa de transportes y se encuentra en camino.";
+                    var nomTrans = empresaTransporte;
+                    var message = $"Su pedido se ha asignado a la empresa de transportes {nomTrans} y se encuentra en camino.";
                     try
                     {
                         await botClient.SendTextMessageAsync(chatId, message);

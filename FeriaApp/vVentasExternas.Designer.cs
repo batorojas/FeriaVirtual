@@ -121,7 +121,7 @@ namespace FeriaApp
             this.metroTabControl1.Location = new System.Drawing.Point(9, 27);
             this.metroTabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(863, 513);
             this.metroTabControl1.TabIndex = 3;
             this.metroTabControl1.UseSelectable = true;
@@ -321,7 +321,7 @@ namespace FeriaApp
             this.mdtFechaEmisionPV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.mdtFechaEmisionPV.Location = new System.Drawing.Point(521, 6);
             this.mdtFechaEmisionPV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.mdtFechaEmisionPV.MinimumSize = new System.Drawing.Size(4, 30);
+            this.mdtFechaEmisionPV.MinimumSize = new System.Drawing.Size(0, 30);
             this.mdtFechaEmisionPV.Name = "mdtFechaEmisionPV";
             this.mdtFechaEmisionPV.Size = new System.Drawing.Size(303, 30);
             this.mdtFechaEmisionPV.TabIndex = 16;
