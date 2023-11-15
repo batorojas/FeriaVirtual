@@ -41,7 +41,19 @@ namespace Negocios
 
 
                 this.configurarConexion();
-                this.con.SqlString = "SELECT * FROM " + this.con.TableName;
+                this.con.SqlString = @$"
+                    SELECT 
+                        US.ID_USUARIO AS ""ID"",
+                        US.NOMBRE_USUARIO AS ""NOMBRE"",
+                        US.PASSWORD AS ""CONTRASEÑA"",
+                        US.FECHA_CREACION AS ""FECHA CREACION"",
+                        US.ID_PERFIL AS ""ID_PERFIL"",
+                        PE.DESC_PERFIL AS ""PERFIL"",
+                        US.ID_ESTD_CTA AS ""ID_ESTD_CTA"",
+                        EC.NOMBRE_ESTD_CTA AS ""ESTADO CUENTA""
+                    FROM {this.con.TableName} US
+                    JOIN PERFIL PE ON (US.ID_PERFIL = PE.ID_PERFIL)
+                    JOIN ESTD_CTA EC ON (US.ID_ESTD_CTA = EC.ID_ESTD_CTA)";
                 this.con.EsSelect = true;
                 this.con.conectar();
             }
