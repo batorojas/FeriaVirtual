@@ -35,13 +35,14 @@ namespace Negocios
             {
                 this.configurarConexion();
                 this.con.SqlString = $@"SELECT
-            P.NOMBRE_PRODUCTO AS ""PRODUCTO"",
-            DV.CANTIDAD,
-            DV.PRECIO_UNITARIO AS ""PRECIO UNIDAD"",
-            DV.CANTIDAD * DV.PRECIO_UNITARIO AS ""TOTAL""
-        FROM DETALLE_PV DV
-        JOIN PRODUCTO P ON (DV.ID_PRODUCTO = P.ID_PRODUCTO) 
-        WHERE DV.ID_CABECERA_PV = {idProcesoVenta}";
+    DV.ID_PRODUCTO,
+    P.NOMBRE_PRODUCTO AS ""PRODUCTO"",
+    DV.CANTIDAD,
+    DV.PRECIO_UNITARIO AS ""PRECIO UNITARIO"",
+    DV.CANTIDAD * DV.PRECIO_UNITARIO AS ""TOTAL""
+FROM DETALLE_PV DV
+INNER JOIN PRODUCTO P ON DV.ID_PRODUCTO = P.ID_PRODUCTO
+    WHERE ID_CABECERA_PV = {idProcesoVenta}";
 
                 this.con.EsSelect = true;
                 this.con.conectar();
